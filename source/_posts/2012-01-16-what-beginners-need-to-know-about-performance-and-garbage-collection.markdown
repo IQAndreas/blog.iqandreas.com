@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "What Beginners need to know about Performance and Garbage Collection"
-date: 2012-01-17 01:43
+date: 2012-01-16 01:43
 comments: true
-categories: ActionScript
+categories: [actionscript, actionscript-for-beginners]
+tags: [ActionScript, ActionScript for Beginners]
 ---
 Another category of beginner questions that often appear on the [Kirupa forums](http://www.kirupa.com/forum/) are about performance and garbage collection. Some common concerns:
 

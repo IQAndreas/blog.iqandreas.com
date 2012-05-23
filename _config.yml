@@ -4,8 +4,8 @@
 
 url: http://IQAndreas.github.com
 title: Andreas Renberg (IQAndreas)
-subtitle: I'm a theoretical programmer at heart
-author: Andreas Renberg
+subtitle: I'm only a Theoretical Developer
+author: Andreas Renberg (IQAndreas)
 simple_search: http://google.com/search
 description:
 
@@ -27,17 +27,27 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+#permalink: /blog/:year/:month/:day/:title/
+#permalink: /:categories/:title/index.html
+permalink: /:categories/:title/
 source: source
 destination: public
 plugins: plugins
 code_dir: downloads/code
-category_dir: blog/categories
+
+category_title_prefix: ''
+# category_dir: posts/categories
+category_dir: posts/categories
+
+static_comment_url: http://iqandreas.isbetterthanyou.org/public/iqandreas.github.com/commentsubmit.php
+
 markdown: rdiscount
 pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
-pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+#paginate: 3          # Posts per page on the blog index
+#pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+pagination_dir: posts  # Directory base for pagination URLs eg. /blog/page/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
 excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
 
@@ -58,14 +68,14 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # ----------------------- #
 
 # Github repositories
-github_user:
+#github_user: IQAndreas
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
-twitter_tweet_count: 4
+#twitter_user: IQAndreas
+twitter_tweet_count: 0
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
@@ -93,7 +103,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-15151414-3
 
 # Facebook Like
 facebook_like: false

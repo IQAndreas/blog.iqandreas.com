@@ -1,0 +1,10 @@
+# Load RVM into a shell session *as a function*
+[[ -s "/home/andreas/.rvm/scripts/rvm" ]] && source "/home/andreas/.rvm/scripts/rvm"  
+
+# Create static site
+rake generate
+
+git add .
+
+# Publish site to GitHub
+rake deploy
