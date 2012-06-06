@@ -13,7 +13,7 @@ TNT no longer destroys blocks when it explodes (but it can still hurt you or oth
 {% include minecraft/patch.html %}
 
 ### Download
-[No More TNT Griefing! Patch v1.2.5-02](https://github.com/downloads/IQAndreas/Minecraft-Mods-and-Patches/no-more-tnt-griefing-v1.2.5-02.zip) _(for MineCraft 1.2.5 Client)_
+[No More TNT Griefing! Patch v1.2.5-03](https://github.com/downloads/IQAndreas/Minecraft-Mods-and-Patches/no-more-tnt-griefing-v1.2.5-03.zip) _(for MineCraft 1.2.5 Client)_
 
 {% include minecraft/no_server_download.html %}
 

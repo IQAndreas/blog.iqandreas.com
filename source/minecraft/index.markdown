@@ -23,6 +23,7 @@ Patches are slightly different from mods. While mods may add new items or change
 {% include minecraft/water-fixes.html %}
 {% include minecraft/leaves-fixes.html %}
 {% include minecraft/cauldron-fixes.html %}
+{% include minecraft/boat-fixes.html %}
 {% include minecraft/no-more-ender-griefing.html %}
 {% include minecraft/no-more-creeper-griefing.html %}
 {% include minecraft/no-more-ghast-griefing.html %}
