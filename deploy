@@ -11,4 +11,5 @@ rake deploy
 
 # Commit source
 git add .
+git commit -a -m "Updated source `date`"
 git push origin

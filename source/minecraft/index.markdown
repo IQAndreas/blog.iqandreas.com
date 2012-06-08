@@ -22,6 +22,7 @@ Patches are slightly different from mods. While mods may add new items or change
 {% include minecraft/iqandreas-fixes.html %}
 {% include minecraft/water-fixes.html %}
 {% include minecraft/leaves-fixes.html %}
+{% include minecraft/snow-fixes.html %}
 {% include minecraft/cauldron-fixes.html %}
 {% include minecraft/boat-fixes.html %}
 {% include minecraft/no-more-ender-griefing.html %}
