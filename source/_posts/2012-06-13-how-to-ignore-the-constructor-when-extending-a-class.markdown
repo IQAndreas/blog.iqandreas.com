@@ -12,7 +12,8 @@ Turns out, this isn't entirely true. The compiler only adds `super()` if it does
 {% gist 2922489 %}
 
 If you want more reading on the matter, this information was taken from a forum thread by [Krilnon](http://me.reclipse.net/) over at the Kirupa forums.
-[{% img smiley /images/icons/icon_kirupa_orange.gif %} [TIP] Skipping super() - Interesting behavior](http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super()-Interesting-behavior)
+
+[{% img smiley /images/icons/icon_kirupa_orange.gif %} [TIP] Skipping super() - Interesting behavior](http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior)
 
 But remember, as I brought up in the forum thread linked to above:
 {% blockquote %}In my opinion, this is pure evil! No good can come of not calling constructors, none at all...{% endblockquote %}
