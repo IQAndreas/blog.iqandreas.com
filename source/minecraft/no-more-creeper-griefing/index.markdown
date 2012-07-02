@@ -17,6 +17,8 @@ Creepers no longer destroy blocks when they explode (but they can still hurt you
 
 {% include minecraft/no_server_download.html %}
 
+If you use Bukkit, you may want to check out the [WorldGuard mod](http://forums.bukkit.org/threads/sec-worldguard-block-fire-ice-melt-mushrooms-advanced-fast-area-protect-blacklist.790/).
+
 ### Recommended mods
 {% include minecraft/recommended_mods.html %}
 {% include minecraft/no-more-ghast-griefing.html %}

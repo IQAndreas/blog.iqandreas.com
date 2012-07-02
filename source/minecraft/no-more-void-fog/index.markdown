@@ -21,7 +21,7 @@ This mod will work both in Single Player and on Multi-player Servers. Only the c
 ### Download
 [No More Void Fog v1.2.5-01](https://github.com/downloads/IQAndreas/Minecraft-Mods-and-Patches/no-more-void-fog-v1.2.5-01.zip) _(for MineCraft 1.2.5 Client)_
 
-_**Note:** You only need to install the mod on the client, and it will automatically work on all multi-player servers. There is no server-side modding required._
+{% include minecraft/client_only_mod.html %}
 
 ### Installation
 {% include minecraft/incompatible_mods_list.html %}
