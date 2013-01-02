@@ -4,7 +4,7 @@
   <title><![CDATA[understanding-the-as3-event-system | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T12:42:29+01:00</updated>
+  <updated>2013-01-02T13:14:23+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -48,14 +48,14 @@
 <h4>Non-Bubbling Events</h4>
 
 <p>Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells <em>"Hey everyone, I got a <u>new car</u>!"</em>
-<code>
+<code>as3
 dispatchEvent(new Event("new_car"));
 </code></p>
 
 <p>A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn't care. And as nice of guy Steve Stage is, he really doesn't care either.</p>
 
 <p>I'm not saying that Chris's <code>Event</code> wasn't important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.
-<code>
+<code>as3
 chris.addEventListener("new_car", talkToChrisAboutTheCar);
 </code></p>
 
@@ -104,7 +104,7 @@ chris.addEventListener("new_car", talkToChrisAboutTheCar);
 <p>These two properties tend to cause a lot of confusion among beginners. Sometimes they refer to the same person, sometimes they do not. To explain the difference, let's take another example.</p>
 
 <p>Nico is listening to me for the <code>"clicked"</code> event.
-<code>
+<code>as3
 andreas.addEventListener("clicked", onClick);
 </code></p>
 
@@ -125,7 +125,7 @@ andreas.addEventListener("clicked", onClick);
 
 <p>However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage <code>homeButton</code>, <code>aboutButton</code>, <code>contactButton</code>, <code>newsButton</code>, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:</p>
 
-<p>```
+<p>```as3
 homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
 aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
 contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
@@ -149,7 +149,7 @@ newsButton.addEventListener(MouseEvent.CLICK, newsButtonClicked);</p>
 
 <p>Instead, you can create <em>one single function</em> which handles the clicks of <em>all</em> buttons. You can calculate which button needs to be pressed by using the <code>currentTarget</code> property.</p>
 
-<p>```
+<p>```as3
 homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
 aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
 contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
@@ -182,7 +182,7 @@ newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
     <content type="html"><![CDATA[<p>This thread is part 2 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series. It continues on the "office" illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.</p>
 
@@ -200,12 +200,12 @@ newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
 <p>We have planned that whenever I am about to start up a new game, I stand up and yell out to everyone <em>"I am about to call <code>Yamato</code>!"</em> (who our boss assumes is one of my Japanese clients)</p>
 
 <p>Everyone knows that the custom <code>event string</code> (also known as <code>event type</code>) for when everyone listening should play starcraft is <code>"Yamato"</code>. So, ahead of time, Nico, Bob, and Larry listen for my <code>"Yamato"</code> event:
-<code>
+<code>as3
 homeButton.addEventListener("Yamato", startPlayingStarScraft);
 </code></p>
 
 <p>Now, we may start playing dozens of different games, and I have chosen a different "code name" as the event string for each type of game:
-<code>
+<code>as3
 homeButton.addEventListener("MarcoPolo", startPlayingAOE);
 homeButton.addEventListener("Gelinor", startPlayingRuneScape);
 homeButton.addEventListener("Germany", startPlayingCOD);
@@ -224,7 +224,7 @@ homeButton.addEventListener("Orcish", startPlayingWOW);
  - <em>settings</em> - the game settings</p>
 
 <p>And our class would look something like this (note that <code>target</code> and <code>type</code> are automatically inherited by the <code>Event</code> since you <code>extend</code> it)
-```
+```as3
 public class StarCraftEvent extends Event
 {</p>
 
@@ -251,7 +251,7 @@ public var settings:GameSettings
 <h4>Dispatching the Custom Event</h4>
 
 <p>This is exactly as simple as it was dispatching the <code>"clicked"</code> event:
-```
+```as3
 //Create the event
 var players:Array = [Andreas, Nico, Bob, Larry];
 var scEvent:StarCraftEvent = new StarCraftEvent("<u>Yamato</u>", lostTemple, players, defaultSettings);</p>
@@ -275,7 +275,7 @@ dispatchEvent(scEvent);
 <p>Instead, what if I print out a plain old <code>Event</code> Folder? All it says is the <code>target</code> and the <code>type</code>, but if they want more information (which someone once in a while does) they can ask me for it directly.</p>
 
 <p>FORGET about the hassle with the <code>StarCraftEvent</code> class, and just do this:
-<code>
+<code>as3
 var eventFolder:Event = new Event("Yamato");
 dispatchEvent(eventFolder);
 </code></p>
@@ -298,7 +298,7 @@ dispatchEvent(eventFolder);
     <content type="html"><![CDATA[<p>This thread is part 1 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.</p>
 
@@ -326,7 +326,7 @@ dispatchEvent(eventFolder);
 <p>Instead, Nico sits in his cubicle continuing his regular work, and in the meantime, <em>listens</em> out in the hallway for my voice. Now, at around noon I yell out <em>"I was <u>keypressed</u>!"</em> He hears my voice, but he really doesn't care about the keypresses. So, he ignores what I say, and continues working. Then another guy in the cubicle (Larry, a really annoying guy) yells out <em>"I was <u>clicked</u>!"</em> Since Larry is not as good looking as Andreas, and The Boss didn't tell Nico to listen to Larry, Nico ignores him completely.</p>
 
 <p>Because, <u>Nico is only listening to</u> Andreas (in <u>the <code>homeButton</code> cubicle</u>) <u>for the <code>clicked</code> event</u> (which looks something like this in AS3):
-<code>
+<code>as3
 homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);
 </code></p>
 
@@ -341,7 +341,7 @@ homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);
 <p>I could spend the next 5 minutes explaining all the juicy details to Nico, but then I would have to repeat all this information to Bob (which is very inefficient, and Bob is a busy man and doesn't want to wait). So instead, I print out all the information on the <code>clicked event</code> and put it into a Folder which I give to Nico. I give the folder to both Nico and Bob so they can use the information in it and look at it as they please. This folder is the <code>Event</code> object (more details on that later)</p>
 
 <p>Immediatly Nico rushes to his art studio in his cubicle and gets to work at <code>drawHouse()</code>, however, now he has the Folder (the <code>Event</code>) he can use that information while drawing the house, and therefore passes it into the function as a parameter:
-```
+```as3
 function drawHouse(<u>event:Event</u>)
 {</p>
 
@@ -386,7 +386,7 @@ And a whole lot more!</p>
 <p>Bob and Nico don't want to wait for me to print out and collect all the papers needed in the <code>MouseEvent</code> file. They want the information to be ready the second they step up to my cubicle. So, BEFORE I stand up and tell everyone I was clicked, I create the folder ahead of time for quick and easy access. THEN, <u>I <code>dispatch</code> it to all who are <code>listening</code></u>.</p>
 
 <p>This is how it looks in ActionScript:
-```
+```as3
 //create the folder with all the information in it
 var eventFolder:MouseEvent = new MouseEvent("<u>clicked</u>", bla, bla, localX, localY, bla, bla, bla, bla, more bla);</p>
 
@@ -398,7 +398,7 @@ dispatchEvent(eventFolder);
 ```</p>
 
 <p>Now Nico and Bob (and whoever else is <code>listening</code>) can react to it and get to see the folder I sent when <code>dispatching</code>:
-```
+```as3
 function drawHouse( <u>andreasEventFolder:MouseEvent</u> )
 {</p>
 

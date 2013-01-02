@@ -4,7 +4,7 @@
   <title><![CDATA[actionscript | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/posts/categories/actionscript/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T12:42:29+01:00</updated>
+  <updated>2013-01-02T13:14:23+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -38,7 +38,7 @@
 <p>If you want more reading on the matter, this information was taken from a forum thread by <a href="http://me.reclipse.net/">Krilnon</a> over at the Kirupa forums.</p>
 
 <ul>
-<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="smiley" src="/images/icons/icon_kirupa_orange.gif"> [TIP] Skipping super() - Interesting behavior</a></li>
+<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> [TIP] Skipping super() - Interesting behavior</a></li>
 </ul>
 
 
@@ -71,8 +71,9 @@
 
 <h3>Download the FDT5 Launcher files</h3>
 
-<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.
-<a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master">https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.</p>
+
+<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
 
 <p>You are all done. Enjoy!</p>
 
@@ -829,14 +830,14 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <h4>Non-Bubbling Events</h4>
 
 <p>Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells <em>"Hey everyone, I got a <u>new car</u>!"</em>
-<code>
+<code>as3
 dispatchEvent(new Event("new_car"));
 </code></p>
 
 <p>A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn't care. And as nice of guy Steve Stage is, he really doesn't care either.</p>
 
 <p>I'm not saying that Chris's <code>Event</code> wasn't important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.
-<code>
+<code>as3
 chris.addEventListener("new_car", talkToChrisAboutTheCar);
 </code></p>
 
@@ -885,7 +886,7 @@ chris.addEventListener("new_car", talkToChrisAboutTheCar);
 <p>These two properties tend to cause a lot of confusion among beginners. Sometimes they refer to the same person, sometimes they do not. To explain the difference, let's take another example.</p>
 
 <p>Nico is listening to me for the <code>"clicked"</code> event.
-<code>
+<code>as3
 andreas.addEventListener("clicked", onClick);
 </code></p>
 
@@ -906,7 +907,7 @@ andreas.addEventListener("clicked", onClick);
 
 <p>However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage <code>homeButton</code>, <code>aboutButton</code>, <code>contactButton</code>, <code>newsButton</code>, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:</p>
 
-<p>```
+<p>```as3
 homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
 aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
 contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
@@ -930,7 +931,7 @@ newsButton.addEventListener(MouseEvent.CLICK, newsButtonClicked);</p>
 
 <p>Instead, you can create <em>one single function</em> which handles the clicks of <em>all</em> buttons. You can calculate which button needs to be pressed by using the <code>currentTarget</code> property.</p>
 
-<p>```
+<p>```as3
 homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
 aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
 contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);

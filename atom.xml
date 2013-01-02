@@ -4,7 +4,7 @@
   <title><![CDATA[Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T12:42:29+01:00</updated>
+  <updated>2013-01-02T13:14:23+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -35,7 +35,7 @@
 <p>There are also further technical details in which ignores take precedence etc. in case anyone wants some heavier reading:</p>
 
 <ul>
-<li><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"><img class="smiley" src="http://www.kernel.org/favicon.ico"> <em>gitignore(5) Manual Page</em></a></li>
+<li><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"><img class="favicon" src="http://www.kernel.org/favicon.ico"> <em>gitignore(5) Manual Page</em></a></li>
 </ul>
 
 ]]></content>
@@ -66,7 +66,7 @@
 <p>If you want more reading on the matter, this information was taken from a forum thread by <a href="http://me.reclipse.net/">Krilnon</a> over at the Kirupa forums.</p>
 
 <ul>
-<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="smiley" src="http://IQAndreas.github.com/images/icons/icon_kirupa_orange.gif"> [TIP] Skipping super() - Interesting behavior</a></li>
+<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> [TIP] Skipping super() - Interesting behavior</a></li>
 </ul>
 
 
@@ -205,9 +205,9 @@
 <p>In the meantime, enjoy the following informative (and practical!) articles by Jackson Dunstan:</p>
 
 <ul>
-<li><a href="http://jacksondunstan.com/articles/1675">Top 10 Performance Tips for 2012</a></li>
-<li><a href="http://jacksondunstan.com/articles/1690">Static vs. Non-Static</a></li>
-<li><a href="http://jacksondunstan.com/articles/1713">Why Static is Slow</a></li>
+<li><a href="http://jacksondunstan.com/articles/1675"><img class="favicon" src="http://jacksondunstan.com/favicon.ico"> Top 10 Performance Tips for 2012</a></li>
+<li><a href="http://jacksondunstan.com/articles/1690"><img class="favicon" src="http://jacksondunstan.com/favicon.ico"> Static vs. Non-Static</a></li>
+<li><a href="http://jacksondunstan.com/articles/1713"><img class="favicon" src="http://jacksondunstan.com/favicon.ico"> Why Static is Slow</a></li>
 </ul>
 
 ]]></content>
@@ -332,8 +332,9 @@
 
 <h3>Download the FDT5 Launcher files</h3>
 
-<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.
-<a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master">https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.</p>
+
+<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="http://IQAndreas.github.com/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
 
 <p>You are all done. Enjoy!</p>
 
@@ -1307,16 +1308,18 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells <em>&#8220;Hey everyone, I got a <u>new car</u>!&#8221;</em></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>dispatchEvent(new Event("new_car"));</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="k">new</span> <span class="kt">Event</span><span class="o">(</span><span class="s2">&quot;new_car&quot;</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn&#8217;t care. And as nice of guy Steve Stage is, he really doesn&#8217;t care either.</p>
 
 <p>I&#8217;m not saying that Chris&#8217;s <code>Event</code> wasn&#8217;t important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chris.addEventListener("new_car", talkToChrisAboutTheCar);</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">chris</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;new_car&quot;</span><span class="o">,</span> <span class="n">talkToChrisAboutTheCar</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Those Events <u>do not Bubble</u> up the corporate ladder.</p>
@@ -1365,8 +1368,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>Nico is listening to me for the <code>"clicked"</code> event.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>andreas.addEventListener("clicked", onClick);</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">andreas</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;clicked&quot;</span><span class="o">,</span> <span class="n">onClick</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Chris, my intern, is clicked, and stands up and tells everyone about it. Nico doesn&#8217;t even know Chris and therefore doesn&#8217;t even know about the event. Chris tells me about the event and hands me all the information.</p>
@@ -1386,7 +1390,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage <code>homeButton</code>, <code>aboutButton</code>, <code>contactButton</code>, <code>newsButton</code>, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1403,30 +1407,31 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
-</span><span class='line'>aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
-</span><span class='line'>contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
-</span><span class='line'>newsButton.addEventListener(MouseEvent.CLICK, newsButtonClicked);
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">homeButtonClicked</span><span class="o">);</span>
+</span><span class='line'><span class="n">aboutButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">aboutButtonClicked</span><span class="o">);</span>
+</span><span class='line'><span class="n">contactButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">contactButtonClicked</span><span class="o">);</span>
+</span><span class='line'><span class="n">newsButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">newsButtonClicked</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>function homeButtonClicked(mouseEvent:MouseEvent):void
-</span><span class='line'>{
-</span><span class='line'>   homeButton.scaleX = 1.2;
-</span><span class='line'>   homeButton.scaleY = 1.2;
-</span><span class='line'>}
+</span><span class='line'><span class="kd">function </span><span class="nf">homeButtonClicked</span><span class="o">(</span><span class="n">mouseEvent</span><span class="o">:</span><span class="kt">MouseEvent</span><span class="o">):</span><span class="kt">void</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>   <span class="n">homeButton</span><span class="o">.</span><span class="na">scaleX</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">;</span>
+</span><span class='line'>   <span class="n">homeButton</span><span class="o">.</span><span class="na">scaleY</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
 </span><span class='line'>
-</span><span class='line'>function aboutButtonClicked(mouseEvent:MouseEvent):void
-</span><span class='line'>{
-</span><span class='line'>   aboutButton.scaleX = 1.2;
-</span><span class='line'>   aboutButton.scaleY = 1.2;
-</span><span class='line'>}
-</span><span class='line'>//etc...</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="kd">function </span><span class="nf">aboutButtonClicked</span><span class="o">(</span><span class="n">mouseEvent</span><span class="o">:</span><span class="kt">MouseEvent</span><span class="o">):</span><span class="kt">void</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>   <span class="n">aboutButton</span><span class="o">.</span><span class="na">scaleX</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">;</span>
+</span><span class='line'>   <span class="n">aboutButton</span><span class="o">.</span><span class="na">scaleY</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="c1">//etc...</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>That means, creating a different handler function for each button, which works, but creates <strong>a lot</strong> of extra code. Then if you want to change details of what happens when a button is clicked, you would need to update every single function.</p>
 
 <p>Instead, you can create <em>one single function</em> which handles the clicks of <em>all</em> buttons. You can calculate which button needs to be pressed by using the <code>currentTarget</code> property.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1437,17 +1442,18 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
-</span><span class='line'>aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
-</span><span class='line'>contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
-</span><span class='line'>newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">navigationButtonClicked</span><span class="o">);</span>
+</span><span class='line'><span class="n">aboutButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">navigationButtonClicked</span><span class="o">);</span>
+</span><span class='line'><span class="n">contactButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">navigationButtonClicked</span><span class="o">);</span>
+</span><span class='line'><span class="n">newsButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">MouseEvent</span><span class="o">.</span><span class="na">CLICK</span><span class="o">,</span> <span class="n">navigationButtonClicked</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>function navigationButtonClicked(mouseEvent:MouseEvent):void
-</span><span class='line'>{
-</span><span class='line'>   var pressedButton:DisplayObject = mouseEvent.currentTarget as DisplayObject;
-</span><span class='line'>   pressedButton.scaleX = 1.2;
-</span><span class='line'>   pressedButton.scaleY = 1.2;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="kd">function </span><span class="nf">navigationButtonClicked</span><span class="o">(</span><span class="n">mouseEvent</span><span class="o">:</span><span class="kt">MouseEvent</span><span class="o">):</span><span class="kt">void</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>   <span class="kd">var</span> <span class="n">pressedButton</span><span class="p">:</span><span class="kt">DisplayObject</span> <span class="o">=</span> <span class="n">mouseEvent</span><span class="o">.</span><span class="na">currentTarget</span> <span class="k">as</span> <span class="n">DisplayObject</span><span class="o">;</span>
+</span><span class='line'>   <span class="n">pressedButton</span><span class="o">.</span><span class="na">scaleX</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">;</span>
+</span><span class='line'>   <span class="n">pressedButton</span><span class="o">.</span><span class="na">scaleY</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>That&#8217;s a lot less code! Now, if you need to change the scaling to 1.3, you only have to update it in one single place!</p>
@@ -1469,7 +1475,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
     <content type="html"><![CDATA[<p>This thread is part 2 in the &#8221;<a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series. It continues on the &#8220;office&#8221; illustration used in <a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&#8217;t fully understand or would like me to clarify further.</p>
 
@@ -1488,20 +1494,22 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>Everyone knows that the custom <code>event string</code> (also known as <code>event type</code>) for when everyone listening should play starcraft is <code>"Yamato"</code>. So, ahead of time, Nico, Bob, and Larry listen for my <code>"Yamato"</code> event:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("Yamato", startPlayingStarScraft);</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Yamato&quot;</span><span class="o">,</span> <span class="n">startPlayingStarScraft</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Now, we may start playing dozens of different games, and I have chosen a different &#8220;code name&#8221; as the event string for each type of game:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("MarcoPolo", startPlayingAOE);
-</span><span class='line'>homeButton.addEventListener("Gelinor", startPlayingRuneScape);
-</span><span class='line'>homeButton.addEventListener("Germany", startPlayingCOD);
-</span><span class='line'>homeButton.addEventListener("Orcish", startPlayingWOW);</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;MarcoPolo&quot;</span><span class="o">,</span> <span class="n">startPlayingAOE</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Gelinor&quot;</span><span class="o">,</span> <span class="n">startPlayingRuneScape</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Germany&quot;</span><span class="o">,</span> <span class="n">startPlayingCOD</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Orcish&quot;</span><span class="o">,</span> <span class="n">startPlayingWOW</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>Custom Events</h4>
@@ -1517,7 +1525,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>And our class would look something like this (note that <code>target</code> and <code>type</code> are automatically inherited by the <code>Event</code> since you <code>extend</code> it)</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1533,22 +1541,23 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>public class StarCraftEvent extends Event
-</span><span class='line'>{
-</span><span class='line'>    public function StarCraftEvent(the_type:String, the_map:SCMap, the_players:Array, the_settings:GameSettings)
-</span><span class='line'>    {
-</span><span class='line'>        //Since you extend the Event, let the super class know a few more additional details
-</span><span class='line'>        super(the_type);
-</span><span class='line'>        
-</span><span class='line'>        map = the_map;
-</span><span class='line'>        players = the_players;
-</span><span class='line'>        settings = the_settings;
-</span><span class='line'>    }
-</span><span class='line'>        
-</span><span class='line'>    public var map:SCMap;
-</span><span class='line'>    public var players:Array;
-</span><span class='line'>    public var settings:GameSettings
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="n">StarCraftEvent</span> <span class="kd">extends</span> <span class="n">Event</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">function </span><span class="nf">StarCraftEvent</span><span class="o">(</span><span class="n">the_type</span><span class="o">:</span><span class="kt">String</span><span class="o">,</span> <span class="n">the_map</span><span class="o">:</span><span class="kt">SCMap</span><span class="o">,</span> <span class="n">the_players</span><span class="o">:</span><span class="kt">Array</span><span class="o">,</span> <span class="n">the_settings</span><span class="o">:</span><span class="kt">GameSettings</span><span class="o">)</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//Since you extend the Event, let the super class know a few more additional details</span>
+</span><span class='line'>        <span class="kd">super</span><span class="o">(</span><span class="n">the_type</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">map</span> <span class="o">=</span> <span class="n">the_map</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">players</span> <span class="o">=</span> <span class="n">the_players</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">settings</span> <span class="o">=</span> <span class="n">the_settings</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">map</span><span class="p">:</span><span class="kt">SCMap</span><span class="o">;</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">players</span><span class="p">:</span><span class="kt">Array</span><span class="o">;</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">settings</span><span class="p">:</span><span class="kt">GameSettings</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This would be my totally custom made event class! <img alt="" border="0" class="inlineimg" src="http://www.kirupa.com/forum/images/smilies/d_smile.gif" title="Big Smile" /> Perfectly customized for whenever we want to start a StarCraft game, allowing everyone to get the information they need!</p>
@@ -1557,18 +1566,19 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>This is exactly as simple as it was dispatching the <code>"clicked"</code> event:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//Create the event
-</span><span class='line'>var players:Array = [Andreas, Nico, Bob, Larry];
-</span><span class='line'>var scEvent:StarCraftEvent = new StarCraftEvent("&lt;u&gt;Yamato&lt;/u&gt;", lostTemple, players, defaultSettings);
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="c1">//Create the event</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">players</span><span class="p">:</span><span class="kt">Array</span> <span class="o">=</span> <span class="o">[</span><span class="n">Andreas</span><span class="o">,</span> <span class="n">Nico</span><span class="o">,</span> <span class="n">Bob</span><span class="o">,</span> <span class="n">Larry</span><span class="o">];</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">scEvent</span><span class="p">:</span><span class="kt">StarCraftEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">StarCraftEvent</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;Yamato&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">lostTemple</span><span class="o">,</span> <span class="n">players</span><span class="o">,</span> <span class="n">defaultSettings</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>//Dispatch the event (and it's folder containing all the info)
-</span><span class='line'>dispatchEvent(scEvent);</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c1">//Dispatch the event (and it&#39;s folder containing all the info)</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">scEvent</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>That <u>dispatches an event</u> which alerts <u>everyone who is listening</u> that I am about to start up a StarCraft game.</p>
@@ -1587,10 +1597,11 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>FORGET about the hassle with the <code>StarCraftEvent</code> class, and just do this:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>var eventFolder:Event = new Event("Yamato");
-</span><span class='line'>dispatchEvent(eventFolder);</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">var</span> <span class="n">eventFolder</span><span class="p">:</span><span class="kt">Event</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">Event</span><span class="o">(</span><span class="s2">&quot;Yamato&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">eventFolder</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>99% of the time. That is all you will ever need. You save a lot of unnecessary work.</p>
@@ -1611,7 +1622,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
     <content type="html"><![CDATA[<p>This thread is part 1 in the &#8221;<a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&#8217;t fully understand or would like me to clarify further.</p>
 
@@ -1640,8 +1651,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>Because, <u>Nico is only listening to</u> Andreas (in <u>the <code>homeButton</code> cubicle</u>) <u>for the <code>clicked</code> event</u> (which looks something like this in AS3):</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;clicked&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">drawHouse</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>When he hears the event, he needs to <u>start drawing the house</u> (which he does in the <code>drawHouse</code> function).</p>
@@ -1656,14 +1668,15 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>Immediatly Nico rushes to his art studio in his cubicle and gets to work at <code>drawHouse()</code>, however, now he has the Folder (the <code>Event</code>) he can use that information while drawing the house, and therefore passes it into the function as a parameter:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>function drawHouse(&lt;u&gt;event:Event&lt;/u&gt;)
-</span><span class='line'>{
-</span><span class='line'>    /* Draw stuff in here... */
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">function </span><span class="nf">drawHouse</span><span class="o">(</span><span class="err">&lt;u&gt;</span><span class="n">event</span><span class="o">:</span><span class="kt">Event</span><span class="err">&lt;/u&gt;</span><span class="o">)</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="cm">/* Draw stuff in here... */</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>The Event</h4>
@@ -1702,7 +1715,7 @@ And a whole lot more!</p>
 
 <p>This is how it looks in ActionScript:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1710,26 +1723,28 @@ And a whole lot more!</p>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//create the folder with all the information in it
-</span><span class='line'>var eventFolder:MouseEvent = new MouseEvent("&lt;u&gt;clicked&lt;/u&gt;", bla, bla, localX, localY, bla, bla, bla, bla, more bla);
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="c1">//create the folder with all the information in it</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">eventFolder</span><span class="p">:</span><span class="kt">MouseEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">MouseEvent</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;clicked&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">localX</span><span class="o">,</span> <span class="n">localY</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">more</span> <span class="n">bla</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>//Now stand up and tell everyone I was clicked
-</span><span class='line'>//The "eventFolder" already says the **event type** is "clicked",
-</span><span class='line'>// so I don't need to repeat myself when dispatching it.
-</span><span class='line'>//All I need to do is dispatch the folder and Flash will do all the dirty work
-</span><span class='line'>dispatchEvent(eventFolder);</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c1">//Now stand up and tell everyone I was clicked</span>
+</span><span class='line'><span class="c1">//The &quot;eventFolder&quot; already says the **event type** is &quot;clicked&quot;,</span>
+</span><span class='line'><span class="c1">// so I don&#39;t need to repeat myself when dispatching it.</span>
+</span><span class='line'><span class="c1">//All I need to do is dispatch the folder and Flash will do all the dirty work</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">eventFolder</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Now Nico and Bob (and whoever else is <code>listening</code>) can react to it and get to see the folder I sent when <code>dispatching</code>:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>function drawHouse( &lt;u&gt;andreasEventFolder:MouseEvent&lt;/u&gt; )
-</span><span class='line'>{
-</span><span class='line'>    /*Draw stuff in here...*/
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">function </span><span class="nf">drawHouse</span><span class="o">(</span> <span class="err">&lt;u&gt;</span><span class="n">andreasEventFolder</span><span class="o">:</span><span class="kt">MouseEvent</span><span class="err">&lt;/u&gt;</span> <span class="o">)</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="cm">/*Draw stuff in here...*/</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>That is Events 101.</p>

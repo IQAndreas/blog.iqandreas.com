@@ -4,7 +4,7 @@
   <title><![CDATA[git | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T12:42:29+01:00</updated>
+  <updated>2013-01-02T13:14:23+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -35,7 +35,7 @@
 <p>There are also further technical details in which ignores take precedence etc. in case anyone wants some heavier reading:</p>
 
 <ul>
-<li><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"><img class="smiley" src="http://www.kernel.org/favicon.ico"> <em>gitignore(5) Manual Page</em></a></li>
+<li><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"><img class="favicon" src="http://www.kernel.org/favicon.ico"> <em>gitignore(5) Manual Page</em></a></li>
 </ul>
 
 ]]></content>

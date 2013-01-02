@@ -110,7 +110,7 @@
 <div class="entry-content"><p>This thread is part 2 in the &#8221;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series. It continues on the &#8220;office&#8221; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&#8217;t fully understand or would like me to clarify further.</p>
 
@@ -129,20 +129,22 @@
 
 <p>Everyone knows that the custom <code>event string</code> (also known as <code>event type</code>) for when everyone listening should play starcraft is <code>"Yamato"</code>. So, ahead of time, Nico, Bob, and Larry listen for my <code>"Yamato"</code> event:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("Yamato", startPlayingStarScraft);</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Yamato&quot;</span><span class="o">,</span> <span class="n">startPlayingStarScraft</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Now, we may start playing dozens of different games, and I have chosen a different &#8220;code name&#8221; as the event string for each type of game:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("MarcoPolo", startPlayingAOE);
-</span><span class='line'>homeButton.addEventListener("Gelinor", startPlayingRuneScape);
-</span><span class='line'>homeButton.addEventListener("Germany", startPlayingCOD);
-</span><span class='line'>homeButton.addEventListener("Orcish", startPlayingWOW);</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;MarcoPolo&quot;</span><span class="o">,</span> <span class="n">startPlayingAOE</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Gelinor&quot;</span><span class="o">,</span> <span class="n">startPlayingRuneScape</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Germany&quot;</span><span class="o">,</span> <span class="n">startPlayingCOD</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Orcish&quot;</span><span class="o">,</span> <span class="n">startPlayingWOW</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>Custom Events</h4>
@@ -158,7 +160,7 @@
 
 <p>And our class would look something like this (note that <code>target</code> and <code>type</code> are automatically inherited by the <code>Event</code> since you <code>extend</code> it)</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -174,22 +176,23 @@
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>public class StarCraftEvent extends Event
-</span><span class='line'>{
-</span><span class='line'>    public function StarCraftEvent(the_type:String, the_map:SCMap, the_players:Array, the_settings:GameSettings)
-</span><span class='line'>    {
-</span><span class='line'>        //Since you extend the Event, let the super class know a few more additional details
-</span><span class='line'>        super(the_type);
-</span><span class='line'>        
-</span><span class='line'>        map = the_map;
-</span><span class='line'>        players = the_players;
-</span><span class='line'>        settings = the_settings;
-</span><span class='line'>    }
-</span><span class='line'>        
-</span><span class='line'>    public var map:SCMap;
-</span><span class='line'>    public var players:Array;
-</span><span class='line'>    public var settings:GameSettings
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="n">StarCraftEvent</span> <span class="kd">extends</span> <span class="n">Event</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">function </span><span class="nf">StarCraftEvent</span><span class="o">(</span><span class="n">the_type</span><span class="o">:</span><span class="kt">String</span><span class="o">,</span> <span class="n">the_map</span><span class="o">:</span><span class="kt">SCMap</span><span class="o">,</span> <span class="n">the_players</span><span class="o">:</span><span class="kt">Array</span><span class="o">,</span> <span class="n">the_settings</span><span class="o">:</span><span class="kt">GameSettings</span><span class="o">)</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//Since you extend the Event, let the super class know a few more additional details</span>
+</span><span class='line'>        <span class="kd">super</span><span class="o">(</span><span class="n">the_type</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">map</span> <span class="o">=</span> <span class="n">the_map</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">players</span> <span class="o">=</span> <span class="n">the_players</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">settings</span> <span class="o">=</span> <span class="n">the_settings</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">map</span><span class="p">:</span><span class="kt">SCMap</span><span class="o">;</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">players</span><span class="p">:</span><span class="kt">Array</span><span class="o">;</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">settings</span><span class="p">:</span><span class="kt">GameSettings</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This would be my totally custom made event class! <img alt="" border="0" class="inlineimg" src="http://www.kirupa.com/forum/images/smilies/d_smile.gif" title="Big Smile" /> Perfectly customized for whenever we want to start a StarCraft game, allowing everyone to get the information they need!</p>
@@ -198,18 +201,19 @@
 
 <p>This is exactly as simple as it was dispatching the <code>"clicked"</code> event:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//Create the event
-</span><span class='line'>var players:Array = [Andreas, Nico, Bob, Larry];
-</span><span class='line'>var scEvent:StarCraftEvent = new StarCraftEvent("&lt;u&gt;Yamato&lt;/u&gt;", lostTemple, players, defaultSettings);
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="c1">//Create the event</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">players</span><span class="p">:</span><span class="kt">Array</span> <span class="o">=</span> <span class="o">[</span><span class="n">Andreas</span><span class="o">,</span> <span class="n">Nico</span><span class="o">,</span> <span class="n">Bob</span><span class="o">,</span> <span class="n">Larry</span><span class="o">];</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">scEvent</span><span class="p">:</span><span class="kt">StarCraftEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">StarCraftEvent</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;Yamato&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">lostTemple</span><span class="o">,</span> <span class="n">players</span><span class="o">,</span> <span class="n">defaultSettings</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>//Dispatch the event (and it's folder containing all the info)
-</span><span class='line'>dispatchEvent(scEvent);</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c1">//Dispatch the event (and it&#39;s folder containing all the info)</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">scEvent</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>That <u>dispatches an event</u> which alerts <u>everyone who is listening</u> that I am about to start up a StarCraft game.</p>
@@ -228,10 +232,11 @@
 
 <p>FORGET about the hassle with the <code>StarCraftEvent</code> class, and just do this:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>var eventFolder:Event = new Event("Yamato");
-</span><span class='line'>dispatchEvent(eventFolder);</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">var</span> <span class="n">eventFolder</span><span class="p">:</span><span class="kt">Event</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">Event</span><span class="o">(</span><span class="s2">&quot;Yamato&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">eventFolder</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>99% of the time. That is all you will ever need. You save a lot of unnecessary work.</p>

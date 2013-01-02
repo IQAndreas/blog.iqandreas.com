@@ -4,7 +4,7 @@
   <title><![CDATA[actionscript-in-ubuntu | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/posts/categories/actionscript-in-ubuntu/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T12:42:29+01:00</updated>
+  <updated>2013-01-02T13:14:23+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -35,8 +35,9 @@
 
 <h3>Download the FDT5 Launcher files</h3>
 
-<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.
-<a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master">https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.</p>
+
+<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
 
 <p>You are all done. Enjoy!</p>
 

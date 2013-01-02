@@ -110,7 +110,7 @@
 <div class="entry-content"><p>This thread is part 1 in the &#8221;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&#8217;t fully understand or would like me to clarify further.</p>
 
@@ -139,8 +139,9 @@
 
 <p>Because, <u>Nico is only listening to</u> Andreas (in <u>the <code>homeButton</code> cubicle</u>) <u>for the <code>clicked</code> event</u> (which looks something like this in AS3):</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;clicked&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">drawHouse</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>When he hears the event, he needs to <u>start drawing the house</u> (which he does in the <code>drawHouse</code> function).</p>
@@ -155,14 +156,15 @@
 
 <p>Immediatly Nico rushes to his art studio in his cubicle and gets to work at <code>drawHouse()</code>, however, now he has the Folder (the <code>Event</code>) he can use that information while drawing the house, and therefore passes it into the function as a parameter:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>function drawHouse(&lt;u&gt;event:Event&lt;/u&gt;)
-</span><span class='line'>{
-</span><span class='line'>    /* Draw stuff in here... */
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">function </span><span class="nf">drawHouse</span><span class="o">(</span><span class="err">&lt;u&gt;</span><span class="n">event</span><span class="o">:</span><span class="kt">Event</span><span class="err">&lt;/u&gt;</span><span class="o">)</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="cm">/* Draw stuff in here... */</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>The Event</h4>
@@ -201,7 +203,7 @@ And a whole lot more!</p>
 
 <p>This is how it looks in ActionScript:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -209,26 +211,28 @@ And a whole lot more!</p>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//create the folder with all the information in it
-</span><span class='line'>var eventFolder:MouseEvent = new MouseEvent("&lt;u&gt;clicked&lt;/u&gt;", bla, bla, localX, localY, bla, bla, bla, bla, more bla);
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="c1">//create the folder with all the information in it</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">eventFolder</span><span class="p">:</span><span class="kt">MouseEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">MouseEvent</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;clicked&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">localX</span><span class="o">,</span> <span class="n">localY</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">more</span> <span class="n">bla</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>//Now stand up and tell everyone I was clicked
-</span><span class='line'>//The "eventFolder" already says the **event type** is "clicked",
-</span><span class='line'>// so I don't need to repeat myself when dispatching it.
-</span><span class='line'>//All I need to do is dispatch the folder and Flash will do all the dirty work
-</span><span class='line'>dispatchEvent(eventFolder);</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c1">//Now stand up and tell everyone I was clicked</span>
+</span><span class='line'><span class="c1">//The &quot;eventFolder&quot; already says the **event type** is &quot;clicked&quot;,</span>
+</span><span class='line'><span class="c1">// so I don&#39;t need to repeat myself when dispatching it.</span>
+</span><span class='line'><span class="c1">//All I need to do is dispatch the folder and Flash will do all the dirty work</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">eventFolder</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Now Nico and Bob (and whoever else is <code>listening</code>) can react to it and get to see the folder I sent when <code>dispatching</code>:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>function drawHouse( &lt;u&gt;andreasEventFolder:MouseEvent&lt;/u&gt; )
-</span><span class='line'>{
-</span><span class='line'>    /*Draw stuff in here...*/
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">function </span><span class="nf">drawHouse</span><span class="o">(</span> <span class="err">&lt;u&gt;</span><span class="n">andreasEventFolder</span><span class="o">:</span><span class="kt">MouseEvent</span><span class="err">&lt;/u&gt;</span> <span class="o">)</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="cm">/*Draw stuff in here...*/</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>That is Events 101.</p>
