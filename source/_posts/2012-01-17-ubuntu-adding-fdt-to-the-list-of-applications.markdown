@@ -24,7 +24,8 @@ I would recommend saving the files to `/opt/fdt5` (may require admin access, whi
 ### Download the FDT5 Launcher files ###
 
 If you want to do this the easy way, download the pre-made files from the [GitHub repository](https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files) and install them to the locations specified in the README.
-[https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master](https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master)
+
+[{% img favicon /images/icons/icon_archive.gif %} https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master](https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master)
 
 You are all done. Enjoy!
 

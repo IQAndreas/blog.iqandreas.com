@@ -13,7 +13,7 @@ tags: [ActionScript, ActionScript for Beginners, Understanding the AS3 Event Sys
 This thread is part 2 in the "[Understanding the AS3 Event System](/actionscript/understanding-the-as3-event-system/)" series. It continues on the "office" illustration used in [part 1](/actionscript/understanding-the-as3-event-system/part-1-the-basics). If you have not read part 1, it is recommended that you do so.
 
 I originally wrote this thread as a response to a Kirupa forum thread:
-[http://www.kirupa.com/forum/showthread.php?t=355040](http://www.kirupa.com/forum/showthread.php?t=355040)
+[{% img favicon http://www.kirupa.com/favicon.ico %} http://www.kirupa.com/forum/showthread.php?t=355040](http://www.kirupa.com/forum/showthread.php?t=355040)
 
 This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.
 <!-- more -->
@@ -29,12 +29,12 @@ We need some way to alert each other when I start up a StarCraft game, _and_ kee
 We have planned that whenever I am about to start up a new game, I stand up and yell out to everyone _"I am about to call `Yamato`!"_ (who our boss assumes is one of my Japanese clients)
 
 Everyone knows that the custom `event string` (also known as `event type`) for when everyone listening should play starcraft is `"Yamato"`. So, ahead of time, Nico, Bob, and Larry listen for my `"Yamato"` event:
-```
+```as3
 homeButton.addEventListener("Yamato", startPlayingStarScraft);
 ```
 
 Now, we may start playing dozens of different games, and I have chosen a different "code name" as the event string for each type of game:
-```
+```as3
 homeButton.addEventListener("MarcoPolo", startPlayingAOE);
 homeButton.addEventListener("Gelinor", startPlayingRuneScape);
 homeButton.addEventListener("Germany", startPlayingCOD);
@@ -52,7 +52,7 @@ Each type of event file would have information inside of it, for instance, the `
  - _settings_ - the game settings
 
 And our class would look something like this (note that `target` and `type` are automatically inherited by the `Event` since you `extend` it)
-```
+```as3
 public class StarCraftEvent extends Event
 {
     public function StarCraftEvent(the_type:String, the_map:SCMap, the_players:Array, the_settings:GameSettings)
@@ -76,7 +76,7 @@ This would be my totally custom made event class! <img alt="" border="0" class="
 
 #### Dispatching the Custom Event ####
 This is exactly as simple as it was dispatching the `"clicked"` event:
-```
+```as3
 //Create the event
 var players:Array = [Andreas, Nico, Bob, Larry];
 var scEvent:StarCraftEvent = new StarCraftEvent("<u>Yamato</u>", lostTemple, players, defaultSettings);
@@ -102,7 +102,7 @@ When you think about it, {do they really **need** all that extra information} su
 Instead, what if I print out a plain old `Event` Folder? All it says is the `target` and the `type`, but if they want more information (which someone once in a while does) they can ask me for it directly.
 
 FORGET about the hassle with the `StarCraftEvent` class, and just do this:
-```
+```as3
 var eventFolder:Event = new Event("Yamato");
 dispatchEvent(eventFolder);
 ```

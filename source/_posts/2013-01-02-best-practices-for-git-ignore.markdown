@@ -22,5 +22,5 @@ Instead, GIT has provided us with four places to provide [_file name patterns_](
 
 There are also further technical details in which ignores take precedence etc. in case anyone wants some heavier reading:
 
- * [{% img smiley http://www.kernel.org/favicon.ico %} _gitignore(5) Manual Page_](http://www.kernel.org/pub/software/scm/git/docs/gitignore.html)
+ * [{% img favicon http://www.kernel.org/favicon.ico %} _gitignore(5) Manual Page_](http://www.kernel.org/pub/software/scm/git/docs/gitignore.html)
 

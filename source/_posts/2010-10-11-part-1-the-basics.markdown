@@ -13,7 +13,7 @@ tags: [ActionScript, ActionScript for Beginners, Understanding the AS3 Event Sys
 This thread is part 1 in the "[Understanding the AS3 Event System](/actionscript/understanding-the-as3-event-system/)" series.
 
 I originally wrote this thread as a response to a Kirupa forum thread:
-[http://www.kirupa.com/forum/showthread.php?t=355040](http://www.kirupa.com/forum/showthread.php?t=355040)
+[{% img favicon http://www.kirupa.com/favicon.ico %} http://www.kirupa.com/forum/showthread.php?t=355040](http://www.kirupa.com/forum/showthread.php?t=355040)
 
 This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.
 <!-- more -->
@@ -40,7 +40,7 @@ Now, Nico could get up out of his seat every five minutes, walk over to me, and 
 Instead, Nico sits in his cubicle continuing his regular work, and in the meantime, _listens_ out in the hallway for my voice. Now, at around noon I yell out _"I was <u>keypressed</u>!"_ He hears my voice, but he really doesn't care about the keypresses. So, he ignores what I say, and continues working. Then another guy in the cubicle (Larry, a really annoying guy) yells out _"I was <u>clicked</u>!"_ Since Larry is not as good looking as Andreas, and The Boss didn't tell Nico to listen to Larry, Nico ignores him completely.
 
 Because, <u>Nico is only listening to</u> Andreas (in <u>the `homeButton` cubicle</u>) <u>for the `clicked` event</u> (which looks something like this in AS3):
-```
+```as3
 homeButton.addEventListener("<u>clicked</u>", drawHouse);
 ```
 
@@ -55,7 +55,7 @@ Two people were listening for my `clicked`, Nico and Bob (the guy from `contentM
 I could spend the next 5 minutes explaining all the juicy details to Nico, but then I would have to repeat all this information to Bob (which is very inefficient, and Bob is a busy man and doesn't want to wait). So instead, I print out all the information on the `clicked event` and put it into a Folder which I give to Nico. I give the folder to both Nico and Bob so they can use the information in it and look at it as they please. This folder is the `Event` object (more details on that later)
 
 Immediatly Nico rushes to his art studio in his cubicle and gets to work at `drawHouse()`, however, now he has the Folder (the `Event`) he can use that information while drawing the house, and therefore passes it into the function as a parameter:
-```
+```as3
 function drawHouse(<u>event:Event</u>)
 {
     /* Draw stuff in here... */
@@ -98,7 +98,7 @@ _(**Extra note:** Maybe Bob didn't even need to see the file. Maybe he just need
 Bob and Nico don't want to wait for me to print out and collect all the papers needed in the `MouseEvent` file. They want the information to be ready the second they step up to my cubicle. So, BEFORE I stand up and tell everyone I was clicked, I create the folder ahead of time for quick and easy access. THEN, <u>I `dispatch` it to all who are `listening`</u>.
 
 This is how it looks in ActionScript:
-```
+```as3
 //create the folder with all the information in it
 var eventFolder:MouseEvent = new MouseEvent("<u>clicked</u>", bla, bla, localX, localY, bla, bla, bla, bla, more bla);
 
@@ -110,7 +110,7 @@ dispatchEvent(eventFolder);
 ```
 
 Now Nico and Bob (and whoever else is `listening`) can react to it and get to see the folder I sent when `dispatching`:
-```
+```as3
 function drawHouse( <u>andreasEventFolder:MouseEvent</u> )
 {
     /*Draw stuff in here...*/

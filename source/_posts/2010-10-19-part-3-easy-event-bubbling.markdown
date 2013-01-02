@@ -39,14 +39,14 @@ Now, there are two types of _Events_; Events that Bubble, and Events that do not
 #### Non-Bubbling Events ####
 
 Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells _"Hey everyone, I got a <u>new car</u>!"_
-```
+```as3
 dispatchEvent(new Event("new_car"));
 ```
 
 A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn't care. And as nice of guy Steve Stage is, he really doesn't care either.
 
 I'm not saying that Chris's `Event` wasn't important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.
-```
+```as3
 chris.addEventListener("new_car", talkToChrisAboutTheCar);
 ```
 
@@ -100,7 +100,7 @@ These two properties tend to cause a lot of confusion among beginners. Sometimes
 
 
 Nico is listening to me for the `"clicked"` event.
-```
+```as3
 andreas.addEventListener("clicked", onClick);
 ```
 
@@ -121,7 +121,7 @@ Why does the `currentTarget` property even exist? I mean if you added the event 
 
 However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage `homeButton`, `aboutButton`, `contactButton`, `newsButton`, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:
 
-```
+```as3
 homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
 aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
 contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
@@ -145,7 +145,7 @@ That means, creating a different handler function for each button, which works, 
 
 Instead, you can create _one single function_ which handles the clicks of _all_ buttons. You can calculate which button needs to be pressed by using the `currentTarget` property.
 
-```
+```as3
 homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
 aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
 contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);

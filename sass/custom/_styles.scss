@@ -10,3 +10,10 @@ article img.smiley {
     //border-radius: 0;
     @include shadow-box(none, none, none);
 }
+
+article img.favicon {
+    top: 0px;
+ 	width: 16px;
+ 	height: 16px;
+    @include shadow-box(none, none, none);
+}
