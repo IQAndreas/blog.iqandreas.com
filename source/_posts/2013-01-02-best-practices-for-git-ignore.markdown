@@ -5,7 +5,7 @@ date: 2013-01-02 11:46
 comments: true
 categories: [git]
 ---
-The [man pages for GIT](http://www.kernel.org/pub/software/scm/git/docs/) aren't usually the clearest or most helpful, and is seldom the first place I turn to for help. Still, I ran across some valuable "best practices" information which I myself have not been following due to ignorance.
+The [man pages for GIT](http://www.kernel.org/pub/software/scm/git/docs/) aren't usually the clearest or most helpful, and is seldom the first place I turn to for help. Still, I ran across some valuable "best practices" information which I myself have not been following due to ignorance.<!-- more --> 
 
 I thought the only place to mark which files to hide was inside of a `.gitignore` file, ideally placed at the root of the repository. As a result, I would list all files and folders I may want to ignore inside of it. [[1](https://github.com/FlixelCommunity/flixel/blob/dev/.gitignore)]
 
