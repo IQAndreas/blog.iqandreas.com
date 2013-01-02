@@ -4,7 +4,7 @@
   <title><![CDATA[understanding-the-as3-event-system | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T13:14:23+01:00</updated>
+  <updated>2013-01-02T13:23:51+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -181,8 +181,7 @@ newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
     <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
     <content type="html"><![CDATA[<p>This thread is part 2 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series. It continues on the "office" illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
-<p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.</p>
 
@@ -297,8 +296,7 @@ dispatchEvent(eventFolder);
     <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
     <content type="html"><![CDATA[<p>This thread is part 1 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series.</p>
 
-<p>I originally wrote this thread as a response to a Kirupa forum thread:
-<a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.</p>
 
