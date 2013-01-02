@@ -12,8 +12,7 @@ tags: [ActionScript, ActionScript for Beginners, Understanding the AS3 Event Sys
 
 This thread is part 1 in the "[Understanding the AS3 Event System](/actionscript/understanding-the-as3-event-system/)" series.
 
-I originally wrote this thread as a response to a Kirupa forum thread:
-[{% img favicon http://www.kirupa.com/favicon.ico %} http://www.kirupa.com/forum/showthread.php?t=355040](http://www.kirupa.com/forum/showthread.php?t=355040)
+I originally wrote this thread as a response to a Kirupa forum thread: [{% img favicon http://www.kirupa.com/favicon.ico %} Passing a string to be a custom event](http://www.kirupa.com/forum/showthread.php?t=355040)
 
 This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don't fully understand or would like me to clarify further.
 <!-- more -->
