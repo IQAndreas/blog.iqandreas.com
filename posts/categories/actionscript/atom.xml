@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[actionscript | Andreas Renberg (IQAndreas)]]></title>
+  <link href="http://IQAndreas.github.com/posts/categories/actionscript/atom.xml" rel="self"/>
+  <link href="http://IQAndreas.github.com/"/>
+  <updated>2013-01-02T12:31:21+01:00</updated>
+  <id>http://IQAndreas.github.com/</id>
+  <author>
+    <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Ignore the Constructor when Extending a Class]]></title>
+    <link href="http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
+    <updated>2012-06-13T08:47:00+02:00</updated>
+    <id>http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
+    <content type="html"><![CDATA[<p>As we all know, if you don't call <code>super()</code> in your constructor's code, the Flash compiler will automatically append it to your constructor's code.</p>
+
+<p>Turns out, this isn't entirely true. The compiler only adds <code>super()</code> if it doesn't see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
+
+<p><div><script src='https://gist.github.com/2922489.js'></script>
+<noscript><pre><code>class Subclass extends Base 
+{
+	public function Subclass()
+	{
+		if (false)
+		{
+			super();
+		}
+	}
+}</code></pre></noscript></div>
+</p>
+
+<p>If you want more reading on the matter, this information was taken from a forum thread by <a href="http://me.reclipse.net/">Krilnon</a> over at the Kirupa forums.</p>
+
+<ul>
+<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="smiley" src="/images/icons/icon_kirupa_orange.gif"> [TIP] Skipping super() - Interesting behavior</a></li>
+</ul>
+
+
+<p>But remember, as I brought up in the forum thread linked to above:
+<blockquote><p>In my opinion, this is pure evil! No good can come of not calling constructors, none at all...</p></blockquote></p>
+
+<p>So use with caution!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
+    <link href="http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
+    <updated>2012-01-17T08:48:00+01:00</updated>
+    <id>http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
+    <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which "resets" the internal SWFViewer in case it won't open after closing improperly.</p>
+
+<p><img class="center" src="/images/blog/fdt-in-ubuntu-applications-menu.png" title="FDT in Ubuntu Applications Menu" ></p>
+
+<!-- more -->
+
+
+<p><em>The following guide was written for 32bit FDT5, but may still work for future or previous versions of FDT. These instructions can of course also be used for any application that doesn't come with an Ubuntu installer, adjusting the  files appropriately.</em></p>
+
+<p>If you are running Ubuntu, I'm assuming you already know how to use the basics of the command line and how to manipulate (create, delete, change permissions) of files. If anyone wants more details, post a comment and I'll clarify.</p>
+
+<p>I'm assuming you have already <a href="http://fdt.powerflasher.com/buy-download/">downloaded FDT</a> (they have a free version if you aren't already using FDT) and extracted the archive.</p>
+
+<p>I would recommend saving the files to <code>/opt/fdt5</code> (may require admin access, which is easily done without messing with the command line by running <code>gksu nautilus</code>, assuming you are still using the default file browser) Depending on what extraction tool you use, you may also need to change the permission settings for the files to allow folder access for all users.</p>
+
+<h3>Download the FDT5 Launcher files</h3>
+
+<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.
+<a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master">https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+
+<p>You are all done. Enjoy!</p>
+
+<p>Alternatively, you can do all the dirty work yourself (if so, keep reading).</p>
+
+<h3>Creating the FDT5 Launcher Files manually</h3>
+
+<p>Create a new file named FDT5.desktop with the following contents:</p>
+
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5.desktop'></script>
+<noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset='utf-8'&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;chrome=1&quot;&gt;
+        &lt;title&gt;404 - GitHub&lt;/title&gt;
+    &lt;link rel=&quot;search&quot; type=&quot;application/opensearchdescription+xml&quot; href=&quot;/opensearch.xml&quot; title=&quot;GitHub&quot; /&gt;
+    &lt;link rel=&quot;fluid-icon&quot; href=&quot;https://github.com/fluidicon.png&quot; title=&quot;GitHub&quot; /&gt;
+
+    
+    
+
+    
+
+    &lt;link href=&quot;https://a248.e.akamai.net/assets.github.com/stylesheets/bundles/github-2344814a81ac52e7c3e4a3291ff65f26c3b45b45.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    
+
+    &lt;script src=&quot;https://a248.e.akamai.net/assets.github.com/javascripts/bundles/jquery-e46225f266eba00902b2e5b66fe6fe6a484fb242.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://a248.e.akamai.net/assets.github.com/javascripts/bundles/github-f2bde18e604676f30c044254d675ad1669f592e2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    
+
+    
+  &lt;/head&gt;
+
+
+  &lt;body class=&quot;logged_out    env-production &quot;&gt;
+    
+
+
+    
+
+      &lt;div id=&quot;header&quot; class=&quot;true clearfix&quot;&gt;
+        &lt;div class=&quot;container clearfix&quot;&gt;
+          &lt;a class=&quot;site-logo&quot; href=&quot;https://github.com&quot;&gt;
+            &lt;!--[if IE]&gt;
+            &lt;img alt=&quot;GitHub&quot; class=&quot;github-logo&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/header/logov7.png?1323882716&quot; /&gt;
+            &lt;img alt=&quot;GitHub&quot; class=&quot;github-logo-hover&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/header/logov7-hover.png?1324325358&quot; /&gt;
+            &lt;![endif]--&gt;
+            &lt;img alt=&quot;GitHub&quot; class=&quot;github-logo-4x&quot; height=&quot;30&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/header/logov7@4x.png?1323882716&quot; /&gt;
+            &lt;img alt=&quot;GitHub&quot; class=&quot;github-logo-4x-hover&quot; height=&quot;30&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/header/logov7@4x-hover.png?1324325358&quot; /&gt;
+          &lt;/a&gt;
+
+                  &lt;!--
+      make sure to use fully qualified URLs here since this nav
+      is used on error pages on other domains
+    --&gt;
+    &lt;ul class=&quot;top-nav logged_out&quot;&gt;
+        &lt;li class=&quot;pricing&quot;&gt;&lt;a href=&quot;https://github.com/plans&quot;&gt;Signup and Pricing&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;explore&quot;&gt;&lt;a href=&quot;https://github.com/explore&quot;&gt;Explore GitHub&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;features&quot;&gt;&lt;a href=&quot;https://github.com/features&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;blog&quot;&gt;&lt;a href=&quot;https://github.com/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;login&quot;&gt;&lt;a href=&quot;https://github.com/login?return_to=%2Fgist%2F1626770%2Ffdt5.desktop&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      
+
+        &lt;div class=&quot;site&quot;&gt;
+          &lt;div class=&quot;container&quot;&gt;
+            
+
+&lt;style type=&quot;text/css&quot;&gt;
+    #header{
+        border-bottom: 0;
+    }
+    .site{
+        padding: 0;
+        margin-top: -20px;
+    }
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    #parallax_field{
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 370px;
+        width: 100%;
+    }
+    #parallax_field #parallax_bg {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 110%;
+        height: 425px;
+        z-index: 1;
+    }
+    #parallax_illustration {
+        display:block;
+        width: 940px;
+        height: 370px;
+        position: relative;
+        overflow: hidden;
+    }
+    #parallax_illustration #parallax_error_text {
+        position: absolute;
+        top: 72px;
+        left: 72px;
+        z-index: 10;
+    }
+    #parallax_illustration #parallax_octocat {
+        position: absolute;
+        top: 94px;
+        left: 356px;
+        z-index: 9;
+    }
+    #parallax_illustration #parallax_speeder {
+        position: absolute;
+        top: 150px;
+        left: 432px;
+        z-index: 8;
+    }
+    #parallax_illustration #parallax_octocatshadow {
+        position: absolute;
+        top: 297px;
+        left: 371px;
+        z-index: 7;
+    }
+    #parallax_illustration #parallax_speedershadow {
+        position: absolute;
+        top: 263px;
+        left: 442px;
+        z-index: 6;
+    }
+    #parallax_illustration #parallax_building_1 {
+        position: absolute;
+        top: 73px;
+        left: 467px;
+        z-index: 5;
+    }
+    #parallax_illustration #parallax_building_2 {
+        position: absolute;
+        top: 113px;
+        left: 762px;
+        z-index: 4;
+    }
+    #footer {
+        margin-top: 0px;
+        z-index: 12;
+    }
+&lt;/style&gt;
+
+
+&lt;div id=&quot;parallax_field&quot;&gt;
+    &lt;img alt=&quot;building&quot; class=&quot;js-plaxify&quot; data-invert=&quot;true&quot; data-xrange=&quot;0&quot; data-yrange=&quot;20&quot; height=&quot;415&quot; id=&quot;parallax_bg&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_bg.jpg?1315867479&quot; width=&quot;940&quot; /&gt;
+&lt;/div&gt;
+&lt;div id=&quot;parallax_illustration&quot;&gt;
+  &lt;img alt=&quot;404 | &amp;ldquo;This is not the web page you are looking for&amp;rdquo;&quot; class=&quot;js-plaxify&quot; data-xrange=&quot;20&quot; data-yrange=&quot;10&quot; height=&quot;249&quot; id=&quot;parallax_error_text&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_errortext.png?1315867479&quot; width=&quot;271&quot; /&gt;
+  &lt;img alt=&quot;Octobi Wan Catnobi&quot; class=&quot;js-plaxify&quot; data-xrange=&quot;10&quot; data-yrange=&quot;10&quot; height=&quot;230&quot; id=&quot;parallax_octocat&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_octocat.png?1315867479&quot; width=&quot;188&quot; /&gt;
+  &lt;img alt=&quot;land speeder&quot; class=&quot;js-plaxify&quot; data-xrange=&quot;10&quot; data-yrange=&quot;10&quot; height=&quot;156&quot; id=&quot;parallax_speeder&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_speeder.png?1315867479&quot; width=&quot;440&quot; /&gt;
+  &lt;img alt=&quot;Octobi Wan Catnobi's shadow&quot; class=&quot;js-plaxify&quot; data-xrange=&quot;10&quot; data-yrange=&quot;10&quot; height=&quot;49&quot; id=&quot;parallax_octocatshadow&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_octocatshadow.png?1315867479&quot; width=&quot;166&quot; /&gt;
+  &lt;img alt=&quot;land speeder's shadow&quot; class=&quot;js-plaxify&quot; data-xrange=&quot;10&quot; data-yrange=&quot;10&quot; height=&quot;75&quot; id=&quot;parallax_speedershadow&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_speedershadow.png?1315867479&quot; width=&quot;430&quot; /&gt;
+  &lt;img alt=&quot;building&quot; class=&quot;js-plaxify&quot; data-invert=&quot;true&quot; data-xrange=&quot;50&quot; data-yrange=&quot;20&quot; height=&quot;123&quot; id=&quot;parallax_building_1&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_building_1.png?1315867479&quot; width=&quot;304&quot; /&gt;
+  &lt;img alt=&quot;building&quot; class=&quot;js-plaxify&quot; data-invert=&quot;true&quot; data-xrange=&quot;75&quot; data-yrange=&quot;30&quot; height=&quot;50&quot; id=&quot;parallax_building_2&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/404/parallax_building_2.png?1315867479&quot; width=&quot;116&quot; /&gt;
+&lt;/div&gt;
+
+          &lt;/div&gt;
+          &lt;div class=&quot;context-overlay&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;!-- footer --&gt;
+      &lt;div id=&quot;footer&quot; &gt;
+        
+  &lt;div class=&quot;upper_footer&quot;&gt;
+     &lt;div class=&quot;container clearfix&quot;&gt;
+
+       &lt;!--[if IE]&gt;&lt;h4 id=&quot;blacktocat_ie&quot;&gt;GitHub Links&lt;/h4&gt;&lt;![endif]--&gt;
+       &lt;![if !IE]&gt;&lt;h4 id=&quot;blacktocat&quot;&gt;GitHub Links&lt;/h4&gt;&lt;![endif]&gt;
+
+       &lt;ul class=&quot;footer_nav&quot;&gt;
+         &lt;h4&gt;GitHub&lt;/h4&gt;
+         &lt;li&gt;&lt;a href=&quot;https://github.com/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;https://github.com/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;https://github.com/features&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;https://github.com/contact&quot;&gt;Contact &amp;amp; Support&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;https://github.com/training&quot;&gt;Training&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://enterprise.github.com/&quot;&gt;GitHub Enterprise&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://status.github.com/&quot;&gt;Site Status&lt;/a&gt;&lt;/li&gt;
+       &lt;/ul&gt;
+
+       &lt;ul class=&quot;footer_nav&quot;&gt;
+         &lt;h4&gt;Tools&lt;/h4&gt;
+         &lt;li&gt;&lt;a href=&quot;http://get.gaug.es/&quot;&gt;Gauges: Analyze web traffic&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://speakerdeck.com&quot;&gt;Speaker Deck: Presentations&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;https://gist.github.com&quot;&gt;Gist: Code snippets&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://mac.github.com/&quot;&gt;GitHub for Mac&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://mobile.github.com/&quot;&gt;Issues for iPhone&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://jobs.github.com/&quot;&gt;Job Board&lt;/a&gt;&lt;/li&gt;
+       &lt;/ul&gt;
+
+       &lt;ul class=&quot;footer_nav&quot;&gt;
+         &lt;h4&gt;Extras&lt;/h4&gt;
+         &lt;li&gt;&lt;a href=&quot;http://shop.github.com/&quot;&gt;GitHub Shop&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://octodex.github.com/&quot;&gt;The Octodex&lt;/a&gt;&lt;/li&gt;
+       &lt;/ul&gt;
+
+       &lt;ul class=&quot;footer_nav&quot;&gt;
+         &lt;h4&gt;Documentation&lt;/h4&gt;
+         &lt;li&gt;&lt;a href=&quot;http://help.github.com/&quot;&gt;GitHub Help&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://developer.github.com/&quot;&gt;Developer API&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://github.github.com/github-flavored-markdown/&quot;&gt;GitHub Flavored Markdown&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
+       &lt;/ul&gt;
+
+     &lt;/div&gt;&lt;!-- /.site --&gt;
+  &lt;/div&gt;&lt;!-- /.upper_footer --&gt;
+
+&lt;div class=&quot;lower_footer&quot;&gt;
+  &lt;div class=&quot;container clearfix&quot;&gt;
+    &lt;!--[if IE]&gt;&lt;div id=&quot;legal_ie&quot;&gt;&lt;![endif]--&gt;
+    &lt;![if !IE]&gt;&lt;div id=&quot;legal&quot;&gt;&lt;![endif]&gt;
+      &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://github.com/site/terms&quot;&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://github.com/site/privacy&quot;&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://github.com/security&quot;&gt;Security&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;p&gt;&amp;copy; 2012 &lt;span id=&quot;_rrt&quot; title=&quot;0.02364s from fe9.rs.github.com&quot;&gt;GitHub&lt;/span&gt; Inc. All rights reserved.&lt;/p&gt;
+    &lt;/div&gt;&lt;!-- /#legal or /#legal_ie--&gt;
+
+      &lt;div class=&quot;sponsor&quot;&gt;
+        &lt;a href=&quot;http://www.rackspace.com&quot; class=&quot;logo&quot;&gt;
+          &lt;img alt=&quot;Dedicated Server&quot; height=&quot;36&quot; src=&quot;https://a248.e.akamai.net/assets.github.com/images/modules/footer/rackspace_logo.png?v2&quot; width=&quot;38&quot; /&gt;
+        &lt;/a&gt;
+        Powered by the &lt;a href=&quot;http://www.rackspace.com &quot;&gt;Dedicated
+        Servers&lt;/a&gt; and&lt;br/&gt; &lt;a href=&quot;http://www.rackspacecloud.com&quot;&gt;Cloud
+        Computing&lt;/a&gt; of Rackspace Hosting&lt;span&gt;&amp;reg;&lt;/span&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;&lt;!-- /.site --&gt;
+&lt;/div&gt;&lt;!-- /.lower_footer --&gt;
+
+      &lt;/div&gt;&lt;!-- /#footer --&gt;
+
+    
+
+&lt;div id=&quot;keyboard_shortcuts_pane&quot; class=&quot;instapaper_ignore readability-extra&quot; style=&quot;display:none&quot;&gt;
+  &lt;h2&gt;Keyboard Shortcuts &lt;small&gt;&lt;a href=&quot;#&quot; class=&quot;js-see-all-keyboard-shortcuts&quot;&gt;(see all)&lt;/a&gt;&lt;/small&gt;&lt;/h2&gt;
+
+  &lt;div class=&quot;columns threecols&quot;&gt;
+    &lt;div class=&quot;column first&quot;&gt;
+      &lt;h3&gt;Site wide shortcuts&lt;/h3&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;s&lt;/dt&gt;
+        &lt;dd&gt;Focus site search&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;?&lt;/dt&gt;
+        &lt;dd&gt;Bring up this help dialog&lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/div&gt;&lt;!-- /.column.first --&gt;
+
+    &lt;div class=&quot;column middle&quot; style='display:none'&gt;
+      &lt;h3&gt;Commit list&lt;/h3&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;j&lt;/dt&gt;
+        &lt;dd&gt;Move selection down&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;k&lt;/dt&gt;
+        &lt;dd&gt;Move selection up&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;c &lt;em&gt;or&lt;/em&gt; o &lt;em&gt;or&lt;/em&gt; enter&lt;/dt&gt;
+        &lt;dd&gt;Open commit&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;y&lt;/dt&gt;
+        &lt;dd&gt;Expand URL to its canonical form&lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/div&gt;&lt;!-- /.column.first --&gt;
+
+    &lt;div class=&quot;column last&quot; style='display:none'&gt;
+      &lt;h3&gt;Pull request list&lt;/h3&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;j&lt;/dt&gt;
+        &lt;dd&gt;Move selection down&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;k&lt;/dt&gt;
+        &lt;dd&gt;Move selection up&lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+        &lt;dt&gt;o &lt;em&gt;or&lt;/em&gt; enter&lt;/dt&gt;
+        &lt;dd&gt;Open issue&lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/div&gt;&lt;!-- /.columns.last --&gt;
+
+  &lt;/div&gt;&lt;!-- /.columns.equacols --&gt;
+
+  &lt;div style='display:none'&gt;
+    &lt;div class=&quot;rule&quot;&gt;&lt;/div&gt;
+
+    &lt;h3&gt;Issues&lt;/h3&gt;
+
+    &lt;div class=&quot;columns threecols&quot;&gt;
+      &lt;div class=&quot;column first&quot;&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;j&lt;/dt&gt;
+          &lt;dd&gt;Move selection down&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;k&lt;/dt&gt;
+          &lt;dd&gt;Move selection up&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;x&lt;/dt&gt;
+          &lt;dd&gt;Toggle selection&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;o &lt;em&gt;or&lt;/em&gt; enter&lt;/dt&gt;
+          &lt;dd&gt;Open issue&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;&lt;!-- /.column.first --&gt;
+      &lt;div class=&quot;column middle&quot;&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;I&lt;/dt&gt;
+          &lt;dd&gt;Mark selection as read&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;U&lt;/dt&gt;
+          &lt;dd&gt;Mark selection as unread&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;e&lt;/dt&gt;
+          &lt;dd&gt;Close selection&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;y&lt;/dt&gt;
+          &lt;dd&gt;Remove selection from view&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;&lt;!-- /.column.middle --&gt;
+      &lt;div class=&quot;column last&quot;&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;c&lt;/dt&gt;
+          &lt;dd&gt;Create issue&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;l&lt;/dt&gt;
+          &lt;dd&gt;Create label&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;i&lt;/dt&gt;
+          &lt;dd&gt;Back to inbox&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;u&lt;/dt&gt;
+          &lt;dd&gt;Back to issues&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;/&lt;/dt&gt;
+          &lt;dd&gt;Focus issues search&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style='display:none'&gt;
+    &lt;div class=&quot;rule&quot;&gt;&lt;/div&gt;
+
+    &lt;h3&gt;Issues Dashboard&lt;/h3&gt;
+
+    &lt;div class=&quot;columns threecols&quot;&gt;
+      &lt;div class=&quot;column first&quot;&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;j&lt;/dt&gt;
+          &lt;dd&gt;Move selection down&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;k&lt;/dt&gt;
+          &lt;dd&gt;Move selection up&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;o &lt;em&gt;or&lt;/em&gt; enter&lt;/dt&gt;
+          &lt;dd&gt;Open issue&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;&lt;!-- /.column.first --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style='display:none'&gt;
+    &lt;div class=&quot;rule&quot;&gt;&lt;/div&gt;
+
+    &lt;h3&gt;Network Graph&lt;/h3&gt;
+    &lt;div class=&quot;columns equacols&quot;&gt;
+      &lt;div class=&quot;column first&quot;&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;&lt;span class=&quot;badmono&quot;&gt;←&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; h&lt;/dt&gt;
+          &lt;dd&gt;Scroll left&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;&lt;span class=&quot;badmono&quot;&gt;→&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; l&lt;/dt&gt;
+          &lt;dd&gt;Scroll right&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;&lt;span class=&quot;badmono&quot;&gt;↑&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; k&lt;/dt&gt;
+          &lt;dd&gt;Scroll up&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;&lt;span class=&quot;badmono&quot;&gt;↓&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; j&lt;/dt&gt;
+          &lt;dd&gt;Scroll down&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;t&lt;/dt&gt;
+          &lt;dd&gt;Toggle visibility of head labels&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;&lt;!-- /.column.first --&gt;
+      &lt;div class=&quot;column last&quot;&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;shift &lt;span class=&quot;badmono&quot;&gt;←&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; shift h&lt;/dt&gt;
+          &lt;dd&gt;Scroll all the way left&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;shift &lt;span class=&quot;badmono&quot;&gt;→&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; shift l&lt;/dt&gt;
+          &lt;dd&gt;Scroll all the way right&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;shift &lt;span class=&quot;badmono&quot;&gt;↑&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; shift k&lt;/dt&gt;
+          &lt;dd&gt;Scroll all the way up&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;shift &lt;span class=&quot;badmono&quot;&gt;↓&lt;/span&gt; &lt;em&gt;or&lt;/em&gt; shift j&lt;/dt&gt;
+          &lt;dd&gt;Scroll all the way down&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;&lt;!-- /.column.last --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style='display:none'&gt;
+    &lt;div class=&quot;rule&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;columns threecols&quot;&gt;
+      &lt;div class=&quot;column first&quot; style='display:none'&gt;
+        &lt;h3&gt;Source Code Browsing&lt;/h3&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;t&lt;/dt&gt;
+          &lt;dd&gt;Activates the file finder&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;l&lt;/dt&gt;
+          &lt;dd&gt;Jump to line&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;w&lt;/dt&gt;
+          &lt;dd&gt;Switch branch/tag&lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;dl class=&quot;keyboard-mappings&quot;&gt;
+          &lt;dt&gt;y&lt;/dt&gt;
+          &lt;dd&gt;Expand URL to its canonical form&lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+    &lt;div id=&quot;markdown-help&quot; class=&quot;instapaper_ignore readability-extra&quot;&gt;
+  &lt;h2&gt;Markdown Cheat Sheet&lt;/h2&gt;
+
+  &lt;div class=&quot;cheatsheet-content&quot;&gt;
+
+  &lt;div class=&quot;mod&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h3&gt;Format Text&lt;/h3&gt;
+      &lt;p&gt;Headers&lt;/p&gt;
+      &lt;pre&gt;
+# This is an &amp;lt;h1&amp;gt; tag
+## This is an &amp;lt;h2&amp;gt; tag
+###### This is an &amp;lt;h6&amp;gt; tag&lt;/pre&gt;
+     &lt;p&gt;Text styles&lt;/p&gt;
+     &lt;pre&gt;
+*This text will be italic*
+_This will also be italic_
+**This text will be bold**
+__This will also be bold__
+
+*You **can** combine them*
+&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h3&gt;Lists&lt;/h3&gt;
+      &lt;p&gt;Unordered&lt;/p&gt;
+      &lt;pre&gt;
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b&lt;/pre&gt;
+     &lt;p&gt;Ordered&lt;/p&gt;
+     &lt;pre&gt;
+1. Item 1
+2. Item 2
+3. Item 3
+   * Item 3a
+   * Item 3b&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h3&gt;Miscellaneous&lt;/h3&gt;
+      &lt;p&gt;Images&lt;/p&gt;
+      &lt;pre&gt;
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+&lt;/pre&gt;
+     &lt;p&gt;Links&lt;/p&gt;
+     &lt;pre&gt;
+http://github.com - automatic!
+[GitHub](http://github.com)&lt;/pre&gt;
+&lt;p&gt;Blockquotes&lt;/p&gt;
+     &lt;pre&gt;
+As Kanye West said:
+
+&gt; We're living the future so
+&gt; the present is our past.
+&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;rule&quot;&gt;&lt;/div&gt;
+
+  &lt;h3&gt;Code Examples in Markdown&lt;/h3&gt;
+  &lt;div class=&quot;col&quot;&gt;
+      &lt;p&gt;Syntax highlighting with &lt;a href=&quot;http://github.github.com/github-flavored-markdown/&quot; title=&quot;GitHub Flavored Markdown&quot; target=&quot;_blank&quot;&gt;GFM&lt;/a&gt;&lt;/p&gt;
+      &lt;pre&gt;
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;p&gt;Or, indent your code 4 spaces&lt;/p&gt;
+      &lt;pre&gt;
+Here is a Python code example
+without syntax highlighting:
+
+    def foo:
+      if not bar:
+        return true&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;p&gt;Inline code for comments&lt;/p&gt;
+      &lt;pre&gt;
+I think you should use an
+`&amp;lt;addr&amp;gt;` element here instead.&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+    &lt;div class=&quot;ajax-error-message&quot;&gt;
+      &lt;p&gt;&lt;span class=&quot;icon&quot;&gt;&lt;/span&gt; Something went wrong with that request. Please try again. &lt;a href=&quot;javascript:;&quot; class=&quot;ajax-error-dismiss&quot;&gt;Dismiss&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    
+    
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></noscript></div>
+</p>
+
+<p>If you want the file to be available to all users of the computer, save the file in
+- <code>/usr/share/applications/</code>
+Alternatively, if you only want the currently logged in user to have FDT show up in the application menu, save the file to
+- <code>~/.local/share/applications/</code></p>
+
+<p>Next, create the following script, and save it as <code>/usr/bin/fdt5</code></p>
+
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5'></script>
+<noscript><pre><code>#!/bin/sh
+#export MOZILLA_FIVE_HOME=&quot;/usr/lib/xulrunner-1.9.2.17/&quot;
+export MOZILLA_FIVE_HOME=&quot;/usr/lib/mozilla/&quot;
+
+export LD_LIBRARY_PATH=${MOZILLA_FIVE_HOME}:${LD_LIBRARY_PATH}
+export GDK_NATIVE_WINDOWS=1
+export ECLIPSE_HOME=&quot;/opt/fdt5&quot;
+
+$ECLIPSE_HOME/eclipse $*
+</code></pre></noscript></div>
+</p>
+
+<p>Note that the script may be a tad more complicated than it needs to be, but this is the script I'm using since I had to jump through a few hoops getting FDT to work properly in Ubuntu.</p>
+
+<p>You also need to set the icon for the application. The default Eclipse icon is okay, but on my system, both Eclipse for Java and <a href="http://code.google.com/p/fb4linux/">FB4Linux</a> use that same icon, so I would prefer being able to tell them apart.</p>
+
+<p>I included FDT's fancy, blue dodecahedron icon <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/blob/master/fdt-icon.png">in the repository</a>, used with permission from Powerflasher GmbH. You can use the icon provided in the repository, or use your own, but which ever icon you use for FDT, make sure to save it to <code>/opt/fdt5/fdt-icon.png</code></p>
+
+<p>Finally, if you want FDT to stay in the launcher bar, start up FDT, right-click the icon in the launcher, and make sure "Keep in Launcher" is checked.</p>
+
+<p><img class="center" src="/images/blog/fdt-in-ubuntu-launcher-keep-in-launcher.png" title="FDT in the Ubuntu Launcher. Right click and make sure &#34;Keep in Launcher&#34; is checked." alt="FDT in the Ubuntu Launcher. Right click and make sure &#34;Keep in Launcher&#34; is checked."></p>
+
+<h3>Cleaning the SWFViewer settings</h3>
+
+<p>If the built in FDT SWFViewer quits improperly (which happens from time to time when running into AS3 errors) it will not open the next time you run the SWF. The solution is to delete a few config files for the plugin, which is a simple task, but gets annoying when you need to constantly delete the files.</p>
+
+<p>The following script will delete said config files (assuming FDT is installed to <code>/opt/fdt5</code> as recommended) though I wish FDT had a button for this inside the IDE instead.</p>
+
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5-clean'></script>
+<noscript><pre><code># Clean out viewer settings for FDT
+# Could remove the windows and MAC settings as well, but it seems a bit uneccessary. ;)
+
+# 32 bit linux
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerCheck
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerLock
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerRestartInfo
+
+# 64 bit linux
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerCheck
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerLock
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerRestartInfo</code></pre></noscript></div>
+</p>
+
+<p>Save the script to <code>/usr/bin/fdt5-clean</code> and run it by typing <code>fdt5-clean</code> into the command prompt. The script does not require admin rights to run as long as your FDT install folder has full permission for all users.</p>
+
+<p>Leave any further questions or problems in the comments and I'll try to help sort them out.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What Beginners need to know about Performance and Garbage Collection]]></title>
+    <link href="http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
+    <updated>2012-01-16T01:43:00+01:00</updated>
+    <id>http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
+    <content type="html"><![CDATA[<p>Another category of beginner questions that often appear on the <a href="http://www.kirupa.com/forum/">Kirupa forums</a> are about performance and garbage collection. Some common concerns:</p>
+
+<ul>
+<li>How do I make sure my <code>MovieClips</code> are garbage collected? Is setting everything to <code>null</code> enough?</li>
+<li>Should I always remove all my event listeners?</li>
+<li>Someone told me it's better to use <code>int</code> instead of <code>uint</code> because it's more efficient.</li>
+<li>I used <code>while(--i)</code> instead, because it is much more efficient than <code>for</code> loops.</li>
+<li><code>hitTest()</code> is really slow! Every site tells me I should never use it.</li>
+</ul>
+
+
+<p>My answer to all those questions: <em>Don't worry about it</em>.</p>
+
+<!-- more -->
+
+
+<p>Don't get me wrong, if you are the type of person who worries about these sorts of things right now, you will make a terrific developer one day! But worrying about these things now is just going to make your code more complicated and much more difficult to manage.</p>
+
+<h3>Strive to make your code clear and readable</h3>
+
+<p>As a beginner, this should be your first and foremost rule. If you scratch your head every time you read your own code, coding will be overwhelming and debugging will be hell.</p>
+
+<p>Take these two identical chunks of code as an example:</p>
+
+<p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_compact.as'></script>
+<noscript><pre><code>compass.rotation = Math.atan2(event.stageY - compass.y, event.stageX - compass.x) * (180/Math.PI) + 90;</code></pre></noscript></div>
+</p>
+
+<p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_expanded.as'></script>
+<noscript><pre><code>//Get the location of the mouse relative to the compass
+var dx:Number = event.stageX - compass.x;
+var dy:Number = event.stageY - compass.y;
+
+var radianRotation:Number = Math.atan2(dy, dx);
+var degreeRotation:Number = radianRotation * (180/Math.PI);
+
+//Offset the rotation by 90 degrees to make it show up properly
+compass.rotation = degreeRotation + 90;</code></pre></noscript></div>
+</p>
+
+<p>The first chunk of code is much more efficient than the second, but I wouldn't want to be the developer that find bugs in that project.</p>
+
+<h3>So should I never worry about performance?</h3>
+
+<p>Not at this point, no. First make sure you have learned the basics and syntax of ActionScript.
+Then, make sure you <strong>really</strong> know the basics of ActionScript (instead of just thinking that you do while perched <a href="http://www.smbc-comics.com/?id=2475">on top of mount stupid</a>. Believe me, we have all been there). <strong>Finally</strong> you can start learning about standard coding conventions and basic performance improvements.</p>
+
+<p>Keep in mind, most performance optimization tips (such as using <code>int</code> instead of <code>uint</code>) will shave <em>milliseconds</em> off your total time if you do tens of thousands of calculations each frame.</p>
+
+<p>Often times, the extra milliseconds won't make a hill of beans difference, so worrying about them while writing the code is a waste of resources. Test your code, and make sure your project works. Then, <strong>if</strong> (and only if!) there is a problem with performance after everything is complete and working, you can go back and find which areas need optimizing.</p>
+
+<h3>Why Garbage Collection doesn't matter</h3>
+
+<p>Same principle as with optimization, don't worry too much about garbage collection unless you are building an enterprise-level application. Flash is actually pretty good at taking care of things for you and making sure everything gets disposed of properly. Even if it misses an image here or there, what is one measly Bitmap for a computer with +2GB of RAM? Users won't notice the difference if your game uses 17 MB instead of 16 MB.</p>
+
+<p>And remember, it's <strong>all</strong> disposed once you close the SWF anyway.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Experiment: Drop Painter]]></title>
+    <link href="http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter/"/>
+    <updated>2011-06-03T17:12:00+02:00</updated>
+    <id>http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter</id>
+    <content type="html"><![CDATA[<p>No, it's not painting with drops (though, that seems like a great idea for another project). Instead this experiment drops pieces of a painting down from above which eventually form to assemble a complete picture.</p>
+
+<p><a href="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/"><img class="center" src="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/experiment-drop-painter-preview-image.png"></a>
+<em>Click the image to go open the SWF</em></p>
+
+<!-- more -->
+
+
+<p>The code is written in AS3 and uses <a href="http://www.box2dflash.org/">Box2D</a> for the physics and <a href="http://www.minimalcomps.com/">MinimalComps</a> for the components.</p>
+
+<p>At first I wrote the code up as a prototype just to test a concept (and rather than rewrite the code cleanly, I just kept adding onto it so it became one tightly-coupled mess).</p>
+
+<p>I later entered it into a <a href="http://www.kirupa.com/forum/showthread.php?362779-Information-and-Rules!">contest</a> held on the <a href="http://www.kirupa.com/forum/">Kirupa Forums</a>, and modified it slightly to fit the contest theme.</p>
+
+<p><a href="https://github.com/IQAndreas/Drop-Painter-Experiment">The source is available on GitHub</a> in case anyone is curious how it was achieved (and yes, I did cheat. It's not actually dynamic. The movement of all those shapes are "pre-baked" during the "Loading" screen and simply played back afterwards, which is why it is able to take up so little CPU on playback. <img class="smiley" src="http://www.kirupa.com/forum/images/smilies/trout.gif"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
+    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
+    <updated>2010-10-19T07:23:00+02:00</updated>
+    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
+    <content type="html"><![CDATA[<p>This thread is part 3 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series. It continues on the "office" illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
+
+<p>This part describes how <em>"Event Bubbling"</em> works. Note that this is a strong simplification of the actual system (which is a bit more complex, but in the next part I will elaborate on that system), but for 99% of all Event uses, this is the only thing you really need to know about Event Bubbling.</p>
+
+<!-- more -->
+
+
+<hr />
+
+<p>At the office I work, a large part of our work system is set up as a hierarchy of responsibility and work delegation.</p>
+
+<h4>The Corporate Ladder</h4>
+
+<p>At the very top of the tree is Mr. Stan Stage. He's a great guy. Very friendly, a nice father figure, and a really good boss. He is the boss of all bosses, and in the end, everyone reports to him.</p>
+
+<p>Since there is so much information passed around the office each day, he delegates most of the tasks to a handful of people who work right under him. These people are all <em>"second in command"</em>. One of these second in command is my boss. Unlike Mr. Stage, my boss is very annoying and difficult, and to avoid his wrath, I will exclude his name, and instead just call him <em>"My Boss"</em>.</p>
+
+<p>My Boss has about 20 people working under him, including me. It's not a great position to be in, but it's still a very rewarding job. Some of us <em>"third in command"</em> workers have people working directly under us.</p>
+
+<p>I am one of the lucky ones, and have five interns working directly for me. Since I am their boss, they obey my every whim, such as getting coffee for me each morning, or taking out my dry-cleaning. Even though they are only interns, they are still considered to be <em>"fourth in command"</em>.</p>
+
+<p>Since a great deal of what we do at the Office is reported via <code>Events</code>, my interns are expected to use the event system to report any changes just like the rest of us.</p>
+
+<p>For efficiency's sake, my five interns have their desks very close to my cubicle, so whenever they <code>dispatch</code> an <code>event</code> (by standing up and shouting for example <em>"I was <u>hovered</u>!"</em>) I hear it immediately.</p>
+
+<p>Now, there are two types of <em>Events</em>; Events that Bubble, and Events that do not Bubble.</p>
+
+<h4>Non-Bubbling Events</h4>
+
+<p>Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells <em>"Hey everyone, I got a <u>new car</u>!"</em>
+<code>
+dispatchEvent(new Event("new_car"));
+</code></p>
+
+<p>A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn't care. And as nice of guy Steve Stage is, he really doesn't care either.</p>
+
+<p>I'm not saying that Chris's <code>Event</code> wasn't important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.
+<code>
+chris.addEventListener("new_car", talkToChrisAboutTheCar);
+</code></p>
+
+<p>Those Events <u>do not Bubble</u> up the corporate ladder.</p>
+
+<h4>Events that Bubble</h4>
+
+<p>Now, clicks are VERY important in my line of work (in fact, that's how we get paid).</p>
+
+<p>We want to let as many people as possible who want to know about the clicks to know about the clicks, but if every single person just stood up and yelled <em>"Someone was clicked!"</em> whenever they found out about it, it would be one disorganized mess and you would hear about the same gossip from eight different people. Instead, we have an organized system for letting everyone in charge know about it.</p>
+
+<h4>Bubbling Events up the Ladder</h4>
+
+<p>One day Chris stands up and yells out to everyone <em>"I was <u>clicked</u>!"</em> (<code>dispatching</code> the <code>event</code> to everyone that may be <code>listening</code> to him. Not many people are usually listening to Chris (in fact, most people at the office don't even know any of my interns). So, Chris only tells everyone specifically listening to him about the <code>"click"</code> event.</p>
+
+<p>Then Chris walks over to me and says <em>"Andreas. I was <u>clicked</u>. All the information on the click is available in this Event folder."</em></p>
+
+<p>Now it's my turn. I stand up and yell <em>"I was <u>clicked</u>!"</em> (I could tell them <em>"someone in my department was clicked"</em>, but since my interns work for me so closely, their work is considered to be part of my work) A few people are listening to me for the <code>"clicked"</code> event, (including Nico and Bob) and walk up to me asking for more information. I give them both the file so they have all the information on the event that they need.</p>
+
+<p>Then, I barge into the office of my Boss, telling him all about the event, and handing him a copy of the information. He in turn switches on his fancy intercom system (since he is second in command, he gets certain perks, and is paid too much to have to yell across the hallway) and announces to everyone in the office <em>"Attention anyone who is listening to me. I was just <u>clicked</u>."</em> A few people are <code>listening</code> to him, and respond.</p>
+
+<p>Finally, my Boss knocks on the door of Steve Stage and tells him all about the click event. Now, at last, Mr. Stage announces the <code>"click"</code> event for the <strong>last</strong> time, telling everyone who is <code>listening</code> to him about the "click".</p>
+
+<p>After that it is done. Everyone who needs to know about the <code>Event</code> knows about it.</p>
+
+<h4>Now why is Bubbling so important?</h4>
+
+<p>Let's take the example of Betty, who works in accounting. In order to do her job property, she needs to know about every single time a client <code>"clicked"</code> an employee.</p>
+
+<p>She could listen to every single employee for the <code>"click"</code> event, but this is a VERY inefficient system. And every time there is a new employee she would need to start listening to them, and when an employee leaves, she needs to remember to stop listening to them.</p>
+
+<p>Instead, because of our nifty little bubbling system, Betty ONLY needs to listen to Mr. Stage for the <code>"click"</code> event. Since those events <code>bubble</code> up to Steve Stage, she will be notified of <strong>every single click event</strong> directly from Steve Stage.</p>
+
+<h4>EXTRA NOTE: Events only bubble upwards</h4>
+
+<p>Let's say one day I'm working at my desk, when a client <code>"clicks"</code> me directly instead of clicking one of my interns. I stand up and yell to everyone who is listening to me that <em>"I was <u>clicked</u>"</em>, but I do not need to directly tell any of my interns about the click. Unless my interns are specifically listening to me, they will not know about the click and will keep carrying on their work undisturbed. The interns will NOT dispatch any <code>"click"</code> event either.</p>
+
+<p>The only one who needs to know is My Boss. The events only bubble "up" the corporate ladder, not down.</p>
+
+<h4>So who was clicked first?</h4>
+
+<p>In order to file the proper paperwork (and hand out promotions or raises where needed) Betty needs to know exactly which person it was who was <code>"clicked"</code> first. Luckily, all this information is perfectly filled out in the <code>Event</code> object (the folder containing all the information).</p>
+
+<p>There are two names in the <code>Event</code> object, <code>target</code> and <code>currentTarget</code>. Flash assigns these two names automatically when the <code>Event</code> is dispatched.</p>
+
+<p>These two properties tend to cause a lot of confusion among beginners. Sometimes they refer to the same person, sometimes they do not. To explain the difference, let's take another example.</p>
+
+<p>Nico is listening to me for the <code>"clicked"</code> event.
+<code>
+andreas.addEventListener("clicked", onClick);
+</code></p>
+
+<p>Chris, my intern, is clicked, and stands up and tells everyone about it. Nico doesn't even know Chris and therefore doesn't even know about the event. Chris tells me about the event and hands me all the information.</p>
+
+<p>Now, I stand up and tell everyone <em>"I was clicked"</em>. Nico is listening to me (Andreas) for the event, and walks over to gather all the information.</p>
+
+<p>Then the event continues to bubble upwards to My Boss and finally Stan Stage.</p>
+
+<p><strong>target</strong> refers to the person who first dispatched the event. In this case, Chris would be the target.
+<strong>currentTarget</strong> refers to the person you were listening to who told you about the event.</p>
+
+<p>Think about <code>currentTarget</code> for a second. For Nico, <code>currentTarget</code> would refer to me, <u>Andreas</u>. However, since Betty is listening to Stan Stage for the Event, the <code>currentTarget</code> property in her event file would refer to <u>Mr. Stage</u>.</p>
+
+<h4>Using currentTarget to your advantage</h4>
+
+<p>Why does the <code>currentTarget</code> property even exist? I mean if you added the event listener to an object, of course you know what that object is, and therefore the property is pretty much worthless.</p>
+
+<p>However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage <code>homeButton</code>, <code>aboutButton</code>, <code>contactButton</code>, <code>newsButton</code>, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:</p>
+
+<p>```
+homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
+aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
+contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
+newsButton.addEventListener(MouseEvent.CLICK, newsButtonClicked);</p>
+
+<p>function homeButtonClicked(mouseEvent:MouseEvent):void
+{
+   homeButton.scaleX = 1.2;
+   homeButton.scaleY = 1.2;
+}</p>
+
+<p>function aboutButtonClicked(mouseEvent:MouseEvent):void
+{
+   aboutButton.scaleX = 1.2;
+   aboutButton.scaleY = 1.2;
+}
+//etc...
+```</p>
+
+<p>That means, creating a different handler function for each button, which works, but creates <strong>a lot</strong> of extra code. Then if you want to change details of what happens when a button is clicked, you would need to update every single function.</p>
+
+<p>Instead, you can create <em>one single function</em> which handles the clicks of <em>all</em> buttons. You can calculate which button needs to be pressed by using the <code>currentTarget</code> property.</p>
+
+<p>```
+homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
+
+<p>function navigationButtonClicked(mouseEvent:MouseEvent):void
+{
+   var pressedButton:DisplayObject = mouseEvent.currentTarget as DisplayObject;
+   pressedButton.scaleX = 1.2;
+   pressedButton.scaleY = 1.2;
+}
+```</p>
+
+<p>That's a lot less code! Now, if you need to change the scaling to 1.3, you only have to update it in one single place!</p>
+
+<p>If you want to attach additional properties to the buttons, (such as setting some custom scale value for each button) you can use the Dictionary object. Look in the FAQ under the appropriate category for links to explanations and example code:
+<a href="http://iqandreas.blogspot.com/2009/09/most-common-flash-questions-as3-faq.html">http://iqandreas.blogspot.com/2009/09/most-common-flash-questions-as3-faq.html</a></p>
+
+<p>This is how Flash bubbles its events.</p>
+
+<p>Next step, how to make your own events bubble (The fourth part of this series is still on my TODO list ;)</p>
+]]></content>
+  </entry>
+  
+</feed>

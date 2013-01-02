@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[monologues | Andreas Renberg (IQAndreas)]]></title>
+  <link href="http://IQAndreas.github.com/posts/categories/monologues/atom.xml" rel="self"/>
+  <link href="http://IQAndreas.github.com/"/>
+  <updated>2013-01-02T12:31:21+01:00</updated>
+  <id>http://IQAndreas.github.com/</id>
+  <author>
+    <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pick a Community, any Community]]></title>
+    <link href="http://IQAndreas.github.com/monologues/pick-a-community-any-community/"/>
+    <updated>2012-06-12T09:56:00+02:00</updated>
+    <id>http://IQAndreas.github.com/monologues/pick-a-community-any-community</id>
+    <content type="html"><![CDATA[<p><span class='pullquote-right' data-pullquote='Learning to program all on your own can be hard, really hard in fact.'>Learning to program all on your own can be hard, really hard in fact. Sometimes it helps having a place where you can ask questions when Google just isn't giving you what you are looking for. There are also benefits in using a community to <em>answer</em> programming questions (a topic I will cover in an upcoming blog post).</span></p>
+
+<p>To assist in choosing a community, I have compiled a list containing details about various communities and my experience in using them.<!-- more --> As I haven't been to every community out there, I would appreciate if you leave your own recommendations and detailed experiences as a comment below.</p>
+
+<p>The list only contains ActionScript communities, but some of them cover other programming languages or topics as well. But remember, if you want to ask a question on a specific topic, you will get much better results asking in a community that specializes in that topic.</p>
+
+<p>For instance, if you had a Java question, you could ask it on the Kirupa forums in the <a href="http://www.kirupa.com/forum/forumdisplay.php?137-Other-%28Java-C-C-etc-%29">Other (Java, C, C++, etc.)</a> section, but I recommend tracking down a forum with its main focus on Java. Similarly, Box2D and Flixel questions <em>could</em> go in a standard ActionScript forum, but will likely get better answers in their <a href="http://www.box2d.org/forum/index.php">Box2D</a> and <a href="http://forums.flixel.org/">Flixel</a> forums.</p>
+
+<h3><a href="http://www.kirupa.com/forum/">The Kirupa Forums</a></h3>
+
+<p>The Kirupa Forums are my "home"; my forum of choice.</p>
+
+<p>In the beginning, I bookmarked every ActionScript forum I could find, from <a href="http://actionscript.org/forums/">ActionScript.org</a> to an obscure section of the forums at <a href="http://armorgames.com/community/forum/39/programming-help/">ArmorGames</a>. Not sure which forum was "the best", I would sometimes ask the same question in several places (in my defense, I didn't know any better).</p>
+
+<p>I eventually started using the Kirupa forums more and more. I don't remember all the reasons why, but one major factor was that I often got better responses there, and would often get tied into long conversations. But in the end, the reason I finally settled down at the Kirupa forums is the same reason that I use ActionScript; it's not necessarily "the best", I'm just used to it. I'm very comfortable there, and have had no reason to switch to a new forum.</p>
+
+<p><span class='pullquote-right' data-pullquote='The Kirupa Forums are just the right size.'>The Kirupa Forums are just the right size. There are enough experienced ActionScripters (and even helpful beginners) to answer nearly every question within a day or two of its being posted. The questions that usually end up unanswered are the poorly written ones and "not-really-questions" like <em>"i need to make a music player in flash cs5 that uses xml. help plz."</em></span></p>
+
+<p>Sure, in a larger forum there are many more people answering questions, but after a few hours your question is already on page 2, which as we all know is where forum threads go to die. By then, no one except Google searchers will find your thread! Personally, I'm not a fan of huge forums.</p>
+
+<p>To boot, The Kirupa Forums have a nice set of <a href="http://www.kirupa.com/tutorials.htm">tutorials</a>, and also run <a href="http://www.kirupa.com/forum/forumdisplay.php?51-Contests">contests</a> with prizes from time to time. I thoroughly recommend <a href="http://www.kirupa.com/forum/">The Kirupa Forums</a> to any new ActionScripters.</p>
+
+<h3>Other Forums</h3>
+
+<p>As Kirupa.com is the only forum I'm familiar with enough to give a full review, I don't know how other forums compare. Let me know what forums you have used, and how you feel about them in the comments below and I'll add your experiences in here.</p>
+
+<h3><a href="http://stackoverflow.com/questions/tagged/actionscript-3">StackOverflow</a></h3>
+
+<p>Although I haven't gotten deeply involved with this community, only using it on occasion, I feel it is a brilliant and magnificent way of asking and answering questions.</p>
+
+<p><span class='pullquote-right' data-pullquote='It&#8217;s questions and answers, pure and simple.'>Unlike "traditional forums" where responses appear from top to bottom in chronological order, the best answers on StackOverflow "float up" to the top. There is no "chit chat" or "small talk"; even the comments that aren't actually "answers" are small and out of the way. It's questions and answers, pure and simple.</span></p>
+
+<p>In the beginning, your powers are quite "limited"; you can't "upvote", use links in your answers, or give those comments that aren't direct "answers". To earn more privileges, you need to earn points by asking and answering questions well. Unlike Expert's Exchange (mentioned below), these points don't go away, but serve as a guard to keep spammers and "low quality askers/answerers" out. But as soon as you have racked up enough points to gain the trust of StackOverflow, you are free to ask, answer, and even edit across the site.</p>
+
+<p>There are more things I love about StackOverflow's q/a system, but they are beyond the scope of this article and will have to be saved for another blog post.</p>
+
+<h3><a href="http://www.experts-exchange.com/">Experts Exchange</a></h3>
+
+<p>Be careful with this one. Experts Exchange is a <strong>paid service</strong>, and in my experience people tend to "expect more" out of a service they spent money on. I have more than once ran into people with the mindset "I payed good money to ask a question here, and you have the audacity to accuse me of using the wrong publish settings? I don't need this kind of treatment!"</p>
+
+<p><em>Note that this is only my personal experience.</em> I have had positive responses as well, and others may also have had different results with EE.</p>
+
+<p>Second, Experts Exchange <strong>really</strong> wants to earn money. It's not enough that people have to pay to ask questions there, but if you have ever stumbled across them on Google, you know that you can't even read answered questions without a paid membership.  (<a href="http://www.experts-exchange.com/Software/Photos_Graphics/Web_Graphics/Macromedia_Flash/ActionScript/Q_26120513.html">Exhibit A</a>)</p>
+
+<p>You don't need a paid membership to get started at EE; you can still see and help answer <strong>unanswered</strong> questions with a "free account". If you answer enough questions each month, you get a "free one month membership" which includes asking questions and viewing answered ones.</p>
+
+<p>But if your amount of answered questions per month dips down below the minimum, you are back to a "free account" until you "earn enough" by answering questions. This is regardless of how many questions you answered in the past. The "monthly minimum" isn't high, but I still find what they are dong to be tacky and close to extortion.</p>
+
+<p>The good news is, if you answer enough questions, you get a free t-shirt. :)</p>
+
+<h3><a href="https://twitter.com/">Twitter</a></h3>
+
+<p>Even though many have moved on to "better technologies", there is still a slew of great Flash developers on Twitter, especially in the "game development" crowd. You can learn a lot from the things they tweet, and even start some pretty nice conversations.</p>
+
+<p>Remember that many developers have busy lives outside of Twitter. If you do use Twitter to ask questions, as in all communities, sometimes it's better to ask a "crowd" of people (in this case, Tweeting to all your followers), rather than bothering a single person with your problems.</p>
+
+<p>You would be surprised how often people ask for programming help on Twitter. If you are a fan of answering questions, keep an eye on the <a href="https://twitter.com/#!/search/%23as3">#as3</a> and <a href="https://twitter.com/#!/search/%23flashdev">#flashdev</a> tags if anyone needs help. Some Twitter applications, such as <a href="http://www.tweetdeck.com/">TweetDeck</a>, help you "monitor" tags and receive instant notifications when someone uses it in a Tweet.</p>
+
+<p>The 140 character limit could be quite limiting, so sometimes it may benefit to invite the user to continue the conversation via an IM service such as <a href="http://www.skype.com/">Skype</a>. If you don't like giving out your Skype username online, create a new account used only for assisting people with ActionScript. This will also keep your programming contacts separate from your personal ones.</p>
+
+<h3>IRC</h3>
+
+<p>I'm not an IRC person; I have used it, but I don't frequent anywhere. If anyone knows of any good IRC hangouts, please share them in the comments.</p>
+
+<p><em>TODO: Insert conclusion that leaves readers inspired to go out and find a community to settle down into.</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why so many Monologues?]]></title>
+    <link href="http://IQAndreas.github.com/monologues/why-so-many-monologues/"/>
+    <updated>2012-03-20T13:34:00+01:00</updated>
+    <id>http://IQAndreas.github.com/monologues/why-so-many-monologues</id>
+    <content type="html"><![CDATA[<p>I typically prefer the information in my posts to be more "practical", but the last few posts have been mainly monologues. Bear with me though, I'm working up to one central point, and after that I'm back to writing useful information. <!-- more --></p>
+
+<p>In the meantime, enjoy the following informative (and practical!) articles by Jackson Dunstan:</p>
+
+<ul>
+<li><a href="http://jacksondunstan.com/articles/1675">Top 10 Performance Tips for 2012</a></li>
+<li><a href="http://jacksondunstan.com/articles/1690">Static vs. Non-Static</a></li>
+<li><a href="http://jacksondunstan.com/articles/1713">Why Static is Slow</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Problems with Being Self Taught]]></title>
+    <link href="http://IQAndreas.github.com/monologues/the-problems-with-being-self-taught/"/>
+    <updated>2012-03-08T15:51:00+01:00</updated>
+    <id>http://IQAndreas.github.com/monologues/the-problems-with-being-self-taught</id>
+    <content type="html"><![CDATA[<p><em><strong>Note:</strong> I can only speak from personal experience on this issue, so I could use more input.</em></p>
+
+<p>To say that I have been "programming" since I was 13 would be a stretch. I knew how to write code, but I was crippled by how much <em>Visual Studio.net</em> generated automatically for me. I never learned many of those automated tasks manually.</p>
+
+<p>Aside from a programming class in high school with a <strong>fantastic</strong> teacher, I'm entirely self taught. Being self taught is usually viewed as a great thing, though I cannot figure out why.<!-- more --></p>
+
+<h3>Like a British person's teeth...</h3>
+
+<p>For an embarrassingly long time I had large "gaps" in my knowledge. As one of many early personal examples, I never learned how to properly use for loops, so I tended to avoid them. In addition, I didn't realize you could access indexes in arrays with variables, and would instead copy and paste lines several times, filling in hard coded numbers.</p>
+
+<p><span class='pullquote-right' data-pullquote='I&#8217;m not done learning'>Today, I still suffer from this. All but the most basic and common design patterns are still unfamiliar to me. In fact, properly organizing large projects is still a mountain of a task. I'm not done learning.</span></p>
+
+<p>Perhaps this problem would not exist if I had taken a single course from start to finish. I would take on new information one idea at a time and in an organized manner, rather than jump around from tutorial to tutorial picking up bits a pieces, missing chunks along the way.</p>
+
+<h3>The dreaded intermediate phase</h3>
+
+<p>There are beginner guides <em>galore</em> to any programming language or library you could imagine, from professional companies such as <a href="http://www.lynda.com/">Lynda</a> and <a href="http://active.tutsplus.com/sessions/as3-101/">Envato</a>, to independent bloggers such as <a href="http://www.untoldentertainment.com/blog/flash-and-actionscript-911">Untold Entertainment</a>, <a href="http://gamedev.michaeljameswilliams.com/as3-avoider-game-tutorial-base/">Michael James Williams</a> and <a href="http://www.emanueleferonato.com/">Emanuele Feronato</a>.</p>
+
+<p><span class='pullquote-right' data-pullquote='&#34;I know the basics and the syntax. Now what?&#34;'>Alas, few beginner tutorials prepare you for the "road ahead". In my experience, the most difficult stage in learning a new language is \"I know the basics and the syntax. Now what?\" During the "intermediate" phase, technical manuals and papers are too advanced, while beginner tutorials are too simple. Either there are too few resources for intermediate developers, or they are too diffiuclt to find.</span></p>
+
+<p>It certainly isn't a help when beginner guides will take shortcuts (such as using timeline code rather than teaching to properly write classes) in an effort to make the new information easier to absorb. But similar to the "automatically-generated-behind-the-scenes code" in <em>Visual Studio.net</em>, this <strong>may</strong> have crippling effects on the students.</p>
+
+<h3>Can you really call yourself self taught?</h3>
+
+<p>On a related side note, successfully self-taught musicians sit down with their instrument of choice, and after much practice one day produce golden melodies from the tips of their fingers (or lips, depending on the instrument).</p>
+
+<p>Can the same really be said for developers? I doubt anyone has summed up their history with "One day I sat down at a compiler, not having read a single book on Objective C. It was hard at first, but after months of trial and error, my fingers eventually produced gold."</p>
+
+<p>Yes, you may not have gone to an "official" school, but most books and online tutorials are set up in a manner similar to how you would learn a subject in a standard classroom.</p>
+
+<p>Perhaps all the self-taught developer can say is "The internet taught me."</p>
+
+<h3>What about you?</h3>
+
+<p>As mentioned, I can only speak from personal experience on being self educated. I have not taken any college level classes on software development, so I can't compare my expertise before and after the course. Would I still be facing the same problems after leaving college, or did I miss something crucial learning on my own?</p>
+
+<p>I need more input. Are you a self taught developer? If so...</p>
+
+<ul>
+<li>What has your experience been learning to become a better self taught developer?</li>
+<li>Are there more hinders self-taught individuals face? How can they be overcome?</li>
+<li>How do you overcome the "intermediate phase" of learning a language?</li>
+<li>Why is being self taught considered a positive thing? Is it?</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What is a Theoretical Developer?]]></title>
+    <link href="http://IQAndreas.github.com/monologues/what-is-a-theoretical-developer/"/>
+    <updated>2012-03-02T14:56:00+01:00</updated>
+    <id>http://IQAndreas.github.com/monologues/what-is-a-theoretical-developer</id>
+    <content type="html"><![CDATA[<p><em><strong>Note:</strong> Take this post with a grain of salt. It's meant to be a slightly amusing rant, and should not be used as an official classification system for developers.</em> <img class="smiley" src="http://www.kirupa.com/forum/images/smilies/wink.gif" title=";)" ></p>
+
+<p><strong>Engineers</strong>, <strong>Architects</strong>, and <strong>Chemists</strong> work with their hands on "real life" projects. They of course use their problem solving and thinking skills in their line of work, but in the end, they get paid to develop specific products with practical uses.</p>
+
+<p><strong>Mathematicians</strong> and <strong>Theoretical Physicists</strong> do the exact opposite. They spend all day thinking, pondering, and mediating; finding better ways of describing the universe, and using their minds to solve problems that may not even exist in real life. <em>(Yes, I skewed those descriptions to fit the point I'm making.)</em></p>
+
+<p>Sometimes their work has practical applications, sometimes it does not.</p>
+
+<h3>What is a theoretical developer?</h3>
+
+<p>Similarly, <strong>Theoretical Developers</strong> are software developers who are more concerned with solving "theoretical" problems than getting any actual work done. When a problem arises, it is more beautiful to develop a solution where all the pieces fit together perfectly than to "Just git 'er dun".</p>
+
+<!-- more -->
+
+
+<p><a href="http://xkcd.com/974/"><img class="center" src="http://imgs.xkcd.com/comics/the_general_problem.png"></a></p>
+
+<p><strong>Software Engineers</strong> and <strong>Software Architects</strong> on the other hand use software development as a means to an end, a way to put food on the table or get a website up and running. They are more willing to take shortcuts even if doing so may break the Sacred Laws of OOP. <em>These people have also been caught placing code on the main timeline. (yuck!)</em></p>
+
+<h3>How do you spot a Theoretical Developer?</h3>
+
+<p>These elusive creatures often appear in the wild among Open Source Activists, Wikipedia Authors, and alas, some among Pyromaniacs, starting flame wars, aggressively trying to convince others that <em>their</em> technology is the best.</p>
+
+<p>Some spend hours ranting on how the syntax for programming languages should theoretically be written, even though there is no chance of those changes being applied to the language (<a href="http://www.kirupa.com/forum/showthread.php?365748-How-definitions-should-%28theoretically%29-be-written-in-AS3"><em>ahem</em></a>).</p>
+
+<p>Or sending code for game prototypes to potential employers that doesn't actually run because the only code written so far is for  a collision detecton API, rather than having focused on making the game playable.</p>
+
+<h3>Are Theoretical Developers better than Software Engineers?</h3>
+
+<p>I have previously jokingly compared Software Engineers to "women of the night"; just getting the job done for the pay check. I wish to revoke that statement, pleading beginner's insanity <em>(see <a href="http://www.smbc-comics.com/?id=2475">Mount Stupid</a>)</em>.</p>
+
+<p>In fact, when comparing the progress of theoretical developers to that of "real developers", usually it's the developers working on "real" projects that become successful. And as already mentioned, there are developers who love programming, while still earning money from the products they create (double bonus!).</p>
+
+<p>So which one are you? A Software Engineer, a Theoretical Developer, or a mix of both?</p>
+
+<p>Or perhaps the Theoretical Developer is just a fancy name I invented as an excuse for my lack of "real life" progress... <img class="smiley" src="http://www.kirupa.com/forum/images/smilies/trout.gif" title=";)" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Humble AIR Bundle]]></title>
+    <link href="http://IQAndreas.github.com/monologues/the-humble-air-bundle/"/>
+    <updated>2011-12-26T05:58:00+01:00</updated>
+    <id>http://IQAndreas.github.com/monologues/the-humble-air-bundle</id>
+    <content type="html"><![CDATA[<p>I'd like to say straight off the bat that this bundle does not exist. It's just an idea I have been playing with in my mind.</p>
+
+<p>Adobe recently announced that they will no longer be releasing updates for AIR for Linux. This saddens me, mainly because the reason I switched from working with .Net to Flash was the "multi-platformness" - the ability to compile once and have your game or application run on any operating system (it has a proper name, but it's still on the tip of my tongue).<!-- more --></p>
+
+<p>A few games in previous <a href="http://www.humblebundle.com/">Humble Indie Bundles</a> were actually Flash games (even if the players don't notice it); <a href="http://amanita-design.net/samorost-2/">Samorost 2</a>, <a href="http://machinarium.net/demo/">Machinarium</a>, and <a href="http://www.traumagame.com/">Trauma</a>. Even though Flash can't make the most powerful of games, it's fairly obvious that Flash games are at least playable.</p>
+
+<p>AIR increases the functionality of Flash, and adds mobile devices to the available platforms, all with very little additional changes made to your existing game or application.</p>
+
+<p>I'm sure if a small group of Flash game developers teamed up "Humble Bundle style" they could release a bundle with multi-platform, DRM-free AIR games, with proceeds either going towards charities, or perhaps towards the open source developers working on the AIR binaries for Linux. In either case, the bundle would provide positive publicity for AIR.</p>
+
+<p>I don't have the influence or resources to do this, but do <strong>you</strong>?</p>
+]]></content>
+  </entry>
+  
+</feed>

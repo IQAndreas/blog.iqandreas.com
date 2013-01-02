@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Understanding the AS3 Event System #1 - The Basics - Andreas Renberg (IQAndreas)</title>
+  <meta name="author" content="Andreas Renberg (IQAndreas)">
+
+  
+  <meta name="description" content="This thread is part 1 in the &#8221;Understanding the AS3 Event System&#8221; series. I originally wrote this thread as a response to a Kirupa forum &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Andreas Renberg (IQAndreas)" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15151414-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Andreas Renberg (IQAndreas)</a></h1>
+  
+    <h2>I'm only a Theoretical Developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:IQAndreas.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/contact">Contact</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+  <li><a href="/minecraft">MineCraft Mods</a></li>
+  <li><a href="/repositories">My Repositories</a></li>
+  <li><a href="https://twitter.com/IQAndreas">My Twitter</a></li>
+  <li><a href="https://github.com/IQAndreas">My GitHub</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Understanding the AS3 Event System #1 - the Basics</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-11T10:39:00+02:00" pubdate data-updated="true">Oct 11<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This thread is part 1 in the &#8221;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series.</p>
+
+<p>I originally wrote this thread as a response to a Kirupa forum thread:
+<a href="http://www.kirupa.com/forum/showthread.php?t=355040">http://www.kirupa.com/forum/showthread.php?t=355040</a></p>
+
+<p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&#8217;t fully understand or would like me to clarify further.</p>
+
+<!-- more -->
+
+
+<hr />
+
+<p>Imagine your code as one big office room. That office has about 100 or so cubicles, with each cubicle representing a different object. For instance, if you have five <code>Buttons</code> on the stage, it&#8217;s not one <code>Button</code> cubicle, but instead five different cubicles, one for each <code>Button</code> instance.</p>
+
+<h4>The Event String/Event Type</h4>
+
+<p>Now, I&#8217;m sitting in the <code>homeButton</code> cubicle. One day, I get an email from my boss who tells me I have been <em>&#8220;clicked&#8221;</em>. So immediately I stand up, and yell out into the hallway so loudly that everyone can hear <em>&#8220;I HAVE BEEN CLICKED!&#8221;</em></p>
+
+<p>Now, the boss may have A LOT more information, such as where I was clicked, how many times, if any of my children were clicked, and a lot more information. However, I won&#8217;t stand up and yell out to everyone in the building all that information. That is quite wasteful, and if I receive several of those emails a day, I would soon get tired of spouting out all that information.</p>
+
+<p>Instead, to save energy, I only tell everyone <em>&#8220;I have been <u>clicked</u>&#8221;</em>. That is me telling everybody the <code>event type</code>, also known as the <code>event string</code>.</p>
+
+<h4>Listening for Events</h4>
+
+<p>Back up a few hours (before the event string). I have a friend named Nico sitting in the art department (his cubicle is labeled <code>currentImage</code>, but that&#8217;s not actually relevant). His boss told him <em>&#8220;Whenever Andreas in the <code>homeButton</code> cubicle is clicked I want you to draw an image of a house and send it right to me.&#8221;</em></p>
+
+<p>Now, Nico could get up out of his seat every five minutes, walk over to me, and ask <em>&#8220;Hey, Andreas. Were you clicked yet?&#8221;</em> I say no, so he walks back to his cubicle and sits down. This would happen again and again, and neither of us would get any work done. This is VERY inefficient. Nico could reduce this and only check with me once per hour, but he wants to know <em>immediately</em> when I am clicked. So that is NOT an option either.</p>
+
+<p>Instead, Nico sits in his cubicle continuing his regular work, and in the meantime, <em>listens</em> out in the hallway for my voice. Now, at around noon I yell out <em>&#8220;I was <u>keypressed</u>!&#8221;</em> He hears my voice, but he really doesn&#8217;t care about the keypresses. So, he ignores what I say, and continues working. Then another guy in the cubicle (Larry, a really annoying guy) yells out <em>&#8220;I was <u>clicked</u>!&#8221;</em> Since Larry is not as good looking as Andreas, and The Boss didn&#8217;t tell Nico to listen to Larry, Nico ignores him completely.</p>
+
+<p>Because, <u>Nico is only listening to</u> Andreas (in <u>the <code>homeButton</code> cubicle</u>) <u>for the <code>clicked</code> event</u> (which looks something like this in AS3):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When he hears the event, he needs to <u>start drawing the house</u> (which he does in the <code>drawHouse</code> function).</p>
+
+<h4>The Event is dispatched</h4>
+
+<p>Now, fast forward back to where we were. Me (Andreas) gets the call from my boss telling me I was <code>clicked</code>. So I stand up and yell out to everyone. <em>&#8220;I was <u>clicked</u>!&#8221;</em></p>
+
+<p>Two people were listening for my <code>clicked</code>, Nico and Bob (the guy from <code>contentManagement</code>, a very talkative fellow) Nico rushes up to me excited <em>&#8220;Hey Andreas. I heard about the click. That is awesome! Congratulations! <img src="http://www.kirupa.com/forum/images/smilies/happy.gif" title="Smilie" > But tell me more about the event! </em>Why were you clicked? Where were you clicked? Who clicked you? Why did they click you?_&#8221;</p>
+
+<p>I could spend the next 5 minutes explaining all the juicy details to Nico, but then I would have to repeat all this information to Bob (which is very inefficient, and Bob is a busy man and doesn&#8217;t want to wait). So instead, I print out all the information on the <code>clicked event</code> and put it into a Folder which I give to Nico. I give the folder to both Nico and Bob so they can use the information in it and look at it as they please. This folder is the <code>Event</code> object (more details on that later)</p>
+
+<p>Immediatly Nico rushes to his art studio in his cubicle and gets to work at <code>drawHouse()</code>, however, now he has the Folder (the <code>Event</code>) he can use that information while drawing the house, and therefore passes it into the function as a parameter:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function drawHouse(&lt;u&gt;event:Event&lt;/u&gt;)
+</span><span class='line'>{
+</span><span class='line'>    /* Draw stuff in here... */
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>The Event</h4>
+
+<p>To make sure that everyone gets the information they need, there are VERY strict protocols to what the <code>Event</code> Folder needs to contain.</p>
+
+<p>The following pages with information are required for standard Event Folders
+* <strong>the target</strong> - the person dispatching the event, which in this case is me, Andreas (or actually the <code>homeButton</code> cubicle).
+* <strong>event type</strong> - the type of event (aka <code>event string</code>), in this case, <code>clicked</code>.
+<span style="font-size: xx-small;">(there are a few more pages in the file, but that&#8217;s mostly the small legal mumbo-jumbo fine print that no one reads anyway. You will be fine ignoring them for now.)</span></p>
+
+<p>This is a standard <code>Event</code> file. But hold on, there was A LOT more information which is missing here! If I hand Nico a file with only those two pages of information in it, he will still wonder <em>&#8220;Where were you clicked?&#8221;</em> along with MANY other important questions. Luckily, the company already has a neat system figured out!</p>
+
+<h4>The MouseEvent</h4>
+
+<p>Now, the company I work for has a second type of file, a <code>MouseEvent</code> File. This file <code>extends</code> the standard <code>Event</code> File. That means that the <code>MouseEvent</code> file has all the information contained in the plus a lot more information, perfect for when a <code>clicked</code> event happens.</p>
+
+<p>It has the standard two fields (<code>target</code> and <code>type</code>) PLUS these additional pages with information:
+- <em>localX</em>
+- <em>localY</em>
+- <em>stageX</em>
+- <em>stageY</em>
+- <em>altKey</em>
+- <em>ctrlKey</em>
+And a whole lot more!</p>
+
+<p>Note that this <code>MouseEvent</code> file ONLY is allowed to be used when dealing with events that had to do with the mouse, such as <code>clicked</code>, <code>hovered</code> etc. The file should NOT be used for events that had to do with the keyboard, <code>keypressed</code> or <code>keyreleased</code>. Those events should instead use a specialized <code>KeyboardEvent</code> File with it&#8217;s own special properties.</p>
+
+<p>So I print out all the relevant information and hand both Nico and Bob a <code>MouseEvent</code> folder. Using that information, they draw the houses, display text, or whatever they want to do with the information.</p>
+
+<p><em>(<strong>Extra note:</strong> Maybe Bob didn&#8217;t even need to see the file. Maybe he just needed to know that I was clicked, so when I hand him the file, he may not even open it or look at the details of the click using the information inside. That&#8217;s fine by me, but I still need to create the file in case there is someone out there who actually needs the information.)</em></p>
+
+<h4>Creating the MouseEvent</h4>
+
+<p>Bob and Nico don&#8217;t want to wait for me to print out and collect all the papers needed in the <code>MouseEvent</code> file. They want the information to be ready the second they step up to my cubicle. So, BEFORE I stand up and tell everyone I was clicked, I create the folder ahead of time for quick and easy access. THEN, <u>I <code>dispatch</code> it to all who are <code>listening</code></u>.</p>
+
+<p>This is how it looks in ActionScript:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//create the folder with all the information in it
+</span><span class='line'>var eventFolder:MouseEvent = new MouseEvent("&lt;u&gt;clicked&lt;/u&gt;", bla, bla, localX, localY, bla, bla, bla, bla, more bla);
+</span><span class='line'>
+</span><span class='line'>//Now stand up and tell everyone I was clicked
+</span><span class='line'>//The "eventFolder" already says the **event type** is "clicked",
+</span><span class='line'>// so I don't need to repeat myself when dispatching it.
+</span><span class='line'>//All I need to do is dispatch the folder and Flash will do all the dirty work
+</span><span class='line'>dispatchEvent(eventFolder);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now Nico and Bob (and whoever else is <code>listening</code>) can react to it and get to see the folder I sent when <code>dispatching</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function drawHouse( &lt;u&gt;andreasEventFolder:MouseEvent&lt;/u&gt; )
+</span><span class='line'>{
+</span><span class='line'>    /*Draw stuff in here...*/
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That is Events 101.</p>
+
+<p>Continue to <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">Part #2 - Custom Events</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andreas Renberg (IQAndreas)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-11T10:39:00+02:00" pubdate data-updated="true">Oct 11<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/posts/categories/actionscript/'>actionscript</a>, <a class='category' href='/posts/categories/understanding-the-as3-event-system/'>understanding-the-as3-event-system</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/" data-via="" data-counturl="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/actionscript/actionscript-blogs-to-follow-march-2010/" title="Previous Post: ActionScript Blogs to Follow [March 2010]">&laquo; ActionScript Blogs to Follow [March 2010]</a>
+      
+      
+        <a class="basic-alignment right" href="/actionscript/understanding-the-as3-event-system/part-2-custom-events/" title="Next Post: Understanding the AS3 Event System #2 - Custom Events">Understanding the AS3 Event System #2 - Custom Events &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/git/best-practices-for-git-ignore/">Best practices for git ignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/actionscript/how-to-ignore-the-constructor-when-extending-a-class/">How to Ignore the Constructor when Extending a Class</a>
+      </li>
+    
+      <li class="post">
+        <a href="/monologues/pick-a-community-any-community/">Pick a Community, any Community</a>
+      </li>
+    
+      <li class="post">
+        <a href="/i-will-code-for-free/">I Will Code for Free!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/monologues/why-so-many-monologues/">Why so many Monologues?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Andreas Renberg (IQAndreas) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

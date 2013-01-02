@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Ignore the Constructor when Extending a Class - Andreas Renberg (IQAndreas)</title>
+  <meta name="author" content="Andreas Renberg (IQAndreas)">
+
+  
+  <meta name="description" content="As we all know, if you don&#8217;t call super() in your constructor&#8217;s code, the Flash compiler will automatically append it to your constructor &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Andreas Renberg (IQAndreas)" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15151414-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Andreas Renberg (IQAndreas)</a></h1>
+  
+    <h2>I'm only a Theoretical Developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:IQAndreas.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/contact">Contact</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+  <li><a href="/minecraft">MineCraft Mods</a></li>
+  <li><a href="/repositories">My Repositories</a></li>
+  <li><a href="https://twitter.com/IQAndreas">My Twitter</a></li>
+  <li><a href="https://github.com/IQAndreas">My GitHub</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Ignore the Constructor When Extending a Class</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-13T08:47:00+02:00" pubdate data-updated="true">Jun 13<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>As we all know, if you don&#8217;t call <code>super()</code> in your constructor&#8217;s code, the Flash compiler will automatically append it to your constructor&#8217;s code.</p>
+
+<p>Turns out, this isn&#8217;t entirely true. The compiler only adds <code>super()</code> if it doesn&#8217;t see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
+
+<div><script src='https://gist.github.com/2922489.js'></script>
+<noscript><pre><code>class Subclass extends Base 
+{
+    public function Subclass()
+    {
+        if (false)
+        {
+            super();
+        }
+    }
+}</code></pre></noscript></div>
+
+
+<p>If you want more reading on the matter, this information was taken from a forum thread by <a href="http://me.reclipse.net/">Krilnon</a> over at the Kirupa forums.</p>
+
+<ul>
+<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="smiley" src="/images/icons/icon_kirupa_orange.gif"> [TIP] Skipping super() - Interesting behavior</a></li>
+</ul>
+
+
+<p>But remember, as I brought up in the forum thread linked to above:</p>
+
+<blockquote><p>In my opinion, this is pure evil! No good can come of not calling constructors, none at all&#8230;</p></blockquote>
+
+
+<p>So use with caution!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andreas Renberg (IQAndreas)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-13T08:47:00+02:00" pubdate data-updated="true">Jun 13<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/posts/categories/actionscript/'>actionscript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/" data-via="" data-counturl="http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/monologues/pick-a-community-any-community/" title="Previous Post: Pick a Community, any Community">&laquo; Pick a Community, any Community</a>
+      
+      
+        <a class="basic-alignment right" href="/git/best-practices-for-git-ignore/" title="Next Post: Best practices for git ignore">Best practices for git ignore &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/git/best-practices-for-git-ignore/">Best practices for git ignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/actionscript/how-to-ignore-the-constructor-when-extending-a-class/">How to Ignore the Constructor when Extending a Class</a>
+      </li>
+    
+      <li class="post">
+        <a href="/monologues/pick-a-community-any-community/">Pick a Community, any Community</a>
+      </li>
+    
+      <li class="post">
+        <a href="/i-will-code-for-free/">I Will Code for Free!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/monologues/why-so-many-monologues/">Why so many Monologues?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Andreas Renberg (IQAndreas) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

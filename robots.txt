@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://IQAndreas.github.com/sitemap.xml 
