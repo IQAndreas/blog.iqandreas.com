@@ -4,7 +4,7 @@
   <title><![CDATA[actionscript | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://IQAndreas.github.com/posts/categories/actionscript/atom.xml" rel="self"/>
   <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-01-02T16:41:27+01:00</updated>
+  <updated>2013-01-04T13:44:43+01:00</updated>
   <id>http://IQAndreas.github.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Why my one line if statements are unusual]]></title>
+    <link href="http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
+    <updated>2013-01-04T13:02:00+01:00</updated>
+    <id>http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
+    <content type="html"><![CDATA[<p>My one line if statements have been described as <em>"um... unique"</em> and <em>"making me cringe"</em>, but trust me, there is method to this madness; mainly, it's practical for debugging.<!-- more --> The sample code is in ActionScript, but should be self-explanatory in any language with similar semantics:</p>
+
+<p>```as3
+if ((data.length > 0) &amp;&amp; server.enabled)</p>
+
+<pre><code>{ server.send(data); }
+</code></pre>
+
+<p>```</p>
+
+<p><em>The average developer</em> doesn't include those extra braces on the second line, and in fact, many will even keep everything on one single line. (You could also pull the braces down so the block of code occupies a full 4 lines of code, but that seems highly unnecessary.)</p>
+
+<p><code>as3
+if ((data.length &gt; 0) &amp;&amp; server.enabled) server.send(data);
+</code></p>
+
+<p>The reason I add these otherwise unnecessary braces is primarily for debugging. Say in our sample code, the data isn't arriving at the server; a good developer goes back to make sure the data is being sent in the first place. The following function <em>looks</em> correct (and as a side note should work in a white-space oriented language such as Python), but does not function as expected:</p>
+
+<p>```as3
+if ((data.length > 0) &amp;&amp; server.enabled)</p>
+
+<pre><code>server.send(data); trace("Data sent");
+</code></pre>
+
+<p>// or even
+if ((data.length > 0) &amp;&amp; server.enabled)</p>
+
+<pre><code>server.send(data);
+trace("Data sent");
+</code></pre>
+
+<p>// But my personal preference allows for the additional code:
+if ((data.length > 0) &amp;&amp; server.enabled)</p>
+
+<pre><code>{ server.send(data); trace("Data sent"); }
+</code></pre>
+
+<p>```</p>
+
+<p>A good developer is smart enough to add the required brackets when adding the "debugging code". I prefer adding the brackets preemptively; the extra time it takes to wrap the code in brackets isn't that valuable to me.</p>
+
+<p><em>(I also have a personal philosophy that <code>if</code>, <code>for</code>, <code>do</code>, and <code>while</code> should always be followed by an open bracket containing code rather than just code on its own, but that just has to do with the way I view the language as functioning behind the scenes. But it's more difficult convincing other developers based on those grounds.)</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Ignore the Constructor when Extending a Class]]></title>
@@ -792,167 +842,6 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <p>I later entered it into a <a href="http://www.kirupa.com/forum/showthread.php?362779-Information-and-Rules!">contest</a> held on the <a href="http://www.kirupa.com/forum/">Kirupa Forums</a>, and modified it slightly to fit the contest theme.</p>
 
 <p><a href="https://github.com/IQAndreas/Drop-Painter-Experiment">The source is available on GitHub</a> in case anyone is curious how it was achieved (and yes, I did cheat. It's not actually dynamic. The movement of all those shapes are "pre-baked" during the "Loading" screen and simply played back afterwards, which is why it is able to take up so little CPU on playback. <img class="smiley" src="http://www.kirupa.com/forum/images/smilies/trout.gif"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
-    <updated>2010-10-19T07:23:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
-    <content type="html"><![CDATA[<p>This thread is part 3 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series. It continues on the "office" illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
-
-<p>This part describes how <em>"Event Bubbling"</em> works. Note that this is a strong simplification of the actual system (which is a bit more complex, but in the next part I will elaborate on that system), but for 99% of all Event uses, this is the only thing you really need to know about Event Bubbling.</p>
-
-<!-- more -->
-
-
-<hr />
-
-<p>At the office I work, a large part of our work system is set up as a hierarchy of responsibility and work delegation.</p>
-
-<h4>The Corporate Ladder</h4>
-
-<p>At the very top of the tree is Mr. Stan Stage. He's a great guy. Very friendly, a nice father figure, and a really good boss. He is the boss of all bosses, and in the end, everyone reports to him.</p>
-
-<p>Since there is so much information passed around the office each day, he delegates most of the tasks to a handful of people who work right under him. These people are all <em>"second in command"</em>. One of these second in command is my boss. Unlike Mr. Stage, my boss is very annoying and difficult, and to avoid his wrath, I will exclude his name, and instead just call him <em>"My Boss"</em>.</p>
-
-<p>My Boss has about 20 people working under him, including me. It's not a great position to be in, but it's still a very rewarding job. Some of us <em>"third in command"</em> workers have people working directly under us.</p>
-
-<p>I am one of the lucky ones, and have five interns working directly for me. Since I am their boss, they obey my every whim, such as getting coffee for me each morning, or taking out my dry-cleaning. Even though they are only interns, they are still considered to be <em>"fourth in command"</em>.</p>
-
-<p>Since a great deal of what we do at the Office is reported via <code>Events</code>, my interns are expected to use the event system to report any changes just like the rest of us.</p>
-
-<p>For efficiency's sake, my five interns have their desks very close to my cubicle, so whenever they <code>dispatch</code> an <code>event</code> (by standing up and shouting for example <em>"I was <u>hovered</u>!"</em>) I hear it immediately.</p>
-
-<p>Now, there are two types of <em>Events</em>; Events that Bubble, and Events that do not Bubble.</p>
-
-<h4>Non-Bubbling Events</h4>
-
-<p>Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells <em>"Hey everyone, I got a <u>new car</u>!"</em>
-<code>as3
-dispatchEvent(new Event("new_car"));
-</code></p>
-
-<p>A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn't care. And as nice of guy Steve Stage is, he really doesn't care either.</p>
-
-<p>I'm not saying that Chris's <code>Event</code> wasn't important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.
-<code>as3
-chris.addEventListener("new_car", talkToChrisAboutTheCar);
-</code></p>
-
-<p>Those Events <u>do not Bubble</u> up the corporate ladder.</p>
-
-<h4>Events that Bubble</h4>
-
-<p>Now, clicks are VERY important in my line of work (in fact, that's how we get paid).</p>
-
-<p>We want to let as many people as possible who want to know about the clicks to know about the clicks, but if every single person just stood up and yelled <em>"Someone was clicked!"</em> whenever they found out about it, it would be one disorganized mess and you would hear about the same gossip from eight different people. Instead, we have an organized system for letting everyone in charge know about it.</p>
-
-<h4>Bubbling Events up the Ladder</h4>
-
-<p>One day Chris stands up and yells out to everyone <em>"I was <u>clicked</u>!"</em> (<code>dispatching</code> the <code>event</code> to everyone that may be <code>listening</code> to him. Not many people are usually listening to Chris (in fact, most people at the office don't even know any of my interns). So, Chris only tells everyone specifically listening to him about the <code>"click"</code> event.</p>
-
-<p>Then Chris walks over to me and says <em>"Andreas. I was <u>clicked</u>. All the information on the click is available in this Event folder."</em></p>
-
-<p>Now it's my turn. I stand up and yell <em>"I was <u>clicked</u>!"</em> (I could tell them <em>"someone in my department was clicked"</em>, but since my interns work for me so closely, their work is considered to be part of my work) A few people are listening to me for the <code>"clicked"</code> event, (including Nico and Bob) and walk up to me asking for more information. I give them both the file so they have all the information on the event that they need.</p>
-
-<p>Then, I barge into the office of my Boss, telling him all about the event, and handing him a copy of the information. He in turn switches on his fancy intercom system (since he is second in command, he gets certain perks, and is paid too much to have to yell across the hallway) and announces to everyone in the office <em>"Attention anyone who is listening to me. I was just <u>clicked</u>."</em> A few people are <code>listening</code> to him, and respond.</p>
-
-<p>Finally, my Boss knocks on the door of Steve Stage and tells him all about the click event. Now, at last, Mr. Stage announces the <code>"click"</code> event for the <strong>last</strong> time, telling everyone who is <code>listening</code> to him about the "click".</p>
-
-<p>After that it is done. Everyone who needs to know about the <code>Event</code> knows about it.</p>
-
-<h4>Now why is Bubbling so important?</h4>
-
-<p>Let's take the example of Betty, who works in accounting. In order to do her job property, she needs to know about every single time a client <code>"clicked"</code> an employee.</p>
-
-<p>She could listen to every single employee for the <code>"click"</code> event, but this is a VERY inefficient system. And every time there is a new employee she would need to start listening to them, and when an employee leaves, she needs to remember to stop listening to them.</p>
-
-<p>Instead, because of our nifty little bubbling system, Betty ONLY needs to listen to Mr. Stage for the <code>"click"</code> event. Since those events <code>bubble</code> up to Steve Stage, she will be notified of <strong>every single click event</strong> directly from Steve Stage.</p>
-
-<h4>EXTRA NOTE: Events only bubble upwards</h4>
-
-<p>Let's say one day I'm working at my desk, when a client <code>"clicks"</code> me directly instead of clicking one of my interns. I stand up and yell to everyone who is listening to me that <em>"I was <u>clicked</u>"</em>, but I do not need to directly tell any of my interns about the click. Unless my interns are specifically listening to me, they will not know about the click and will keep carrying on their work undisturbed. The interns will NOT dispatch any <code>"click"</code> event either.</p>
-
-<p>The only one who needs to know is My Boss. The events only bubble "up" the corporate ladder, not down.</p>
-
-<h4>So who was clicked first?</h4>
-
-<p>In order to file the proper paperwork (and hand out promotions or raises where needed) Betty needs to know exactly which person it was who was <code>"clicked"</code> first. Luckily, all this information is perfectly filled out in the <code>Event</code> object (the folder containing all the information).</p>
-
-<p>There are two names in the <code>Event</code> object, <code>target</code> and <code>currentTarget</code>. Flash assigns these two names automatically when the <code>Event</code> is dispatched.</p>
-
-<p>These two properties tend to cause a lot of confusion among beginners. Sometimes they refer to the same person, sometimes they do not. To explain the difference, let's take another example.</p>
-
-<p>Nico is listening to me for the <code>"clicked"</code> event.
-<code>as3
-andreas.addEventListener("clicked", onClick);
-</code></p>
-
-<p>Chris, my intern, is clicked, and stands up and tells everyone about it. Nico doesn't even know Chris and therefore doesn't even know about the event. Chris tells me about the event and hands me all the information.</p>
-
-<p>Now, I stand up and tell everyone <em>"I was clicked"</em>. Nico is listening to me (Andreas) for the event, and walks over to gather all the information.</p>
-
-<p>Then the event continues to bubble upwards to My Boss and finally Stan Stage.</p>
-
-<p><strong>target</strong> refers to the person who first dispatched the event. In this case, Chris would be the target.
-<strong>currentTarget</strong> refers to the person you were listening to who told you about the event.</p>
-
-<p>Think about <code>currentTarget</code> for a second. For Nico, <code>currentTarget</code> would refer to me, <u>Andreas</u>. However, since Betty is listening to Stan Stage for the Event, the <code>currentTarget</code> property in her event file would refer to <u>Mr. Stage</u>.</p>
-
-<h4>Using currentTarget to your advantage</h4>
-
-<p>Why does the <code>currentTarget</code> property even exist? I mean if you added the event listener to an object, of course you know what that object is, and therefore the property is pretty much worthless.</p>
-
-<p>However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage <code>homeButton</code>, <code>aboutButton</code>, <code>contactButton</code>, <code>newsButton</code>, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:</p>
-
-<p>```as3
-homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
-aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
-contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
-newsButton.addEventListener(MouseEvent.CLICK, newsButtonClicked);</p>
-
-<p>function homeButtonClicked(mouseEvent:MouseEvent):void
-{
-   homeButton.scaleX = 1.2;
-   homeButton.scaleY = 1.2;
-}</p>
-
-<p>function aboutButtonClicked(mouseEvent:MouseEvent):void
-{
-   aboutButton.scaleX = 1.2;
-   aboutButton.scaleY = 1.2;
-}
-//etc...
-```</p>
-
-<p>That means, creating a different handler function for each button, which works, but creates <strong>a lot</strong> of extra code. Then if you want to change details of what happens when a button is clicked, you would need to update every single function.</p>
-
-<p>Instead, you can create <em>one single function</em> which handles the clicks of <em>all</em> buttons. You can calculate which button needs to be pressed by using the <code>currentTarget</code> property.</p>
-
-<p>```as3
-homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
-aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
-contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
-newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
-
-<p>function navigationButtonClicked(mouseEvent:MouseEvent):void
-{
-   var pressedButton:DisplayObject = mouseEvent.currentTarget as DisplayObject;
-   pressedButton.scaleX = 1.2;
-   pressedButton.scaleY = 1.2;
-}
-```</p>
-
-<p>That's a lot less code! Now, if you need to change the scaling to 1.3, you only have to update it in one single place!</p>
-
-<p>If you want to attach additional properties to the buttons, (such as setting some custom scale value for each button) you can use the Dictionary object. Look in the FAQ under the appropriate category for links to explanations and example code:
-<a href="http://iqandreas.blogspot.com/2009/09/most-common-flash-questions-as3-faq.html">http://iqandreas.blogspot.com/2009/09/most-common-flash-questions-as3-faq.html</a></p>
-
-<p>This is how Flash bubbles its events.</p>
-
-<p>Next step, how to make your own events bubble (The fourth part of this series is still on my TODO list ;)</p>
 ]]></content>
   </entry>
   
