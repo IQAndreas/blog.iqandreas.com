@@ -46,6 +46,7 @@ module StaticComments
 			next unless File.file?(comment) and File.readable?(comment)
 			yaml_data = YAML::load_file(comment)
 			post_id = yaml_data.delete('post_id')
+			puts "Comment on: " + post_id
 			comments[post_id] << yaml_data
 		end
 		
