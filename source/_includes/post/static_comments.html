@@ -7,7 +7,7 @@
 		{% else %}
 			<h3>{{page.comment_count}} Comments</h3>
 	{% endcase %}
-	{% for c in page.comments %}
+	{% for c in page.comment_list %}
 		<div class="comment {% cycle 'odd', 'even' %}">
 			<p class="comment_header">
 				<!-- Date not neccessary <span class="comment_date">{{c.date | date: "%d %B %Y"}}</span> -->
