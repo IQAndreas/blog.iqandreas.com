@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://IQAndreas.github.com/sitemap.xml 
+Sitemap: http://blog.iqandreas.com/sitemap.xml 

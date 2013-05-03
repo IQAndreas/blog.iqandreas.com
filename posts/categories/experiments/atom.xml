@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[experiments | Andreas Renberg (IQAndreas)]]></title>
-  <link href="http://IQAndreas.github.com/posts/categories/experiments/atom.xml" rel="self"/>
-  <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-05-03T22:17:01+02:00</updated>
-  <id>http://IQAndreas.github.com/</id>
+  <link href="http://blog.iqandreas.com/posts/categories/experiments/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-05-03T22:35:55+02:00</updated>
+  <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Experiment: Drop Painter]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter/"/>
+    <link href="http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter/"/>
     <updated>2011-06-03T17:12:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter</id>
+    <id>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter</id>
     <content type="html"><![CDATA[<p>No, it's not painting with drops (though, that seems like a great idea for another project). Instead this experiment drops pieces of a painting down from above which eventually form to assemble a complete picture.</p>
 
 <p><a href="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/"><img class="center" src="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/experiment-drop-painter-preview-image.png"></a>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Andreas Renberg (IQAndreas)]]></title>
-  <link href="http://IQAndreas.github.com/atom.xml" rel="self"/>
-  <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-05-03T22:17:01+02:00</updated>
-  <id>http://IQAndreas.github.com/</id>
+  <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-05-03T22:35:55+02:00</updated>
+  <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Why my one line if statements are unusual]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
+    <link href="http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
     <updated>2013-01-04T13:02:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
+    <id>http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
     <content type="html"><![CDATA[<p>My one line if statements have been described as <em>&#8220;um&#8230; unique&#8221;</em> and <em>&#8220;making me cringe&#8221;</em>, but trust me, there is method to this madness; mainly, it&#8217;s practical for debugging.<!-- more --> The sample code is in ActionScript, but should be self-explanatory in any language with similar semantics:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -69,9 +69,9 @@
   
   <entry>
     <title type="html"><![CDATA[Best practices for git ignore]]></title>
-    <link href="http://IQAndreas.github.com/git/best-practices-for-git-ignore/"/>
+    <link href="http://blog.iqandreas.com/git/best-practices-for-git-ignore/"/>
     <updated>2013-01-02T11:46:00+01:00</updated>
-    <id>http://IQAndreas.github.com/git/best-practices-for-git-ignore</id>
+    <id>http://blog.iqandreas.com/git/best-practices-for-git-ignore</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.kernel.org/pub/software/scm/git/docs/">man pages for GIT</a> aren&#8217;t usually the clearest or most helpful, and is seldom the first place I turn to for help. Still, I ran across some valuable &#8220;best practices&#8221; information which I myself have not been following due to ignorance.<!-- more --></p>
 
 <p>I thought the only place to mark which files to hide was inside of a <code>.gitignore</code> file, ideally placed at the root of the repository. As a result, I would list all files and folders I may want to ignore inside of it. [<a href="https://github.com/FlixelCommunity/flixel/blob/dev/.gitignore">1</a>]</p>
@@ -97,9 +97,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to Ignore the Constructor when Extending a Class]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
+    <link href="http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
     <updated>2012-06-13T08:47:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
+    <id>http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
     <content type="html"><![CDATA[<p>As we all know, if you don&#8217;t call <code>super()</code> in your constructor&#8217;s code, the Flash compiler will automatically append it to your constructor&#8217;s code.</p>
 
 <p>Turns out, this isn&#8217;t entirely true. The compiler only adds <code>super()</code> if it doesn&#8217;t see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
@@ -135,9 +135,9 @@
   
   <entry>
     <title type="html"><![CDATA[Pick a Community, any Community]]></title>
-    <link href="http://IQAndreas.github.com/monologues/pick-a-community-any-community/"/>
+    <link href="http://blog.iqandreas.com/monologues/pick-a-community-any-community/"/>
     <updated>2012-06-12T09:56:00+02:00</updated>
-    <id>http://IQAndreas.github.com/monologues/pick-a-community-any-community</id>
+    <id>http://blog.iqandreas.com/monologues/pick-a-community-any-community</id>
     <content type="html"><![CDATA[<p><span class='pullquote-right' data-pullquote='Learning to program all on your own can be hard, really hard in fact.'>Learning to program all on your own can be hard, really hard in fact. Sometimes it helps having a place where you can ask questions when Google just isn&#8217;t giving you what you are looking for. There are also benefits in using a community to <em>answer</em> programming questions (a topic I will cover in an upcoming blog post).</span></p>
 
 <p>To assist in choosing a community, I have compiled a list containing details about various communities and my experience in using them.<!-- more --> As I haven&#8217;t been to every community out there, I would appreciate if you leave your own recommendations and detailed experiences as a comment below.</p>
@@ -208,9 +208,9 @@
   
   <entry>
     <title type="html"><![CDATA[I Will Code for Free!]]></title>
-    <link href="http://IQAndreas.github.com/i-will-code-for-free/"/>
+    <link href="http://blog.iqandreas.com/i-will-code-for-free/"/>
     <updated>2012-04-16T06:54:00+02:00</updated>
-    <id>http://IQAndreas.github.com/i-will-code-for-free</id>
+    <id>http://blog.iqandreas.com/i-will-code-for-free</id>
     <content type="html"><![CDATA[<p>No, it&#8217;s not a trap. There is no fine-print.</p>
 
 <p>If you need any help with code but are working on a low budget, <strong>I&#8217;m your man</strong>. I also do tutoring, helping to explain anything you may have missed or still don&#8217;t understand fully when learning a new programming language.<!-- more --></p>
@@ -229,7 +229,7 @@
 
 <h3>I can afford working free for 15 minutes</h3>
 
-<p>Although I reserve the right to decline any job, <a href="http://IQAndreas.github.com/contact">contact me</a> if you need assistance with any of the following:</p>
+<p>Although I reserve the right to decline any job, <a href="http://blog.iqandreas.com/contact">contact me</a> if you need assistance with any of the following:</p>
 
 <ul>
 <li><p><strong>Fixing/Tweaking existing code</strong> - Do you want that menu on the left instead of the right and to expand when you click on it instead of hovering over it? I&#8217;ll fix that.</p></li>
@@ -245,15 +245,15 @@
 
 <p><strong>I am not a designer.</strong> I can only help with code, not making things look nice (which includes HTML and CSS).</p>
 
-<p>I can be contacted via the form below, or via the media listed on the <a href="http://IQAndreas.github.com/contact">contact</a> page.</p>
+<p>I can be contacted via the form below, or via the media listed on the <a href="http://blog.iqandreas.com/contact">contact</a> page.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Why so many Monologues?]]></title>
-    <link href="http://IQAndreas.github.com/monologues/why-so-many-monologues/"/>
+    <link href="http://blog.iqandreas.com/monologues/why-so-many-monologues/"/>
     <updated>2012-03-20T13:34:00+01:00</updated>
-    <id>http://IQAndreas.github.com/monologues/why-so-many-monologues</id>
+    <id>http://blog.iqandreas.com/monologues/why-so-many-monologues</id>
     <content type="html"><![CDATA[<p>I typically prefer the information in my posts to be more &#8220;practical&#8221;, but the last few posts have been mainly monologues. Bear with me though, I&#8217;m working up to one central point, and after that I&#8217;m back to writing useful information. <!-- more --></p>
 
 <p>In the meantime, enjoy the following informative (and practical!) articles by Jackson Dunstan:</p>
@@ -269,9 +269,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Problems with Being Self Taught]]></title>
-    <link href="http://IQAndreas.github.com/monologues/the-problems-with-being-self-taught/"/>
+    <link href="http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught/"/>
     <updated>2012-03-08T15:51:00+01:00</updated>
-    <id>http://IQAndreas.github.com/monologues/the-problems-with-being-self-taught</id>
+    <id>http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught</id>
     <content type="html"><![CDATA[<p><em><strong>Note:</strong> I can only speak from personal experience on this issue, so I could use more input.</em></p>
 
 <p>To say that I have been &#8220;programming&#8221; since I was 13 would be a stretch. I knew how to write code, but I was crippled by how much <em>Visual Studio.net</em> generated automatically for me. I never learned many of those automated tasks manually.</p>
@@ -322,9 +322,9 @@
   
   <entry>
     <title type="html"><![CDATA[What is a Theoretical Developer?]]></title>
-    <link href="http://IQAndreas.github.com/monologues/what-is-a-theoretical-developer/"/>
+    <link href="http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer/"/>
     <updated>2012-03-02T14:56:00+01:00</updated>
-    <id>http://IQAndreas.github.com/monologues/what-is-a-theoretical-developer</id>
+    <id>http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer</id>
     <content type="html"><![CDATA[<p><em><strong>Note:</strong> Take this post with a grain of salt. It&#8217;s meant to be a slightly amusing rant, and should not be used as an official classification system for developers.</em> <img class="smiley" src="http://www.kirupa.com/forum/images/smilies/wink.gif" title=";)" ></p>
 
 <p><strong>Engineers</strong>, <strong>Architects</strong>, and <strong>Chemists</strong> work with their hands on &#8220;real life&#8221; projects. They of course use their problem solving and thinking skills in their line of work, but in the end, they get paid to develop specific products with practical uses.</p>
@@ -366,12 +366,12 @@
   
   <entry>
     <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
+    <link href="http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
     <updated>2012-01-17T08:48:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
+    <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
     <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which &#8220;resets&#8221; the internal SWFViewer in case it won&#8217;t open after closing improperly.</p>
 
-<p><img class="center" src="http://IQAndreas.github.com/images/blog/fdt-in-ubuntu-applications-menu.png" title="FDT in Ubuntu Applications Menu" ></p>
+<p><img class="center" src="http://blog.iqandreas.com/images/blog/fdt-in-ubuntu-applications-menu.png" title="FDT in Ubuntu Applications Menu" ></p>
 
 <!-- more -->
 
@@ -388,7 +388,7 @@
 
 <p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.</p>
 
-<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="http://IQAndreas.github.com/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="http://blog.iqandreas.com/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
 
 <p>You are all done. Enjoy!</p>
 
@@ -994,7 +994,7 @@ $ECLIPSE_HOME/eclipse $*
 
 <p>Finally, if you want FDT to stay in the launcher bar, start up FDT, right-click the icon in the launcher, and make sure &#8220;Keep in Launcher&#8221; is checked.</p>
 
-<p><img class="center" src="http://IQAndreas.github.com/images/blog/fdt-in-ubuntu-launcher-keep-in-launcher.png" title="FDT in the Ubuntu Launcher. Right click and make sure &#34;Keep in Launcher&#34; is checked." alt="FDT in the Ubuntu Launcher. Right click and make sure &#34;Keep in Launcher&#34; is checked."></p>
+<p><img class="center" src="http://blog.iqandreas.com/images/blog/fdt-in-ubuntu-launcher-keep-in-launcher.png" title="FDT in the Ubuntu Launcher. Right click and make sure &#34;Keep in Launcher&#34; is checked." alt="FDT in the Ubuntu Launcher. Right click and make sure &#34;Keep in Launcher&#34; is checked."></p>
 
 <h3>Cleaning the SWFViewer settings</h3>
 
@@ -1025,9 +1025,9 @@ rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SW
   
   <entry>
     <title type="html"><![CDATA[What Beginners need to know about Performance and Garbage Collection]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
+    <link href="http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
     <updated>2012-01-16T01:43:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
+    <id>http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
     <content type="html"><![CDATA[<p>Another category of beginner questions that often appear on the <a href="http://www.kirupa.com/forum/">Kirupa forums</a> are about performance and garbage collection. Some common concerns:</p>
 
 <ul>
@@ -1091,9 +1091,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[The Humble AIR Bundle]]></title>
-    <link href="http://IQAndreas.github.com/monologues/the-humble-air-bundle/"/>
+    <link href="http://blog.iqandreas.com/monologues/the-humble-air-bundle/"/>
     <updated>2011-12-26T05:58:00+01:00</updated>
-    <id>http://IQAndreas.github.com/monologues/the-humble-air-bundle</id>
+    <id>http://blog.iqandreas.com/monologues/the-humble-air-bundle</id>
     <content type="html"><![CDATA[<p>I&#8217;d like to say straight off the bat that this bundle does not exist. It&#8217;s just an idea I have been playing with in my mind.</p>
 
 <p>Adobe recently announced that they will no longer be releasing updates for AIR for Linux. This saddens me, mainly because the reason I switched from working with .Net to Flash was the &#8220;multi-platformness&#8221; - the ability to compile once and have your game or application run on any operating system (it has a proper name, but it&#8217;s still on the tip of my tongue).<!-- more --></p>
@@ -1110,9 +1110,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Is High Score dead?]]></title>
-    <link href="http://IQAndreas.github.com/monologues/is-high-score-dead/"/>
+    <link href="http://blog.iqandreas.com/monologues/is-high-score-dead/"/>
     <updated>2011-11-25T14:50:00+01:00</updated>
-    <id>http://IQAndreas.github.com/monologues/is-high-score-dead</id>
+    <id>http://blog.iqandreas.com/monologues/is-high-score-dead</id>
     <content type="html"><![CDATA[<p>I have recently played with the thought of the classic high score system being &#8220;dead&#8221;. These viewpoints are from the perspective as a player rather than a developer.</p>
 
 <!-- more -->
@@ -1121,7 +1121,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <p>Remember the good old days of playing Pac-Man at the arcade, burning quarter after quarter until you were #1? You could then laugh in the face of the last high score holder, and brag to all the local children and challenge them to beat your score.
 <sub><sup><em>(Or maybe not, I was born a few years too late for the glory days of arcade games, so I&#8217;m guessing at how the high scores worked back then)</em></sup></sub></p>
 
-<p><img class="right" src="http://IQAndreas.github.com/images/blog/high-score-2011-11-25-small.png" title="Really really high high score" ></p>
+<p><img class="right" src="http://blog.iqandreas.com/images/blog/high-score-2011-11-25-small.png" title="Really really high high score" ></p>
 
 <p>But today, with the rise of flash games, no matter how hard you work at getting to the top, your fantastic score of 189,335 points will place you at position #24,890 in the high score list, with the top scores always being held by cheaters or some Asian kid with an abnormal talent for games and hours of time on his hands.</p>
 
@@ -1141,7 +1141,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>When you have finished a working design, you see a bar chart of how creation&#8217;s efficiency compares to the average user. This allows you to see which areas you could realistically improve your score without being blown out of the water by Sum Yung Gui from Beijing.</p>
 
-<p><img class="center" src="http://IQAndreas.github.com/images/blog/spacechem-high-score-small.png" title="Example SpaceChem high score result" ></p>
+<p><img class="center" src="http://blog.iqandreas.com/images/blog/spacechem-high-score-small.png" title="Example SpaceChem high score result" ></p>
 
 <p>If you know of any other games with unique and brilliant high score systems, share them in the comments.</p>
 ]]></content>
@@ -1149,12 +1149,12 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Does "Ponycorns" exploit the mentally ill?]]></title>
-    <link href="http://IQAndreas.github.com/monologues/does-ponycorns-exploit-the-mentally-ill/"/>
+    <link href="http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill/"/>
     <updated>2011-06-04T14:15:00+02:00</updated>
-    <id>http://IQAndreas.github.com/monologues/does-ponycorns-exploit-the-mentally-ill</id>
+    <id>http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill</id>
     <content type="html"><![CDATA[<p>Untold Entertainment recently released a new game, &#8221;<a href="http://www.untoldentertainment.com/games/sissy/">Sissy&#8217;s Magical Ponycorn Adventure</a>&#8221;.</p>
 
-<p><a href="http://www.untoldentertainment.com/games/sissy/"><img class="center" src="http://IQAndreas.github.com/images/blog/sissys-magical-ponycorn-adventure-title.jpg" title="Sissy's Magical Ponycorn Adventure" ></a></p>
+<p><a href="http://www.untoldentertainment.com/games/sissy/"><img class="center" src="http://blog.iqandreas.com/images/blog/sissys-magical-ponycorn-adventure-title.jpg" title="Sissy's Magical Ponycorn Adventure" ></a></p>
 
 <p>Already the game has had some positive media attention, from interviews on both local radio and television, to several internet news sites including <a href="http://ca.news.yahoo.com/blogs/good-news/toronto-five-old-cassie-creighton-video-game-takes-175342572.html">Yahoo news</a> and <a href="http://www.boingboing.net/2011/06/03/sissys-magic-ponycor.html">BoingBoing</a>.</p>
 
@@ -1259,9 +1259,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Experiment: Drop Painter]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter/"/>
+    <link href="http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter/"/>
     <updated>2011-06-03T17:12:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter</id>
+    <id>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter</id>
     <content type="html"><![CDATA[<p>No, it&#8217;s not painting with drops (though, that seems like a great idea for another project). Instead this experiment drops pieces of a painting down from above which eventually form to assemble a complete picture.</p>
 
 <p><a href="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/"><img class="center" src="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/experiment-drop-painter-preview-image.png"></a>
@@ -1282,9 +1282,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Developing for the Playbook: Chapter 3 - The Emulator]]></title>
-    <link href="http://IQAndreas.github.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/"/>
+    <link href="http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/"/>
     <updated>2011-03-30T04:50:00+02:00</updated>
-    <id>http://IQAndreas.github.com/monologues/developing-for-the-playbook-chapter-3-the-emulator</id>
+    <id>http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator</id>
     <content type="html"><![CDATA[<p><strong>DISCLAIMER:</strong> This is the most rediculous thing I have ever done. Please ignore it. ;)</p>
 
 <p><a href="http://us.blackberry.com/developers/tablet/playbook_offer.jsp"><img class="center" src="http://2.bp.blogspot.com/-5xwNp6B-g3k/TZL9dOkh0DI/AAAAAAAAACU/HIBnOj0qhp8/s400/playbook1.png" width="400" height="250"></a></p>
@@ -1328,10 +1328,10 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
     <updated>2010-10-19T07:23:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
-    <content type="html"><![CDATA[<p>This thread is part 3 in the &#8221;<a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series. It continues on the &#8220;office&#8221; illustration used in <a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
+    <content type="html"><![CDATA[<p>This thread is part 3 in the &#8221;<a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series. It continues on the &#8220;office&#8221; illustration used in <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
 
 <p>This part describes how <em>&#8220;Event Bubbling&#8221;</em> works. Note that this is a strong simplification of the actual system (which is a bit more complex, but in the next part I will elaborate on that system), but for 99% of all Event uses, this is the only thing you really need to know about Event Bubbling.</p>
 
@@ -1523,10 +1523,10 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #2 - Custom Events]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
     <updated>2010-10-12T07:53:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
-    <content type="html"><![CDATA[<p>This thread is part 2 in the &#8221;<a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series. It continues on the &#8220;office&#8221; illustration used in <a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
+    <content type="html"><![CDATA[<p>This thread is part 2 in the &#8221;<a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series. It continues on the &#8220;office&#8221; illustration used in <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
 
@@ -1663,16 +1663,16 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>That is Custom Events 101</p>
 
-<p>Continue to <a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling">Part #3 - Easy Event Bubbling</a></p>
+<p>Continue to <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling">Part #3 - Easy Event Bubbling</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #1 - The Basics]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
     <updated>2010-10-11T10:39:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
-    <content type="html"><![CDATA[<p>This thread is part 1 in the &#8221;<a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series.</p>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
+    <content type="html"><![CDATA[<p>This thread is part 1 in the &#8221;<a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&#8221; series.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
 
@@ -1801,15 +1801,15 @@ And a whole lot more!</p>
 
 <p>That is Events 101.</p>
 
-<p>Continue to <a href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">Part #2 - Custom Events</a></p>
+<p>Continue to <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">Part #2 - Custom Events</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[ActionScript Blogs to Follow [March 2010]]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/actionscript-blogs-to-follow-march-2010/"/>
+    <link href="http://blog.iqandreas.com/actionscript/actionscript-blogs-to-follow-march-2010/"/>
     <updated>2010-03-10T10:36:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/actionscript-blogs-to-follow-march-2010</id>
+    <id>http://blog.iqandreas.com/actionscript/actionscript-blogs-to-follow-march-2010</id>
     <content type="html"><![CDATA[<p>A Google search for &#8221;<a href="http://www.google.com/search?&amp;q=actionscript+blog">ActionScript blog</a>&#8221; returns over 5,790,000 results. In a widespread internet world like this, it can be difficult (especially for beginners) sifting through which information is reliable and helpful, and which simply isn&#8217;t (hopefully this blog is not in the latter category).</p>
 
 <p>Here is my personal list of blogs I find quite worthwhile to bookmark and check up on from time to time.<!-- more --></p>

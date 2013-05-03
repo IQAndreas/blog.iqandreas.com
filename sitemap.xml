@@ -1,237 +1,235 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://blog.iqandreas.com/actionscript/actionscript-blogs-to-follow-march-2010/</loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
         <loc>
-            http://IQAndreas.github.com/actionscript/actionscript-blogs-to-follow-march-2010/
+            http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/
         </loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/
+            http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/
         </loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/
+            http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/
         </loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/
+            http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/
+        </loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter/</loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill/</loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/monologues/is-high-score-dead/</loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/monologues/the-humble-air-bundle/</loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/
         </loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://IQAndreas.github.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/
+            http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/
         </loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter/</loc>
+        <loc>http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer/</loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/monologues/does-ponycorns-exploit-the-mentally-ill/</loc>
+        <loc>http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught/</loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/monologues/is-high-score-dead/</loc>
+        <loc>http://blog.iqandreas.com/monologues/why-so-many-monologues/</loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/monologues/the-humble-air-bundle/</loc>
+        <loc>http://blog.iqandreas.com/i-will-code-for-free/</loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/monologues/pick-a-community-any-community/</loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/
+            http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/
         </loc>
+        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/git/best-practices-for-git-ignore/</loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/
+            http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual/
         </loc>
         <lastmod>2013-01-15T16:04:11+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/monologues/what-is-a-theoretical-developer/</loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://IQAndreas.github.com/monologues/the-problems-with-being-self-taught/</loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://IQAndreas.github.com/monologues/why-so-many-monologues/</loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://IQAndreas.github.com/i-will-code-for-free/</loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://IQAndreas.github.com/monologues/pick-a-community-any-community/</loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/
-        </loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://IQAndreas.github.com/git/best-practices-for-git-ignore/</loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual/
-        </loc>
-        <lastmod>2013-01-15T16:04:11+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://IQAndreas.github.com/actionscript/actionscript-for-beginners/</loc>
+        <loc>http://blog.iqandreas.com/actionscript/actionscript-for-beginners/</loc>
         <lastmod>2012-03-09T23:56:27+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/</loc>
+        <loc>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/</loc>
         <lastmod>2012-03-09T23:56:27+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/actionscript/experiments/</loc>
+        <loc>http://blog.iqandreas.com/actionscript/experiments/</loc>
         <lastmod>2012-03-09T23:56:27+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/actionscript/</loc>
+        <loc>http://blog.iqandreas.com/actionscript/</loc>
         <lastmod>2012-03-09T23:56:27+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/</loc>
+        <loc>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/</loc>
         <lastmod>2012-03-09T23:56:27+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/archives/</loc>
+        <loc>http://blog.iqandreas.com/archives/</loc>
         <lastmod>2013-01-04T13:44:23+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/blog/archives/</loc>
+        <loc>http://blog.iqandreas.com/blog/archives/</loc>
         <lastmod>2013-01-04T13:44:23+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/contact/github/</loc>
+        <loc>http://blog.iqandreas.com/contact/github/</loc>
         <lastmod>2012-03-15T00:29:48+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/contact/</loc>
+        <loc>http://blog.iqandreas.com/contact/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/contact/kirupa.com/</loc>
+        <loc>http://blog.iqandreas.com/contact/kirupa.com/</loc>
         <lastmod>2012-03-15T00:27:41+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/contact/twitter/</loc>
+        <loc>http://blog.iqandreas.com/contact/twitter/</loc>
         <lastmod>2012-03-15T00:26:23+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/git/</loc>
+        <loc>http://blog.iqandreas.com/git/</loc>
         <lastmod>2013-01-02T12:42:00+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/</loc>
+        <loc>http://blog.iqandreas.com/</loc>
         <lastmod>2013-01-04T13:44:23+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/adjustable-anaglyph/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/adjustable-anaglyph/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/boat-fixes/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/boat-fixes/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/cauldron-fixes/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/cauldron-fixes/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/craftable-double-slabs/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/craftable-double-slabs/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/harvestable-ice/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/harvestable-ice/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/installation/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/installation/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/iqandreas-fixes/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/iqandreas-fixes/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/leaves-fixes/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/leaves-fixes/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/license/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/license/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-creeper-griefing/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-creeper-griefing/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-ender-griefing/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-ender-griefing/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-ghast-griefing/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-ghast-griefing/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-silverfish-griefing/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-silverfish-griefing/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-tnt-griefing/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-tnt-griefing/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-void-fog/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-void-fog/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/no-more-water-griefing/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/no-more-water-griefing/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/snow-fixes/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/snow-fixes/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/minecraft/water-fixes/</loc>
+        <loc>http://blog.iqandreas.com/minecraft/water-fixes/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/monologues/</loc>
+        <loc>http://blog.iqandreas.com/monologues/</loc>
         <lastmod>2012-03-09T23:56:27+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/repositories/</loc>
+        <loc>http://blog.iqandreas.com/repositories/</loc>
         <lastmod>2013-01-02T16:44:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://IQAndreas.github.com/robots.txt</loc>
+        <loc>http://blog.iqandreas.com/robots.txt</loc>
         <lastmod>2013-01-02T11:10:06+01:00</lastmod>
     </url>
 </urlset>

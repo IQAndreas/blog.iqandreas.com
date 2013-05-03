@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[understanding-the-as3-event-system | Andreas Renberg (IQAndreas)]]></title>
-  <link href="http://IQAndreas.github.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
-  <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-05-03T22:17:01+02:00</updated>
-  <id>http://IQAndreas.github.com/</id>
+  <link href="http://blog.iqandreas.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-05-03T22:35:55+02:00</updated>
+  <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
     <updated>2010-10-19T07:23:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
     <content type="html"><![CDATA[<p>This thread is part 3 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series. It continues on the "office" illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
 
 <p>This part describes how <em>"Event Bubbling"</em> works. Note that this is a strong simplification of the actual system (which is a bit more complex, but in the next part I will elaborate on that system), but for 99% of all Event uses, this is the only thing you really need to know about Event Bubbling.</p>
@@ -176,9 +176,9 @@ newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
   
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #2 - Custom Events]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
     <updated>2010-10-12T07:53:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
     <content type="html"><![CDATA[<p>This thread is part 2 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series. It continues on the "office" illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
@@ -291,9 +291,9 @@ dispatchEvent(eventFolder);
   
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #1 - The Basics]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
     <updated>2010-10-11T10:39:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
     <content type="html"><![CDATA[<p>This thread is part 1 in the "<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>" series.</p>
 
 <p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>

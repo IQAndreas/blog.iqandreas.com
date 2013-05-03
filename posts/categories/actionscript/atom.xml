@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[actionscript | Andreas Renberg (IQAndreas)]]></title>
-  <link href="http://IQAndreas.github.com/posts/categories/actionscript/atom.xml" rel="self"/>
-  <link href="http://IQAndreas.github.com/"/>
-  <updated>2013-05-03T22:17:01+02:00</updated>
-  <id>http://IQAndreas.github.com/</id>
+  <link href="http://blog.iqandreas.com/posts/categories/actionscript/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-05-03T22:35:55+02:00</updated>
+  <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Why my one line if statements are unusual]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
+    <link href="http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
     <updated>2013-01-04T13:02:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
+    <id>http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
     <content type="html"><![CDATA[<p>My one line if statements have been described as <em>"um... unique"</em> and <em>"making me cringe"</em>, but trust me, there is method to this madness; mainly, it's practical for debugging.<!-- more --> The sample code is in ActionScript, but should be self-explanatory in any language with similar semantics:</p>
 
 <p>```as3
@@ -65,9 +65,9 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
   
   <entry>
     <title type="html"><![CDATA[How to Ignore the Constructor when Extending a Class]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
+    <link href="http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
     <updated>2012-06-13T08:47:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
+    <id>http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
     <content type="html"><![CDATA[<p>As we all know, if you don't call <code>super()</code> in your constructor's code, the Flash compiler will automatically append it to your constructor's code.</p>
 
 <p>Turns out, this isn't entirely true. The compiler only adds <code>super()</code> if it doesn't see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
@@ -101,9 +101,9 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
+    <link href="http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
     <updated>2012-01-17T08:48:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
+    <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
     <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which "resets" the internal SWFViewer in case it won't open after closing improperly.</p>
 
 <p><img class="center" src="/images/blog/fdt-in-ubuntu-applications-menu.png" title="FDT in Ubuntu Applications Menu" ></p>
@@ -760,9 +760,9 @@ rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SW
   
   <entry>
     <title type="html"><![CDATA[What Beginners need to know about Performance and Garbage Collection]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
+    <link href="http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
     <updated>2012-01-16T01:43:00+01:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
+    <id>http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
     <content type="html"><![CDATA[<p>Another category of beginner questions that often appear on the <a href="http://www.kirupa.com/forum/">Kirupa forums</a> are about performance and garbage collection. Some common concerns:</p>
 
 <ul>
@@ -824,9 +824,9 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   
   <entry>
     <title type="html"><![CDATA[Experiment: Drop Painter]]></title>
-    <link href="http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter/"/>
+    <link href="http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter/"/>
     <updated>2011-06-03T17:12:00+02:00</updated>
-    <id>http://IQAndreas.github.com/actionscript/experiments/experiment-drop-painter</id>
+    <id>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter</id>
     <content type="html"><![CDATA[<p>No, it's not painting with drops (though, that seems like a great idea for another project). Instead this experiment drops pieces of a painting down from above which eventually form to assemble a complete picture.</p>
 
 <p><a href="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/"><img class="center" src="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/experiment-drop-painter-preview-image.png"></a>
