@@ -134,23 +134,24 @@
 
 <p>Take these two identical chunks of code as an example:</p>
 
-<div><script src='https://gist.github.com/1625219.js?file=compass_rotation_compact.as'></script>
-<noscript><pre><code>compass.rotation = Math.atan2(event.stageY - compass.y, event.stageX - compass.x) * (180/Math.PI) + 90;</code></pre></noscript></div>
+<pre><code>    &lt;div&gt;&lt;script src='https://gist.github.com/1625219.js?file=compass_rotation_compact.as'&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;$(".gist-file table tr td.line-numbers").remove();&lt;/script&gt;
+    &lt;noscript&gt;&lt;pre&gt;&lt;code&gt;compass.rotation = Math.atan2(event.stageY - compass.y, event.stageX - compass.x) * (180/Math.PI) + 90;&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;/div&gt;
 
 
+    &lt;div&gt;&lt;script src='https://gist.github.com/1625219.js?file=compass_rotation_expanded.as'&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;$(".gist-file table tr td.line-numbers").remove();&lt;/script&gt;
+    &lt;noscript&gt;&lt;pre&gt;&lt;code&gt;//Get the location of the mouse relative to the compass
+</code></pre>
 
+<p>var dx:Number = event.stageX &ndash; compass.x;
+var dy:Number = event.stageY &ndash; compass.y;</p>
 
-<div><script src='https://gist.github.com/1625219.js?file=compass_rotation_expanded.as'></script>
-<noscript><pre><code>//Get the location of the mouse relative to the compass
-var dx:Number = event.stageX - compass.x;
-var dy:Number = event.stageY - compass.y;
+<p>var radianRotation:Number = Math.atan2(dy, dx);
+var degreeRotation:Number = radianRotation * (180/Math.PI);</p>
 
-var radianRotation:Number = Math.atan2(dy, dx);
-var degreeRotation:Number = radianRotation * (180/Math.PI);
-
-//Offset the rotation by 90 degrees to make it show up properly
-compass.rotation = degreeRotation + 90;</code></pre></noscript></div>
-
+<p>//Offset the rotation by 90 degrees to make it show up properly
+compass.rotation = degreeRotation + 90;</code></pre></noscript></div></p>
 
 <p>The first chunk of code is much more efficient than the second, but I wouldn&rsquo;t want to be the developer that find bugs in that project.</p>
 
