@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Understanding the AS3 Event System #2 - Custom Events - Andreas Renberg (IQAndreas)</title>
+  <meta name="author" content="Andreas Renberg (IQAndreas)">
+
+  
+  <meta name="description" content="This thread is part 2 in the &ldquo;Understanding the AS3 Event System&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/iconize.css" media="all" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Andreas Renberg (IQAndreas)" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15151414-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Andreas Renberg (IQAndreas)</a></h1>
+  
+    <h2>I'm only a Theoretical Developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.iqandreas.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/contact">Contact</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/posts/archives">Archives</a></li>
+  <li><a href="http://minecraft.iqandreas.com">MineCraft Mods</a></li>
+  <li><a href="/repositories">My Repositories</a></li>
+  <li><a href="https://twitter.com/IQAndreas">My Twitter</a></li>
+  <li><a href="https://github.com/IQAndreas">My GitHub</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Understanding the AS3 Event System #2 - Custom Events</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-12T07:53:00+02:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This thread is part 2 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
+
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
+
+<p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&rsquo;t fully understand or would like me to clarify further.</p>
+
+<!-- more -->
+
+
+<hr />
+
+<p>Listen, don&rsquo;t tell my boss, but those days when work gets slow, I fire up some StarCraft! StarCraft is no fun alone, so Nico, Bob, Larry, and I all play against eachother. The problem is that we all need to be logged on at the same time in order to play together. I&rsquo;m the one who plays the most, so I am the &ldquo;Game Master&rdquo;; the one who starts up the server, chooses a map, and waits for everyone else to join in.</p>
+
+<p>We need some way to alert each other when I start up a StarCraft game, <em>and</em> keep it a secret from my boss (he reads all our emails, so I can&rsquo;t tell them via email). So, we use the Event system!</p>
+
+<h4>Custom Event Strings</h4>
+
+<p>We have planned that whenever I am about to start up a new game, I stand up and yell out to everyone <em>&ldquo;I am about to call <code>Yamato</code>!&rdquo;</em> (who our boss assumes is one of my Japanese clients)</p>
+
+<p>Everyone knows that the custom <code>event string</code> (also known as <code>event type</code>) for when everyone listening should play starcraft is <code>"Yamato"</code>. So, ahead of time, Nico, Bob, and Larry listen for my <code>"Yamato"</code> event:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Yamato&quot;</span><span class="o">,</span> <span class="n">startPlayingStarScraft</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, we may start playing dozens of different games, and I have chosen a different &ldquo;code name&rdquo; as the event string for each type of game:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;MarcoPolo&quot;</span><span class="o">,</span> <span class="n">startPlayingAOE</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Gelinor&quot;</span><span class="o">,</span> <span class="n">startPlayingRuneScape</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Germany&quot;</span><span class="o">,</span> <span class="n">startPlayingCOD</span><span class="o">);</span>
+</span><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;Orcish&quot;</span><span class="o">,</span> <span class="n">startPlayingWOW</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Custom Events</h4>
+
+<p>Now, I could create a different type of <code>Event</code> Folder for each type of game, such as <code>StarCraftEvent</code>, <code>RuneScapeEvent</code>, <code>AOEEvent</code> etc.</p>
+
+<p>Each type of event file would have information inside of it, for instance, the <code>StarCraftEvent</code> Folder may have the following properties:
+ &ndash; <em>target</em> &ndash; Me, since I&rsquo;m the one &ldquo;dispatching&rdquo; the event
+ &ndash; <em>type</em> &ndash; the custom event string, in this case <em>&ldquo;Yamato&rdquo;</em>
+ &ndash; <em>map</em> &ndash; the StarCraft map we will be playing in
+ &ndash; <em>players</em> &ndash; a list of all players
+ &ndash; <em>settings</em> &ndash; the game settings</p>
+
+<p>And our class would look something like this (note that <code>target</code> and <code>type</code> are automatically inherited by the <code>Event</code> since you <code>extend</code> it)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="n">StarCraftEvent</span> <span class="kd">extends</span> <span class="n">Event</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">function </span><span class="nf">StarCraftEvent</span><span class="o">(</span><span class="n">the_type</span><span class="o">:</span><span class="kt">String</span><span class="o">,</span> <span class="n">the_map</span><span class="o">:</span><span class="kt">SCMap</span><span class="o">,</span> <span class="n">the_players</span><span class="o">:</span><span class="kt">Array</span><span class="o">,</span> <span class="n">the_settings</span><span class="o">:</span><span class="kt">GameSettings</span><span class="o">)</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//Since you extend the Event, let the super class know a few more additional details</span>
+</span><span class='line'>        <span class="kd">super</span><span class="o">(</span><span class="n">the_type</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">map</span> <span class="o">=</span> <span class="n">the_map</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">players</span> <span class="o">=</span> <span class="n">the_players</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">settings</span> <span class="o">=</span> <span class="n">the_settings</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">map</span><span class="p">:</span><span class="kt">SCMap</span><span class="o">;</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">players</span><span class="p">:</span><span class="kt">Array</span><span class="o">;</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kd">var</span> <span class="n">settings</span><span class="p">:</span><span class="kt">GameSettings</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This would be my totally custom made event class! <img alt="" border="0" class="inlineimg" src="http://www.kirupa.com/forum/images/smilies/d_smile.gif" title="Big Smile" /> Perfectly customized for whenever we want to start a StarCraft game, allowing everyone to get the information they need!</p>
+
+<h4>Dispatching the Custom Event</h4>
+
+<p>This is exactly as simple as it was dispatching the <code>"clicked"</code> event:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="c1">//Create the event</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">players</span><span class="p">:</span><span class="kt">Array</span> <span class="o">=</span> <span class="o">[</span><span class="n">Andreas</span><span class="o">,</span> <span class="n">Nico</span><span class="o">,</span> <span class="n">Bob</span><span class="o">,</span> <span class="n">Larry</span><span class="o">];</span>
+</span><span class='line'><span class="kd">var</span> <span class="n">scEvent</span><span class="p">:</span><span class="kt">StarCraftEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">StarCraftEvent</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;Yamato&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">lostTemple</span><span class="o">,</span> <span class="n">players</span><span class="o">,</span> <span class="n">defaultSettings</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//Dispatch the event (and it&#39;s folder containing all the info)</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">scEvent</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That <u>dispatches an event</u> which alerts <u>everyone who is listening</u> that I am about to start up a StarCraft game.</p>
+
+<p>So, Nico, Bob, and Larry run up to my cubicle and I hand them all the <code>StarCraftEvent</code> Folder containing ALL the information they need to join in the game.</p>
+
+<h3>Do you really need to create Custom Events?</h3>
+
+<p>Now I can create a new Custom Event for each and every game we play and that would alright.</p>
+
+<p>But I noticed, no one really reads the information in the <code>Event</code> Folder! I spent good money putting together and printing out all the information for those folders, and no one reads them! They get the file from me, then run back to their own cubicles, fire up the game, and throw the <code>Event</code> Folder directly into the trash.</p>
+
+<p>Surround your pullquote like this {&ldquo; text to be quoted &rdquo;}</p>
+
+<p>Instead, what if I print out a plain old <code>Event</code> Folder? All it says is the <code>target</code> and the <code>type</code>, but if they want more information (which someone once in a while does) they can ask me for it directly.</p>
+
+<p>FORGET about the hassle with the <code>StarCraftEvent</code> class, and just do this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">var</span> <span class="n">eventFolder</span><span class="p">:</span><span class="kt">Event</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">Event</span><span class="o">(</span><span class="s2">&quot;Yamato&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">eventFolder</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>99% of the time. That is all you will ever need. You save a lot of unnecessary work.</p>
+
+<p><strong>You don&rsquo;t always need to create custom <u>Events</u>, usually it is enough just using custom <u>Event Strings</u>.</strong></p>
+
+<p>That is Custom Events 101</p>
+
+<p>Continue to <a href="/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling">Part #3 &ndash; Easy Event Bubbling</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andreas Renberg (IQAndreas)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-12T07:53:00+02:00" pubdate data-updated="true">Oct 12<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/posts/categories/actionscript/'>actionscript</a>, <a class='category' href='/posts/categories/understanding-the-as3-event-system/'>understanding-the-as3-event-system</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/" data-via="IQAndreas" data-counturl="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/actionscript/understanding-the-as3-event-system/part-1-the-basics/" title="Previous Post: Understanding the AS3 Event System #1 - The Basics">&laquo; Understanding the AS3 Event System #1 - The Basics</a>
+      
+      
+        <a class="basic-alignment right" href="/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/" title="Next Post: Understanding the AS3 Event System #3 - Easy Event Bubbling">Understanding the AS3 Event System #3 - Easy Event Bubbling &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <div id="comments">
+	
+			<h1> Comments</h1>
+	
+	
+	<h1>Post a comment</h1>
+	<p style="font-style: italic">
+		All comments are held for moderation; basic HTML formatting accepted.
+	</p>
+	<form id="commentform" method="POST" action="http://blog.iqandreas.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/actionscript/understanding-the-as3-event-system/part-2-custom-events" />
+		<input type="hidden" name="post_title" value="Understanding the AS3 Event System #2 - Custom Events" />
+		<input type="hidden" name="return_url" value="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/" />
+		<table>
+			<tr>
+				<th>Name:</th>
+				<td><input type="text" size="25" name="name" /> (required)</td>
+			</tr>
+			<tr>
+				<th>E-mail:</th>
+				<td><input type="text" size="25" name="email" /> (required, not published)</td>
+			</tr>
+			<tr>
+				<th>Website:</th>
+				<td><input type="text" size="25" name="link" /> (optional)</td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea name="comment" rows="10" cols="60" ></textarea></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Submit Comment" /></td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/actionscript/why-my-one-line-if-statements-are-unusual/">Why My One Line if Statements Are Unusual</a>
+      </li>
+    
+      <li class="post">
+        <a href="/git/best-practices-for-git-ignore/">Best Practices for Git Ignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/actionscript/how-to-ignore-the-constructor-when-extending-a-class/">How to Ignore the Constructor When Extending a Class</a>
+      </li>
+    
+      <li class="post">
+        <a href="/monologues/pick-a-community-any-community/">Pick a Community, Any Community</a>
+      </li>
+    
+      <li class="post">
+        <a href="/i-will-code-for-free/">I Will Code for Free!</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/IQAndreas">@IQAndreas</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'IQAndreas',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Andreas Renberg (IQAndreas) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

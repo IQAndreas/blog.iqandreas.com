@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: understanding-the-as3-event-system | Andreas Renberg (IQAndreas)]]></title>
+  <link href="http://blog.iqandreas.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-09-19T01:12:23+02:00</updated>
+  <id>http://blog.iqandreas.com/</id>
+  <author>
+    <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
+    <updated>2010-10-19T07:23:00+02:00</updated>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
+    <content type="html"><![CDATA[<p>This thread is part 3 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
+
+<p>This part describes how <em>&ldquo;Event Bubbling&rdquo;</em> works. Note that this is a strong simplification of the actual system (which is a bit more complex, but in the next part I will elaborate on that system), but for 99% of all Event uses, this is the only thing you really need to know about Event Bubbling.</p>
+
+<!-- more -->
+
+
+<hr />
+
+<p>At the office I work, a large part of our work system is set up as a hierarchy of responsibility and work delegation.</p>
+
+<h4>The Corporate Ladder</h4>
+
+<p>At the very top of the tree is Mr. Stan Stage. He&rsquo;s a great guy. Very friendly, a nice father figure, and a really good boss. He is the boss of all bosses, and in the end, everyone reports to him.</p>
+
+<p>Since there is so much information passed around the office each day, he delegates most of the tasks to a handful of people who work right under him. These people are all <em>&ldquo;second in command&rdquo;</em>. One of these second in command is my boss. Unlike Mr. Stage, my boss is very annoying and difficult, and to avoid his wrath, I will exclude his name, and instead just call him <em>&ldquo;My Boss&rdquo;</em>.</p>
+
+<p>My Boss has about 20 people working under him, including me. It&rsquo;s not a great position to be in, but it&rsquo;s still a very rewarding job. Some of us <em>&ldquo;third in command&rdquo;</em> workers have people working directly under us.</p>
+
+<p>I am one of the lucky ones, and have five interns working directly for me. Since I am their boss, they obey my every whim, such as getting coffee for me each morning, or taking out my dry-cleaning. Even though they are only interns, they are still considered to be <em>&ldquo;fourth in command&rdquo;</em>.</p>
+
+<p>Since a great deal of what we do at the Office is reported via <code>Events</code>, my interns are expected to use the event system to report any changes just like the rest of us.</p>
+
+<p>For efficiency&rsquo;s sake, my five interns have their desks very close to my cubicle, so whenever they <code>dispatch</code> an <code>event</code> (by standing up and shouting for example <em>&ldquo;I was <u>hovered</u>!&rdquo;</em>) I hear it immediately.</p>
+
+<p>Now, there are two types of <em>Events</em>; Events that Bubble, and Events that do not Bubble.</p>
+
+<h4>Non-Bubbling Events</h4>
+
+<p>Some Events are only important to the person to which it actually happened. For instance, one day one of my interns, Chris, stands up and yells <em>&ldquo;Hey everyone, I got a <u>new car</u>!&rdquo;</em>
+<code>as3
+dispatchEvent(new Event("new_car"));
+</code></p>
+
+<p>A few of my other interns reacted. However, I honestly did not care. My Boss sure as hell doesn&rsquo;t care. And as nice of guy Steve Stage is, he really doesn&rsquo;t care either.</p>
+
+<p>I&rsquo;m not saying that Chris&rsquo;s <code>Event</code> wasn&rsquo;t important, in fact, it was quite important since it allows him to do his job better and will definitely affect his work. However, there is no need to tell as many people about it as possible. The only people who need to know about the event are people who specifically asked Chris to let them know whenever he got a new car.
+<code>as3
+chris.addEventListener("new_car", talkToChrisAboutTheCar);
+</code></p>
+
+<p>Those Events <u>do not Bubble</u> up the corporate ladder.</p>
+
+<h4>Events that Bubble</h4>
+
+<p>Now, clicks are VERY important in my line of work (in fact, that&rsquo;s how we get paid).</p>
+
+<p>We want to let as many people as possible who want to know about the clicks to know about the clicks, but if every single person just stood up and yelled <em>&ldquo;Someone was clicked!&rdquo;</em> whenever they found out about it, it would be one disorganized mess and you would hear about the same gossip from eight different people. Instead, we have an organized system for letting everyone in charge know about it.</p>
+
+<h4>Bubbling Events up the Ladder</h4>
+
+<p>One day Chris stands up and yells out to everyone <em>&ldquo;I was <u>clicked</u>!&rdquo;</em> (<code>dispatching</code> the <code>event</code> to everyone that may be <code>listening</code> to him. Not many people are usually listening to Chris (in fact, most people at the office don&rsquo;t even know any of my interns). So, Chris only tells everyone specifically listening to him about the <code>"click"</code> event.</p>
+
+<p>Then Chris walks over to me and says <em>&ldquo;Andreas. I was <u>clicked</u>. All the information on the click is available in this Event folder.&rdquo;</em></p>
+
+<p>Now it&rsquo;s my turn. I stand up and yell <em>&ldquo;I was <u>clicked</u>!&rdquo;</em> (I could tell them <em>&ldquo;someone in my department was clicked&rdquo;</em>, but since my interns work for me so closely, their work is considered to be part of my work) A few people are listening to me for the <code>"clicked"</code> event, (including Nico and Bob) and walk up to me asking for more information. I give them both the file so they have all the information on the event that they need.</p>
+
+<p>Then, I barge into the office of my Boss, telling him all about the event, and handing him a copy of the information. He in turn switches on his fancy intercom system (since he is second in command, he gets certain perks, and is paid too much to have to yell across the hallway) and announces to everyone in the office <em>&ldquo;Attention anyone who is listening to me. I was just <u>clicked</u>.&rdquo;</em> A few people are <code>listening</code> to him, and respond.</p>
+
+<p>Finally, my Boss knocks on the door of Steve Stage and tells him all about the click event. Now, at last, Mr. Stage announces the <code>"click"</code> event for the <strong>last</strong> time, telling everyone who is <code>listening</code> to him about the &ldquo;click&rdquo;.</p>
+
+<p>After that it is done. Everyone who needs to know about the <code>Event</code> knows about it.</p>
+
+<h4>Now why is Bubbling so important?</h4>
+
+<p>Let&rsquo;s take the example of Betty, who works in accounting. In order to do her job property, she needs to know about every single time a client <code>"clicked"</code> an employee.</p>
+
+<p>She could listen to every single employee for the <code>"click"</code> event, but this is a VERY inefficient system. And every time there is a new employee she would need to start listening to them, and when an employee leaves, she needs to remember to stop listening to them.</p>
+
+<p>Instead, because of our nifty little bubbling system, Betty ONLY needs to listen to Mr. Stage for the <code>"click"</code> event. Since those events <code>bubble</code> up to Steve Stage, she will be notified of <strong>every single click event</strong> directly from Steve Stage.</p>
+
+<h4>EXTRA NOTE: Events only bubble upwards</h4>
+
+<p>Let&rsquo;s say one day I&rsquo;m working at my desk, when a client <code>"clicks"</code> me directly instead of clicking one of my interns. I stand up and yell to everyone who is listening to me that <em>&ldquo;I was <u>clicked</u>&rdquo;</em>, but I do not need to directly tell any of my interns about the click. Unless my interns are specifically listening to me, they will not know about the click and will keep carrying on their work undisturbed. The interns will NOT dispatch any <code>"click"</code> event either.</p>
+
+<p>The only one who needs to know is My Boss. The events only bubble &ldquo;up&rdquo; the corporate ladder, not down.</p>
+
+<h4>So who was clicked first?</h4>
+
+<p>In order to file the proper paperwork (and hand out promotions or raises where needed) Betty needs to know exactly which person it was who was <code>"clicked"</code> first. Luckily, all this information is perfectly filled out in the <code>Event</code> object (the folder containing all the information).</p>
+
+<p>There are two names in the <code>Event</code> object, <code>target</code> and <code>currentTarget</code>. Flash assigns these two names automatically when the <code>Event</code> is dispatched.</p>
+
+<p>These two properties tend to cause a lot of confusion among beginners. Sometimes they refer to the same person, sometimes they do not. To explain the difference, let&rsquo;s take another example.</p>
+
+<p>Nico is listening to me for the <code>"clicked"</code> event.
+<code>as3
+andreas.addEventListener("clicked", onClick);
+</code></p>
+
+<p>Chris, my intern, is clicked, and stands up and tells everyone about it. Nico doesn&rsquo;t even know Chris and therefore doesn&rsquo;t even know about the event. Chris tells me about the event and hands me all the information.</p>
+
+<p>Now, I stand up and tell everyone <em>&ldquo;I was clicked&rdquo;</em>. Nico is listening to me (Andreas) for the event, and walks over to gather all the information.</p>
+
+<p>Then the event continues to bubble upwards to My Boss and finally Stan Stage.</p>
+
+<p><strong>target</strong> refers to the person who first dispatched the event. In this case, Chris would be the target.
+<strong>currentTarget</strong> refers to the person you were listening to who told you about the event.</p>
+
+<p>Think about <code>currentTarget</code> for a second. For Nico, <code>currentTarget</code> would refer to me, <u>Andreas</u>. However, since Betty is listening to Stan Stage for the Event, the <code>currentTarget</code> property in her event file would refer to <u>Mr. Stage</u>.</p>
+
+<h4>Using currentTarget to your advantage</h4>
+
+<p>Why does the <code>currentTarget</code> property even exist? I mean if you added the event listener to an object, of course you know what that object is, and therefore the property is pretty much worthless.</p>
+
+<p>However, if used properly, it can save you a lot of code! For instance, perhaps you have several buttons on the stage <code>homeButton</code>, <code>aboutButton</code>, <code>contactButton</code>, <code>newsButton</code>, etc. You want the button to scale up when it is clicked. You could add the event listeners like this:</p>
+
+<p>```as3
+homeButton.addEventListener(MouseEvent.CLICK, homeButtonClicked);
+aboutButton.addEventListener(MouseEvent.CLICK, aboutButtonClicked);
+contactButton.addEventListener(MouseEvent.CLICK, contactButtonClicked);
+newsButton.addEventListener(MouseEvent.CLICK, newsButtonClicked);</p>
+
+<p>function homeButtonClicked(mouseEvent:MouseEvent):void
+{
+   homeButton.scaleX = 1.2;
+   homeButton.scaleY = 1.2;
+}</p>
+
+<p>function aboutButtonClicked(mouseEvent:MouseEvent):void
+{
+   aboutButton.scaleX = 1.2;
+   aboutButton.scaleY = 1.2;
+}
+//etc&hellip;
+```</p>
+
+<p>That means, creating a different handler function for each button, which works, but creates <strong>a lot</strong> of extra code. Then if you want to change details of what happens when a button is clicked, you would need to update every single function.</p>
+
+<p>Instead, you can create <em>one single function</em> which handles the clicks of <em>all</em> buttons. You can calculate which button needs to be pressed by using the <code>currentTarget</code> property.</p>
+
+<p>```as3
+homeButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+aboutButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+contactButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);
+newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
+
+<p>function navigationButtonClicked(mouseEvent:MouseEvent):void
+{
+   var pressedButton:DisplayObject = mouseEvent.currentTarget as DisplayObject;
+   pressedButton.scaleX = 1.2;
+   pressedButton.scaleY = 1.2;
+}
+```</p>
+
+<p>That&rsquo;s a lot less code! Now, if you need to change the scaling to 1.3, you only have to update it in one single place!</p>
+
+<p>If you want to attach additional properties to the buttons, (such as setting some custom scale value for each button) you can use the Dictionary object. Look in the FAQ under the appropriate category for links to explanations and example code:
+<a href="http://iqandreas.blogspot.com/2009/09/most-common-flash-questions-as3-faq.html">http://iqandreas.blogspot.com/2009/09/most-common-flash-questions-as3-faq.html</a></p>
+
+<p>This is how Flash bubbles its events.</p>
+
+<p>Next step, how to make your own events bubble (The fourth part of this series is still on my TODO list ;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Understanding the AS3 Event System #2 - Custom Events]]></title>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
+    <updated>2010-10-12T07:53:00+02:00</updated>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
+    <content type="html"><![CDATA[<p>This thread is part 2 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
+
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
+
+<p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&rsquo;t fully understand or would like me to clarify further.</p>
+
+<!-- more -->
+
+
+<hr />
+
+<p>Listen, don&rsquo;t tell my boss, but those days when work gets slow, I fire up some StarCraft! StarCraft is no fun alone, so Nico, Bob, Larry, and I all play against eachother. The problem is that we all need to be logged on at the same time in order to play together. I&rsquo;m the one who plays the most, so I am the &ldquo;Game Master&rdquo;; the one who starts up the server, chooses a map, and waits for everyone else to join in.</p>
+
+<p>We need some way to alert each other when I start up a StarCraft game, <em>and</em> keep it a secret from my boss (he reads all our emails, so I can&rsquo;t tell them via email). So, we use the Event system!</p>
+
+<h4>Custom Event Strings</h4>
+
+<p>We have planned that whenever I am about to start up a new game, I stand up and yell out to everyone <em>&ldquo;I am about to call <code>Yamato</code>!&rdquo;</em> (who our boss assumes is one of my Japanese clients)</p>
+
+<p>Everyone knows that the custom <code>event string</code> (also known as <code>event type</code>) for when everyone listening should play starcraft is <code>"Yamato"</code>. So, ahead of time, Nico, Bob, and Larry listen for my <code>"Yamato"</code> event:
+<code>as3
+homeButton.addEventListener("Yamato", startPlayingStarScraft);
+</code></p>
+
+<p>Now, we may start playing dozens of different games, and I have chosen a different &ldquo;code name&rdquo; as the event string for each type of game:
+<code>as3
+homeButton.addEventListener("MarcoPolo", startPlayingAOE);
+homeButton.addEventListener("Gelinor", startPlayingRuneScape);
+homeButton.addEventListener("Germany", startPlayingCOD);
+homeButton.addEventListener("Orcish", startPlayingWOW);
+</code></p>
+
+<h4>Custom Events</h4>
+
+<p>Now, I could create a different type of <code>Event</code> Folder for each type of game, such as <code>StarCraftEvent</code>, <code>RuneScapeEvent</code>, <code>AOEEvent</code> etc.</p>
+
+<p>Each type of event file would have information inside of it, for instance, the <code>StarCraftEvent</code> Folder may have the following properties:
+ &ndash; <em>target</em> &ndash; Me, since I&rsquo;m the one &ldquo;dispatching&rdquo; the event
+ &ndash; <em>type</em> &ndash; the custom event string, in this case <em>&ldquo;Yamato&rdquo;</em>
+ &ndash; <em>map</em> &ndash; the StarCraft map we will be playing in
+ &ndash; <em>players</em> &ndash; a list of all players
+ &ndash; <em>settings</em> &ndash; the game settings</p>
+
+<p>And our class would look something like this (note that <code>target</code> and <code>type</code> are automatically inherited by the <code>Event</code> since you <code>extend</code> it)
+```as3
+public class StarCraftEvent extends Event
+{</p>
+
+<pre><code>public function StarCraftEvent(the_type:String, the_map:SCMap, the_players:Array, the_settings:GameSettings)
+{
+    //Since you extend the Event, let the super class know a few more additional details
+    super(the_type);
+
+    map = the_map;
+    players = the_players;
+    settings = the_settings;
+}
+
+public var map:SCMap;
+public var players:Array;
+public var settings:GameSettings
+</code></pre>
+
+<p>}
+```</p>
+
+<p>This would be my totally custom made event class! <img alt="" border="0" class="inlineimg" src="http://www.kirupa.com/forum/images/smilies/d_smile.gif" title="Big Smile" /> Perfectly customized for whenever we want to start a StarCraft game, allowing everyone to get the information they need!</p>
+
+<h4>Dispatching the Custom Event</h4>
+
+<p>This is exactly as simple as it was dispatching the <code>"clicked"</code> event:
+```as3
+//Create the event
+var players:Array = [Andreas, Nico, Bob, Larry];
+var scEvent:StarCraftEvent = new StarCraftEvent(&ldquo;<u>Yamato</u>&rdquo;, lostTemple, players, defaultSettings);</p>
+
+<p>//Dispatch the event (and it&rsquo;s folder containing all the info)
+dispatchEvent(scEvent);
+```</p>
+
+<p>That <u>dispatches an event</u> which alerts <u>everyone who is listening</u> that I am about to start up a StarCraft game.</p>
+
+<p>So, Nico, Bob, and Larry run up to my cubicle and I hand them all the <code>StarCraftEvent</code> Folder containing ALL the information they need to join in the game.</p>
+
+<h3>Do you really need to create Custom Events?</h3>
+
+<p>Now I can create a new Custom Event for each and every game we play and that would alright.</p>
+
+<p>But I noticed, no one really reads the information in the <code>Event</code> Folder! I spent good money putting together and printing out all the information for those folders, and no one reads them! They get the file from me, then run back to their own cubicles, fire up the game, and throw the <code>Event</code> Folder directly into the trash.</p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>Instead, what if I print out a plain old <code>Event</code> Folder? All it says is the <code>target</code> and the <code>type</code>, but if they want more information (which someone once in a while does) they can ask me for it directly.</p>
+
+<p>FORGET about the hassle with the <code>StarCraftEvent</code> class, and just do this:
+<code>as3
+var eventFolder:Event = new Event("Yamato");
+dispatchEvent(eventFolder);
+</code></p>
+
+<p>99% of the time. That is all you will ever need. You save a lot of unnecessary work.</p>
+
+<p><strong>You don&rsquo;t always need to create custom <u>Events</u>, usually it is enough just using custom <u>Event Strings</u>.</strong></p>
+
+<p>That is Custom Events 101</p>
+
+<p>Continue to <a href="/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling">Part #3 &ndash; Easy Event Bubbling</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Understanding the AS3 Event System #1 - The Basics]]></title>
+    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
+    <updated>2010-10-11T10:39:00+02:00</updated>
+    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
+    <content type="html"><![CDATA[<p>This thread is part 1 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series.</p>
+
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
+
+<p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&rsquo;t fully understand or would like me to clarify further.</p>
+
+<!-- more -->
+
+
+<hr />
+
+<p>Imagine your code as one big office room. That office has about 100 or so cubicles, with each cubicle representing a different object. For instance, if you have five <code>Buttons</code> on the stage, it&rsquo;s not one <code>Button</code> cubicle, but instead five different cubicles, one for each <code>Button</code> instance.</p>
+
+<h4>The Event String/Event Type</h4>
+
+<p>Now, I&rsquo;m sitting in the <code>homeButton</code> cubicle. One day, I get an email from my boss who tells me I have been <em>&ldquo;clicked&rdquo;</em>. So immediately I stand up, and yell out into the hallway so loudly that everyone can hear <em>&ldquo;I HAVE BEEN CLICKED!&rdquo;</em></p>
+
+<p>Now, the boss may have A LOT more information, such as where I was clicked, how many times, if any of my children were clicked, and a lot more information. However, I won&rsquo;t stand up and yell out to everyone in the building all that information. That is quite wasteful, and if I receive several of those emails a day, I would soon get tired of spouting out all that information.</p>
+
+<p>Instead, to save energy, I only tell everyone <em>&ldquo;I have been <u>clicked</u>&rdquo;</em>. That is me telling everybody the <code>event type</code>, also known as the <code>event string</code>.</p>
+
+<h4>Listening for Events</h4>
+
+<p>Back up a few hours (before the event string). I have a friend named Nico sitting in the art department (his cubicle is labeled <code>currentImage</code>, but that&rsquo;s not actually relevant). His boss told him <em>&ldquo;Whenever Andreas in the <code>homeButton</code> cubicle is clicked I want you to draw an image of a house and send it right to me.&rdquo;</em></p>
+
+<p>Now, Nico could get up out of his seat every five minutes, walk over to me, and ask <em>&ldquo;Hey, Andreas. Were you clicked yet?&rdquo;</em> I say no, so he walks back to his cubicle and sits down. This would happen again and again, and neither of us would get any work done. This is VERY inefficient. Nico could reduce this and only check with me once per hour, but he wants to know <em>immediately</em> when I am clicked. So that is NOT an option either.</p>
+
+<p>Instead, Nico sits in his cubicle continuing his regular work, and in the meantime, <em>listens</em> out in the hallway for my voice. Now, at around noon I yell out <em>&ldquo;I was <u>keypressed</u>!&rdquo;</em> He hears my voice, but he really doesn&rsquo;t care about the keypresses. So, he ignores what I say, and continues working. Then another guy in the cubicle (Larry, a really annoying guy) yells out <em>&ldquo;I was <u>clicked</u>!&rdquo;</em> Since Larry is not as good looking as Andreas, and The Boss didn&rsquo;t tell Nico to listen to Larry, Nico ignores him completely.</p>
+
+<p>Because, <u>Nico is only listening to</u> Andreas (in <u>the <code>homeButton</code> cubicle</u>) <u>for the <code>clicked</code> event</u> (which looks something like this in AS3):
+<code>as3
+homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);
+</code></p>
+
+<p>When he hears the event, he needs to <u>start drawing the house</u> (which he does in the <code>drawHouse</code> function).</p>
+
+<h4>The Event is dispatched</h4>
+
+<p>Now, fast forward back to where we were. Me (Andreas) gets the call from my boss telling me I was <code>clicked</code>. So I stand up and yell out to everyone. <em>&ldquo;I was <u>clicked</u>!&rdquo;</em></p>
+
+<p>Two people were listening for my <code>clicked</code>, Nico and Bob (the guy from <code>contentManagement</code>, a very talkative fellow) Nico rushes up to me excited <em>&ldquo;Hey Andreas. I heard about the click. That is awesome! Congratulations! <img class="<a" src="href="http://www.kirupa.com/forum/images/smilies/happy.gif">http://www.kirupa.com/forum/images/smilies/happy.gif</a>" title="Smilie" > But tell me more about the event! </em>Why were you clicked? Where were you clicked? Who clicked you? Why did they click you?_&rdquo;</p>
+
+<p>I could spend the next 5 minutes explaining all the juicy details to Nico, but then I would have to repeat all this information to Bob (which is very inefficient, and Bob is a busy man and doesn&rsquo;t want to wait). So instead, I print out all the information on the <code>clicked event</code> and put it into a Folder which I give to Nico. I give the folder to both Nico and Bob so they can use the information in it and look at it as they please. This folder is the <code>Event</code> object (more details on that later)</p>
+
+<p>Immediatly Nico rushes to his art studio in his cubicle and gets to work at <code>drawHouse()</code>, however, now he has the Folder (the <code>Event</code>) he can use that information while drawing the house, and therefore passes it into the function as a parameter:
+```as3
+function drawHouse(<u>event:Event</u>)
+{</p>
+
+<pre><code>/* Draw stuff in here... */
+</code></pre>
+
+<p>}
+```</p>
+
+<h4>The Event</h4>
+
+<p>To make sure that everyone gets the information they need, there are VERY strict protocols to what the <code>Event</code> Folder needs to contain.</p>
+
+<p>The following pages with information are required for standard Event Folders
+* <strong>the target</strong> &ndash; the person dispatching the event, which in this case is me, Andreas (or actually the <code>homeButton</code> cubicle).
+* <strong>event type</strong> &ndash; the type of event (aka <code>event string</code>), in this case, <code>clicked</code>.
+<span style="font-size: xx-small;">(there are a few more pages in the file, but that&rsquo;s mostly the small legal mumbo-jumbo fine print that no one reads anyway. You will be fine ignoring them for now.)</span></p>
+
+<p>This is a standard <code>Event</code> file. But hold on, there was A LOT more information which is missing here! If I hand Nico a file with only those two pages of information in it, he will still wonder <em>&ldquo;Where were you clicked?&rdquo;</em> along with MANY other important questions. Luckily, the company already has a neat system figured out!</p>
+
+<h4>The MouseEvent</h4>
+
+<p>Now, the company I work for has a second type of file, a <code>MouseEvent</code> File. This file <code>extends</code> the standard <code>Event</code> File. That means that the <code>MouseEvent</code> file has all the information contained in the plus a lot more information, perfect for when a <code>clicked</code> event happens.</p>
+
+<p>It has the standard two fields (<code>target</code> and <code>type</code>) PLUS these additional pages with information:
+&ndash; <em>localX</em>
+&ndash; <em>localY</em>
+&ndash; <em>stageX</em>
+&ndash; <em>stageY</em>
+&ndash; <em>altKey</em>
+&ndash; <em>ctrlKey</em>
+And a whole lot more!</p>
+
+<p>Note that this <code>MouseEvent</code> file ONLY is allowed to be used when dealing with events that had to do with the mouse, such as <code>clicked</code>, <code>hovered</code> etc. The file should NOT be used for events that had to do with the keyboard, <code>keypressed</code> or <code>keyreleased</code>. Those events should instead use a specialized <code>KeyboardEvent</code> File with it&rsquo;s own special properties.</p>
+
+<p>So I print out all the relevant information and hand both Nico and Bob a <code>MouseEvent</code> folder. Using that information, they draw the houses, display text, or whatever they want to do with the information.</p>
+
+<p><em>(<strong>Extra note:</strong> Maybe Bob didn&rsquo;t even need to see the file. Maybe he just needed to know that I was clicked, so when I hand him the file, he may not even open it or look at the details of the click using the information inside. That&rsquo;s fine by me, but I still need to create the file in case there is someone out there who actually needs the information.)</em></p>
+
+<h4>Creating the MouseEvent</h4>
+
+<p>Bob and Nico don&rsquo;t want to wait for me to print out and collect all the papers needed in the <code>MouseEvent</code> file. They want the information to be ready the second they step up to my cubicle. So, BEFORE I stand up and tell everyone I was clicked, I create the folder ahead of time for quick and easy access. THEN, <u>I <code>dispatch</code> it to all who are <code>listening</code></u>.</p>
+
+<p>This is how it looks in ActionScript:
+```as3
+//create the folder with all the information in it
+var eventFolder:MouseEvent = new MouseEvent(&ldquo;<u>clicked</u>&rdquo;, bla, bla, localX, localY, bla, bla, bla, bla, more bla);</p>
+
+<p>//Now stand up and tell everyone I was clicked
+//The &ldquo;eventFolder&rdquo; already says the <strong>event type</strong> is &ldquo;clicked&rdquo;,
+// so I don&rsquo;t need to repeat myself when dispatching it.
+//All I need to do is dispatch the folder and Flash will do all the dirty work
+dispatchEvent(eventFolder);
+```</p>
+
+<p>Now Nico and Bob (and whoever else is <code>listening</code>) can react to it and get to see the folder I sent when <code>dispatching</code>:
+```as3
+function drawHouse( <u>andreasEventFolder:MouseEvent</u> )
+{</p>
+
+<pre><code>/*Draw stuff in here...*/
+</code></pre>
+
+<p>}
+```</p>
+
+<p>That is Events 101.</p>
+
+<p>Continue to <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">Part #2 &ndash; Custom Events</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: actionscript-in-ubuntu | Andreas Renberg (IQAndreas)]]></title>
+  <link href="http://blog.iqandreas.com/posts/categories/actionscript-in-ubuntu/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-09-19T01:12:23+02:00</updated>
+  <id>http://blog.iqandreas.com/</id>
+  <author>
+    <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
+    <link href="http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
+    <updated>2012-01-17T08:48:00+01:00</updated>
+    <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
+    <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which &ldquo;resets&rdquo; the internal SWFViewer in case it won&rsquo;t open after closing improperly.</p>
+
+<p><img class="center" src="/images/blog/fdt-in-ubuntu-applications-menu.png" title="FDT in Ubuntu Applications Menu" ></p>
+
+<!-- more -->
+
+
+<p><em>The following guide was written for 32bit FDT5, but may still work for future or previous versions of FDT. These instructions can of course also be used for any application that doesn&rsquo;t come with an Ubuntu installer, adjusting the  files appropriately.</em></p>
+
+<p>If you are running Ubuntu, I&rsquo;m assuming you already know how to use the basics of the command line and how to manipulate (create, delete, change permissions) of files. If anyone wants more details, post a comment and I&rsquo;ll clarify.</p>
+
+<p>I&rsquo;m assuming you have already <a href="http://fdt.powerflasher.com/buy-download/">downloaded FDT</a> (they have a free version if you aren&rsquo;t already using FDT) and extracted the archive.</p>
+
+<p>I would recommend saving the files to <code>/opt/fdt5</code> (may require admin access, which is easily done without messing with the command line by running <code>gksu nautilus</code>, assuming you are still using the default file browser) Depending on what extraction tool you use, you may also need to change the permission settings for the files to allow folder access for all users.</p>
+
+<h3>Download the FDT5 Launcher files</h3>
+
+<p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.</p>
+
+<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+
+<p>You are all done. Enjoy!</p>
+
+<p>Alternatively, you can do all the dirty work yourself (if so, keep reading).</p>
+
+<h3>Creating the FDT5 Launcher Files manually</h3>
+
+<p>Create a new file named FDT5.desktop with the following contents:</p>
+
+<p><div><script src='https://gist.github.com/1626770.js?file=FDT5.desktop'></script>
+<noscript><pre><code>[Desktop Entry]
+Name=FDT5
+#Comment=
+Exec=fdt5
+Icon=/opt/fdt5/fdt-icon.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;Application;IDE;</code></pre></noscript></div>
+</p>
+
+<p>If you want the file to be available to all users of the computer, save the file in
+&ndash; <code>/usr/share/applications/</code>
+Alternatively, if you only want the currently logged in user to have FDT show up in the application menu, save the file to
+&ndash; <code>~/.local/share/applications/</code></p>
+
+<p>Next, create the following script, and save it as <code>/usr/bin/fdt5</code></p>
+
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5'></script>
+<noscript><pre><code>#!/bin/sh
+#export MOZILLA_FIVE_HOME=&quot;/usr/lib/xulrunner-1.9.2.17/&quot;
+export MOZILLA_FIVE_HOME=&quot;/usr/lib/mozilla/&quot;
+
+export LD_LIBRARY_PATH=${MOZILLA_FIVE_HOME}:${LD_LIBRARY_PATH}
+export GDK_NATIVE_WINDOWS=1
+export ECLIPSE_HOME=&quot;/opt/fdt5&quot;
+
+$ECLIPSE_HOME/eclipse $*
+</code></pre></noscript></div>
+</p>
+
+<p>Note that the script may be a tad more complicated than it needs to be, but this is the script I&rsquo;m using since I had to jump through a few hoops getting FDT to work properly in Ubuntu.</p>
+
+<p>You also need to set the icon for the application. The default Eclipse icon is okay, but on my system, both Eclipse for Java and <a href="http://code.google.com/p/fb4linux/">FB4Linux</a> use that same icon, so I would prefer being able to tell them apart.</p>
+
+<p>I included FDT&rsquo;s fancy, blue dodecahedron icon <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/blob/master/fdt-icon.png">in the repository</a>, used with permission from Powerflasher GmbH. You can use the icon provided in the repository, or use your own, but which ever icon you use for FDT, make sure to save it to <code>/opt/fdt5/fdt-icon.png</code></p>
+
+<p>Finally, if you want FDT to stay in the launcher bar, start up FDT, right-click the icon in the launcher, and make sure &ldquo;Keep in Launcher&rdquo; is checked.</p>
+
+<p><img class="center" src="/images/blog/fdt-in-ubuntu-launcher-keep-in-launcher.png" title="FDT in the Ubuntu Launcher. Right click and make sure &ldquo;Keep in Launcher&rdquo; is checked." ></p>
+
+<h3>Cleaning the SWFViewer settings</h3>
+
+<p>If the built in FDT SWFViewer quits improperly (which happens from time to time when running into AS3 errors) it will not open the next time you run the SWF. The solution is to delete a few config files for the plugin, which is a simple task, but gets annoying when you need to constantly delete the files.</p>
+
+<p>The following script will delete said config files (assuming FDT is installed to <code>/opt/fdt5</code> as recommended) though I wish FDT had a button for this inside the IDE instead.</p>
+
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5-clean'></script>
+<noscript><pre><code># Clean out viewer settings for FDT
+# Could remove the windows and MAC settings as well, but it seems a bit uneccessary. ;)
+
+# 32 bit linux
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerCheck
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerLock
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerRestartInfo
+
+# 64 bit linux
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerCheck
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerLock
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerRestartInfo</code></pre></noscript></div>
+</p>
+
+<p>Save the script to <code>/usr/bin/fdt5-clean</code> and run it by typing <code>fdt5-clean</code> into the command prompt. The script does not require admin rights to run as long as your FDT install folder has full permission for all users.</p>
+
+<p>Leave any further questions or problems in the comments and I&rsquo;ll try to help sort them out.</p>
+]]></content>
+  </entry>
+  
+</feed>
