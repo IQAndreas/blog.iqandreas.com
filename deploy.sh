@@ -9,7 +9,12 @@ rake generate
 # Publish site to GitHub
 rake deploy
 
+message="Updated source `date`"
+[[ -z "$1" ]] && message="$1" 
+
 # Commit source
 git add .
-git commit -a -m "Updated source `date`"
+git commit -a -m "$message"
 git push origin
+
+

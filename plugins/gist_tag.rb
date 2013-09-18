@@ -31,11 +31,13 @@ module Jekyll
       end
     end
 
+    # See http://devspade.com/blog/2013/08/06/fixing-gist-embeds-in-octopress/
     def html_output_for(script_url, code)
       code = CGI.escapeHTML code
       <<-HTML
-<div><script src='#{script_url}'></script>
-<noscript><pre><code>#{code}</code></pre></noscript></div>
+		<div><script src='#{script_url}'></script>
+		<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
+		<noscript><pre><code>#{code}</code></pre></noscript></div>
       HTML
     end
 
