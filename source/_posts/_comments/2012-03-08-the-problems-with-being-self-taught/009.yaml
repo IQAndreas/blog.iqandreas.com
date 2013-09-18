@@ -1,0 +1,36 @@
+post_id: /monologues/the-problems-with-being-self-taught
+date: 2012-04-12 09:04
+return_url: 'http://IQAndreas.github.com/monologues/the-problems-with-being-self-taught/'
+name: 'DT'
+email: 'Crystalmir@gmail.com'
+link: ''
+comment: '<p>I used to be self-taught. I started programming when I was 9 with qbasic. My dad basically said to me "that computer is too old to run windows, and too slow to run games - so if you want to do something you will need to program it."</p>
+
+<p>And so I started with qbasic. qbasic had a formidable help system with many examples that you could copy-paste and modify. I knew I would spend many hours playing with particular functions to know inside out how they worked. Then I switched to turbo pascal a couple of years later. Then I hit a wall... I tried to learn C.</p>
+
+<p>I felt like I had hit a wall of complexity that I could not surmount. So I drifted away from programming, I still did a few delphi and VB things but it was very basic... Internet also made things much more easy to download than to program.</p>
+
+<p>I guess that''s what you call the intermediate steps in your post. Only mine demotivated me to the point of stopping programming all together. After a few years I felt I had gaps in my knowledge that prevented me from going further, I couldn''t say that I knew programming because of those gaps. I mean I could have told you how to use a pointer back then... but I didn''t know why it worked or why you could initialize an array with a pointer. I only had the "technical side" covered, but I had no idea about the abstract side or how someone could organize a large project.</p>
+
+<p>So I decided to return to university and take computer science. My expectations was that I would learn about those gaps in my knowledge and things would make more sense. And it did a lot. I felt that at the end of my first semester I had learned more about programming than I had done in the last 25 years of my life. I felt that I had finally learned the basics properly and I could make all sort of assumptions because I had a solid foundation and they usually turned to be right - plus the courses overlapped a bit so if I didn''t quite get the logic course, other courses would use that knowledge, but explain it in another way so in the end I would get it. I think the most helpful thing is that I learned a bit about every "domains" in information technology. I feel I know the basics enough to be able to work in computer security, or with networks, or as a functionnal analyst or just straight programming tomorrow. I would still be a newbie, but I know enough to know what to look for to further my knowledge in a specific domain. If I had to do the firmware for an hard drive, I know a few algorithms used to encode/read/write data on an hard drive, I could discuss that with a more experienced person and find out more about the specific algorithm he had in mind to be able to do what is expected of me.</p>
+
+<p>If I had to understand a game engine tomorrow I know that I would expect to see a scene manager, a rendering loop that encompass most of the code, lights, geometry and so on.</p>
+
+<p>Those are the two big advantages it gave me:
+<ul><li>I don''t feel there is gaps in the basics anymore</li>
+<li>I feel I know enough to be able to start somewhere in any situation related to programming.</li></ul></p>
+
+<p>Those two things give me a lot of confidence... the confidence that I can get throught any new things that show up... like a new language or a specific design pattern a client wants me to use.</p>
+
+<p>There are some disadvantages of course:</p>
+
+<ul><li><p>My geek friends with no formal education get lost pretty quickly when I explain things to them. I give way too much details and I end up making things more complicated. If we discuss windows I might eventually mention that windows switch the active program every 10 milliseconds and then I have to explain what a time quantum is and how/why an OS even do that.</p></li>
+
+<li><p>It''s much more difficult finding help on google now, because the questions are more advanced and more abstract. Asking google how to format a string to display 2 decimals in vb.net will get you an answer, but asking google to explain you what the pros and cons of using a red-black tree are is a bit more difficult.</p></li>
+
+<li><p>My friends don''t really know what kind of "information technology" I do. They don''t really understand the differences between programmers from different kind of school ... technical college, college, vocational high-school and university. They think that with what I learned I can fix computer and diagnose problems with some sort of electronics toolkit - so I mostly spend time explaining what a computer science diploma is supposed to prepare you for - being an functionnal/organic analyst, being a software architect and maybe eventually being a lead programmer/team/project manager.</p></li>
+
+<li><p>Due to the last disadvantage they will usually forward me jobs that have absolutely nothing to do with what I learned. Tech support jobs and sysadmin/database administrators jobs for example - sure I could do them, but my diploma doesn''t change my odds of getting those jobs - because that''s not what I learned at school. So I have to thank them, explain what I learned and tell them what kind of job I''m looking for.</p></li>
+
+<li><p>School didn''t make me a better person. In fact I think that all the stress a 4-year diploma entails made me a worse person.</p></li></ul>'
+submit: 'Submit Comment'
