@@ -114,23 +114,19 @@
 
 <p>Turns out, this isn&rsquo;t entirely true. The compiler only adds <code>super()</code> if it doesn&rsquo;t see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
 
-<pre><code>&lt;div&gt;&lt;script src='https://gist.github.com/2922489.js'&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;$(".gist-file table tr td.line-numbers").remove();&lt;/script&gt;
-&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;class Subclass extends Base 
-</code></pre>
-
-<p>{</p>
-
-<pre><code>public function Subclass()
+<div><script src='https://gist.github.com/2922489.js'></script>
+<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
+<noscript><pre><code>class Subclass extends Base 
 {
-    if (false)
+    public function Subclass()
     {
-        super();
+        if (false)
+        {
+            super();
+        }
     }
-}
-</code></pre>
+}</code></pre></noscript></div>
 
-<p>}</code></pre></noscript></div></p>
 
 <p>If you want more reading on the matter, this information was taken from a forum thread by <a href="http://me.reclipse.net/">Krilnon</a> over at the Kirupa forums.</p>
 
