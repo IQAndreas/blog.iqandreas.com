@@ -1,6 +1,26 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+article img.smiley {
+    top: 0px;
+    position: relative;
+    //float: left;
+    //margin-right: 0.5em;
+    //border: none;
+    //border-radius: 0;
+    @include shadow-box(none, none, none);
+}
+
+article img.favicon {
+    top: 0px;
+ 	width: 16px;
+ 	height: 16px;
+    @include shadow-box(none, none, none);
+}
+
+
+/* ---- GISTS ---- */
+
 // See http://devspade.com/blog/2013/08/06/fixing-gist-embeds-in-octopress/
 .gist-file {
   font-size:.8em !important;

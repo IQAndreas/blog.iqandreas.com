@@ -9,8 +9,12 @@ rake generate
 # Publish site to GitHub
 rake deploy
 
-message="Updated source `date`"
-[[ -z "$1" ]] && message="$1" 
+
+if [[ -z "$1" ]]; then 
+	message="Updated source `date`"
+else
+	message="$1"; 
+fi
 
 # Commit source
 git add .
