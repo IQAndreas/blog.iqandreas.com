@@ -9,6 +9,8 @@ rake generate
 # Publish site to GitHub
 rake deploy
 
+echo ""
+echo "## Commit source to GitHub"
 
 if [[ -z "$1" ]]; then 
 	message="Updated source `date`"
@@ -16,7 +18,6 @@ else
 	message="$1"; 
 fi
 
-# Commit source
 git add .
 git commit -a -m "$message"
 git push origin
