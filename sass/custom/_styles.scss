@@ -6,8 +6,8 @@ article img.smiley {
     position: relative;
     //float: left;
     //margin-right: 0.5em;
-    //border: none;
-    //border-radius: 0;
+    border: none;
+    border-radius: 0;
     @include shadow-box(none, none, none);
 }
 
@@ -15,6 +15,8 @@ article img.favicon {
     top: 0px;
  	width: 16px;
  	height: 16px;
+    border: none;
+    border-radius: 0;
     @include shadow-box(none, none, none);
 }
 
