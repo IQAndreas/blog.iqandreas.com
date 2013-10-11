@@ -33,7 +33,7 @@ class Jekyll::Page
 	alias :to_liquid_without_comments :to_liquid
 	
 	def to_liquid(attrs = nil)
-		data = to_liquid_without_comments(attrs)
+		data = (attrs != nil) ? to_liquid_without_comments(attrs) : to_liquid_without_comments()
 		data['comment_list'] = StaticComments::find_for(self.site, data['id'])
 		data['comment_count'] = data['comment_list'].length
 		data
