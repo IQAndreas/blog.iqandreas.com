@@ -21,8 +21,8 @@
 class Jekyll::Post
 	alias :to_liquid_without_comments :to_liquid
 	
-	def to_liquid(attrs = nil)
-		data = (attrs != nil) ? to_liquid_without_comments(attrs) : to_liquid_without_comments()
+	def to_liquid()
+		data = to_liquid_without_comments()
 		data['comment_list'] = StaticComments::find_for(self.site, data['id'])
 		data['comment_count'] = data['comment_list'].length
 		data
@@ -33,7 +33,7 @@ class Jekyll::Page
 	alias :to_liquid_without_comments :to_liquid
 	
 	def to_liquid(attrs = nil)
-		data = (attrs != nil) ? to_liquid_without_comments(attrs) : to_liquid_without_comments()
+		data = to_liquid_without_comments()
 		data['comment_list'] = StaticComments::find_for(self.site, data['id'])
 		data['comment_count'] = data['comment_list'].length
 		data
@@ -124,6 +124,17 @@ module StaticComments
 			@ext =      File.extname(full_filename)
 			@dir =      File.dirname(full_filename)
 			@basename = File.basename(@name, @ext)
+		end
+		
+		# Convert this Convertible's data to a Hash suitable for use by Liquid.
+		# Copied from https://github.com/mojombo/jekyll/blob/2bb29216e784afb27ac78aec6bb3f2bd8ac9a1bd/lib/jekyll/convertible.rb#L97
+		#
+		# Returns the Hash representation of this Convertible.
+		def to_liquid(attrs = nil)
+			further_data = Hash[(attrs || self.class::ATTRIBUTES_FOR_LIQUID).map { |attribute|
+				[attribute, send(attribute)]
+			}]
+			data.deep_merge(further_data)
 		end
 		
 		def custom_converter
