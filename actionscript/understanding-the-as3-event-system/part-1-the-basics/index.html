@@ -4,6 +4,9 @@
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
+
+  
+
   <meta charset="utf-8">
   <title>Understanding the AS3 Event System #1 - The Basics - Andreas Renberg (IQAndreas)</title>
   <meta name="author" content="Andreas Renberg (IQAndreas)">
@@ -84,6 +87,7 @@
 </nav>
   <div id="main">
     <div id="content">
+      
       <div>
 <article class="hentry" role="article">
   
@@ -296,44 +300,48 @@ And a whole lot more!</p>
   </footer>
 </article>
 
-  <section>
-    <div id="comments">
+<section id="comments">
 	
-			<h1> Comments</h1>
-	
-	
+		<h1> Comments</h1>
+
+
+
+
 	<h1>Post a comment</h1>
 	<p style="font-style: italic">
-		All comments are held for moderation; basic HTML formatting accepted.
-	</p>
-	<form id="commentform" method="POST" action="http://iqandreas.isbetterthanyou.org/public/iqandreas.github.com/commentsubmit.php/commentsubmit.php">
-		<input type="hidden" name="post_id" value="/actionscript/understanding-the-as3-event-system/part-1-the-basics" />
-		<input type="hidden" name="post_title" value="Understanding the AS3 Event System #1 - The Basics" />
-		<input type="hidden" name="return_url" value="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/" />
-		<table>
-			<tr>
-				<th>Name:</th>
-				<td><input type="text" size="25" name="name" /> (required)</td>
-			</tr>
-			<tr>
-				<th>E-mail:</th>
-				<td><input type="text" size="25" name="email" /> (required, not published)</td>
-			</tr>
-			<tr>
-				<th>Website:</th>
-				<td><input type="text" size="25" name="link" /> (optional)</td>
-			</tr>
-			<tr>
-				<td colspan="2"><textarea name="comment" rows="10" cols="60" ></textarea></td>
-			</tr>
-			<tr>
-				<td><input type="submit" name="submit" value="Submit Comment" /></td>
-			</tr>
-		</table>
-	</form>
-</div>
+	All comments are held for moderation; Markdown and basic HTML formatting accepted.
+</p>
+<form id="commentform" method="POST" action="http://api.iqandreas.com/jekyll-static-comments/commentsubmit.php">
+	<input type="hidden" name="page_id" value="/actionscript/understanding-the-as3-event-system/part-1-the-basics" />
+	<input type="hidden" name="page_title" value="Understanding the AS3 Event System #1 - The Basics" />
+	<input type="hidden" name="return_url" value="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/" />
+	<table>
+		<tr>
+			<th><label for="commenter-name">Name:</label></th>
+			<td><input type="text" size="25" id="commenter-name" name="name" /> (required)</td>
+		</tr>
+		<tr>
+			<th><label for="commenter-email">E-mail:</label></th>
+			<td><input type="text" size="25" id="commenter-email" name="email" /> (required, not published)</td>
+		</tr>
+		<tr>
+			<th><label for="commenter-website">Website:</label></th>
+			<td><input type="text" size="25" id="commenter-website" name="link" /> (optional)</td>
+		</tr>
+		<tr>
+			<td colspan="2"><textarea name="comment" rows="10" cols="60" ></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2"><label><input type="checkbox" name="private" value="true" /> Keep this comment private <i>(only the site owner will be able to see it)</i></label></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="submit" value="Submit Comment" /></td>
+		</tr>
+	</table>
+</form>
 
-  </section>
+</section>
+
 
 
 </div>
