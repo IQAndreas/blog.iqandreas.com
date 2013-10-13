@@ -5,6 +5,7 @@ date: 2012-05-01 22:56
 comments: true
 sharing: true
 footer: true
+permalink: no-more-tnt-griefing/index.html
 ---
 TNT no longer destroys blocks when it explodes (but it can still hurt you or other entities).
 

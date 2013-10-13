@@ -5,6 +5,7 @@ date: 2012-04-15 21:53
 comments: true
 sharing: true
 footer: true
+permalink: iqandreas-fixes/index.html
 ---
 
 A collection if my favorite fixes to MineCraft.

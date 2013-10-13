@@ -5,6 +5,7 @@ date: 2012-04-15 22:00
 comments: true
 sharing: true
 footer: true
+permalink: no-more-silverfish-griefing/index.html
 ---
 
 This patch prevents your bulidings from being destroyed by silverfish.

@@ -5,6 +5,7 @@ date: 2012-04-16 09:26
 comments: true
 sharing: true
 footer: true
+permalink: water-fixes/index.html
 ---
 Fixes the two most annoying water bugs in MineCraft!
 

@@ -5,6 +5,7 @@ date: 2012-05-01 22:52
 comments: true
 sharing: true
 footer: true
+permalink: no-more-ghast-griefing/index.html
 ---
 Fireballs from Ghasts no longer destroy blocks when they explode (but they can still hurt you or other entities, so be careful!).
 

@@ -5,6 +5,7 @@ date: 2012-06-07 04:52
 comments: true
 sharing: true
 footer: true
+permalink: snow-fixes/index.html
 ---
 Snow biomes look a little bit nicer now!
 

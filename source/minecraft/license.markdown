@@ -5,6 +5,7 @@ date: 2012-04-14 12:37
 comments: false
 sharing: true
 footer: true
+permalink: license/index.html
 ---
 
 ### Used Terms

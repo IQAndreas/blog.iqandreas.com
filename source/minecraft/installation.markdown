@@ -5,6 +5,7 @@ date: 2012-04-14 12:27
 comments: false
 sharing: true
 footer: true
+permalink: installation/index.html
 ---
 The installation instructions are the same as most other MineCraft mods, but for completeness, full instructions have been included.
 

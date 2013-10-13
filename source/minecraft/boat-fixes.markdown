@@ -5,6 +5,7 @@ date: 2012-05-23 11:53
 comments: true
 sharing: true
 footer: true
+permalink: boat-fixes/index.html
 ---
 Boats now drop as items when broken (instead of dropping planks and sticks)
 

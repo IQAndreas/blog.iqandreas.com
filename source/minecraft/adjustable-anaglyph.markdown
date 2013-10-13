@@ -5,6 +5,7 @@ date: 2012-04-14 13:49
 comments: true
 sharing: true
 footer: true
+permalink: adjustable-anaglyph/index.html
 ---
 This MineCraft patch allows you to adjust the anaglyph settings. 
 

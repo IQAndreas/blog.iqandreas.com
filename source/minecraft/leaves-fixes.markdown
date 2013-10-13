@@ -5,6 +5,7 @@ date: 2012-04-20 01:41
 comments: true
 sharing: true
 footer: true
+permalink: leaves-fixes/index.html
 ---
 Patch that makes leaves more appealing to break yourself, rather than waiting for them to decay naturally.
 

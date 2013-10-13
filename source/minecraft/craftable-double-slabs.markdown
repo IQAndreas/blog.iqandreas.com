@@ -5,6 +5,7 @@ date: 2012-04-15 22:01
 comments: true
 sharing: true
 footer: true
+permalink: craftable-double-slabs/index.html
 ---
 
 Planning to build a massive structure out of double half-slab blocks? Tired of placing twice as many blocks to make the building?

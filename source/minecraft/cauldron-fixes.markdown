@@ -5,6 +5,7 @@ date: 2012-05-01 22:43
 comments: true
 sharing: true
 footer: true
+permalink: cauldron-fixes/index.html
 ---
 Cauldrons now work as magical 1x1 infinite water source blocks.
 

@@ -5,6 +5,7 @@ date: 2012-04-14 3:49
 comments: true
 sharing: true
 footer: true
+permalink: harvestable-ice/index.html
 ---
 
 This MineCraft patch allows you to once again harvest ice blocks. Ever wanted to build a castle out of ice? Now you can!

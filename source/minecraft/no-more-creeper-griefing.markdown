@@ -5,6 +5,7 @@ date: 2012-05-01 22:46
 comments: true
 sharing: true
 footer: true
+permalink: no-more-creeper-griefing/index.html
 ---
 Creepers no longer destroy blocks when they explode (but they can still hurt you or other entities).
 

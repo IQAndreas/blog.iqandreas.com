@@ -5,6 +5,7 @@ date: 2012-05-01 23:11
 comments: true
 sharing: true
 footer: true
+permalink: no-more-water-griefing/index.html
 ---
 Patch that prevents your redstone circuits from being griefed by flowing water.
 

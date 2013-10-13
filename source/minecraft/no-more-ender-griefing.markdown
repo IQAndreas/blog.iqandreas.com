@@ -5,6 +5,7 @@ date: 2012-04-14 13:48
 comments: true
 sharing: true
 footer: true
+permalink: no-more-ender-griefing/index.html
 ---
 
 This MineCraft patch entirely removes the ability for Endermen to pick up blocks.

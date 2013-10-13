@@ -5,6 +5,7 @@ date: 2012-04-14 13:48
 comments: true
 sharing: true
 footer: true
+permalink: no-more-void-fog/index.html
 ---
 This MineCraft patch adds options for the void fog in the _Video Settings_ menu.
 
