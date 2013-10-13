@@ -5,6 +5,9 @@
   <nav role="navigation">{% include navigation.html %}</nav>
   <div id="main">
     <div id="content">
+      {% if page.redirect %}
+	  <div id="redirect-notice">This page has moved to a new location. Click here if you are not redirected automatically: <a href="{{ page.redirect }}">{{ page.redirect }}</a></div>
+	  {% endif %}
       {{ content | expand_urls: root_url }}
     </div>
   </div>

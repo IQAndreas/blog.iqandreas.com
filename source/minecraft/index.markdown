@@ -6,6 +6,10 @@ comments: true
 sharing: true
 footer: true
 ---
+**Notice:** These mods and others can now be found at:
+
+ * {% img favicon http://minecraft.iqandreas.com/favicon.png %} http://minecraft.iqandreas.com
+
 The following are installable mods and patches for the award-winning sandbox game [MineCraft](http://www.minecraft.net/).
 
 Unless otherwise indicated, all of the mods and patches are 100% compatible with each other.

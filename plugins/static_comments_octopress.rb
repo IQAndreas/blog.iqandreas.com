@@ -22,8 +22,9 @@ class Jekyll::Post
 	alias :to_liquid_without_comments :to_liquid
 	
 	def to_liquid()
+		puts "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
 		data = to_liquid_without_comments()
-		data['comment_list'] = StaticComments::find_for(self.site, data['id'])
+		data['comment_list'] = StaticComments::find_for(self.site, data['id'], data['url'])
 		data['comment_count'] = data['comment_list'].length
 		data
 	end
@@ -34,7 +35,8 @@ class Jekyll::Page
 	
 	def to_liquid(attrs = nil)
 		data = to_liquid_without_comments()
-		data['comment_list'] = StaticComments::find_for(self.site, data['id'])
+		#puts data
+		data['comment_list'] = StaticComments::find_for(self.site, data['id'], data['url'])
 		data['comment_count'] = data['comment_list'].length
 		data
 	end
@@ -43,7 +45,12 @@ end
 module StaticComments
 	
 	# Find all the comments for a post or page with the specified id
-	def self.find_for(site, id)
+	def self.find_for(site, id, url)
+		if (id != nil)
+			puts ("finding for " + id)
+		else
+			puts ("No id on " + url)
+		end
 		@comment_list ||= read_comments(site)
 		@comment_list[id]
 	end
