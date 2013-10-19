@@ -18,41 +18,27 @@
 #  You should have received a copy of the GNU General Public License along
 #  with this program; if not, see <http://www.gnu.org/licences/>
 
-class Jekyll::Post
-	alias :to_liquid_without_comments :to_liquid
-	
-	def to_liquid()
-		puts "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
-		data = to_liquid_without_comments()
-		data['comment_list'] = StaticComments::find_for(self.site, data['id'], data['url'])
-		data['comment_count'] = data['comment_list'].length
-		data
-	end
-end
-
-class Jekyll::Page
-	alias :to_liquid_without_comments :to_liquid
-	
-	def to_liquid(attrs = nil)
-		data = to_liquid_without_comments()
-		#puts data
-		data['comment_list'] = StaticComments::find_for(self.site, data['id'], data['url'])
-		data['comment_count'] = data['comment_list'].length
-		data
+class CustomPlugin < Jekyll::Plugin
+	def initialize(config = {})
+		puts("I'm invincible!!!!!!!!!!!!!!!!!!!")
+		puts(config)
 	end
 end
 
 module StaticComments
+
+	def comment_list()
+		@comment_list ||= StaticComments.find_for(self.site, self.id)
+	end
+	
+	def comment_count()
+		comment_list.length
+	end
 	
 	# Find all the comments for a post or page with the specified id
-	def self.find_for(site, id, url)
-		if (id != nil)
-			puts ("finding for " + id)
-		else
-			puts ("No id on " + url)
-		end
-		@comment_list ||= read_comments(site)
-		@comment_list[id]
+	def self.find_for(site, id)
+		@all_comment_list ||= read_comments(site)
+		@all_comment_list[id]
 	end
 	
 	# Read all the comments files in the site, and return them as a hash of
@@ -71,36 +57,26 @@ module StaticComments
 			end
 		end
 		
+		# TODO: Sort 'comment_list' by date
 		comment_list
 	end
 	
 	class Comment 
-		include Jekyll::Convertible
+		#include Jekyll::Convertible
 		
-		# Attributes for Liquid templates
-		ATTRIBUTES_FOR_LIQUID = %w[
-			page_id
-			date
-			name
-			link
-			content
-			published
-		]
-		
-		attr_accessor :site
+		attr_accessor :site, :filename, :ext
 		attr_accessor :data, :content
-		attr_accessor :page_id, :date, :published
-		attr_accessor :name, :link
-		attr_accessor :path, :dir, :name, :basename, :ext, :output
+		attr_accessor :page_id, :published
 		
-		def initialize(site, full_filename)
+		def initialize(site, filename)
 			@site = site
-			self.process(full_filename)
+			@filename = filename
 			
-			self.read_yaml(@dir, @name)
+			self.load_yaml(filename)
+			
 			@date      = self.data['date']
-			@name      = self.data['name']
-			@link      = self.data['link']
+			#@name      = self.data['name']
+			#@link      = self.data['link']
 			@published = self.published?
 			
 			# Reverse compatiblitiy with previous versions of `jekyll-static-comments` wich called the "page_id" field "post_id"
@@ -110,48 +86,66 @@ module StaticComments
 				@page_id = self.data['page_id']
 			end
 			
-			# Reverse compatiblitiy with previous versions of `jekyll-static-comments` wich called the "content" field "comment"
-			if (data.key?('comment'))
-				@content = data['comment']
-				data.delete('comment')
-			end
-			
-			
-			# First the script goes through a few custom converters (I don't want to interfere with the rest
-			# of Jekyll just in case). If none is profided, just use one of the builtin converters.
-			# The default converter that handles the type of extension can be found and adjusted in `configuration.rb`
-			@converter = custom_converter || converter
-			
 			self.transform()
 		end
 		
-		def process(full_filename)
-			@path =     full_filename # Required by Jekyll::Convertible
-			@name =     File.basename(full_filename)
-			@ext =      File.extname(full_filename)
-			@dir =      File.dirname(full_filename)
-			@basename = File.basename(@name, @ext)
+		def load_yaml(filename)
+			begin
+				#Jeyll: self.content = File.read_with_options(filename, self.site.file_read_opts)
+				self.content = File.read(filename)
+				self.ext = File.extname(filename)
+				if self.content =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
+					self.content = $POSTMATCH
+					#Jeyll: self.data = YAML.safe_load($1)
+					self.data = YAML.load($1)
+				else
+					# It's all YAML! (maybe)
+					# This is to accomodate for comments generated in older versions of Jekyll Static Comments
+					#Jeyll: self.data = YAML.safe_load(self.content)
+					self.data = YAML.load(self.content)
+					if (data.key?('comment'))
+						self.content = data['comment']
+						data.delete('comment')
+					else
+						self.content = ""
+						puts "[StaticComments::Comment] WARNING: I don't know how to parse #{filename}; there doesn't seem to beany 'comment' property."
+					end
+				end
+			rescue SyntaxError => e
+				puts "YAML Exception reading #{filename}: #{e.message}"
+			rescue Exception => e
+				puts "Error reading file #{filename}: #{e.message}"
+			end
+
+			self.data ||= {}
 		end
 		
-		# Convert this Convertible's data to a Hash suitable for use by Liquid.
-		# Copied from https://github.com/mojombo/jekyll/blob/2bb29216e784afb27ac78aec6bb3f2bd8ac9a1bd/lib/jekyll/convertible.rb#L97
+		# Transform the contents based on the content type.
 		#
-		# Returns the Hash representation of this Convertible.
-		def to_liquid(attrs = nil)
-			further_data = Hash[(attrs || self.class::ATTRIBUTES_FOR_LIQUID).map { |attribute|
-				[attribute, send(attribute)]
-			}]
-			data.deep_merge(further_data)
+		# Returns nothing.
+		def transform
+			self.content = converter.convert(self.content)
+		rescue => e
+			Jekyll.logger.error "Conversion error:", "There was an error converting" +
+			" '#{self.path}'."
+			raise e
 		end
 		
-		def custom_converter
+		# First the script goes through a few custom converters (I don't want to interfere with the rest
+		# of Jekyll just in case). If none is profided, just use one of the builtin converters.
+		# The default converter that handles the type of extension can be found and adjusted in `configuration.rb`
+		def converter
 			if (PlaintextConverter::matches(self.ext))
 				PlaintextConverter.new()
 			elsif (HTMLConverter::matches(self.ext))
 				HTMLConverter.new(true, true)
 			else
-				nil
+				self.site.converters.find { |c| c.matches(self.ext) }
 			end
+		end
+		
+		def to_liquid
+			return self.data.deep_merge({ "content" => self.content })
 		end
 		
 		def published?
@@ -201,4 +195,38 @@ module StaticComments
 		end
 	end
 end
+
+
+class Jekyll::Post
+	include StaticComments
+	# Already contains 'id' property
+
+	alias :to_liquid_without_comments :to_liquid
+	def to_liquid(attrs = nil)
+		puts("POST="+self.id)
+		data = (attrs.nil? ? to_liquid_without_comments() : to_liquid_without_comments(attrs))
+		data['comment_list']  = self.comment_list
+		data['comment_count'] = self.comment_count
+		data
+	end
+end
+
+class Jekyll::Page
+	include StaticComments
+	
+	alias :to_liquid_without_comments :to_liquid
+	def to_liquid(attrs = nil)
+		puts("PAGE="+self.id)
+		data = (attrs.nil? ? to_liquid_without_comments() : to_liquid_without_comments(attrs))
+		data['comment_list']  = self.comment_list
+		data['comment_count'] = self.comment_count
+		data
+	end
+	
+	def id()
+		"nil"
+	end
+	
+end
+
 
