@@ -35,6 +35,14 @@ module StaticComments
 		comment_list.length
 	end
 	
+    # Returns the comment-specific liquid attributes
+	def liquid_comment_attributes
+		{
+			'comment_list'  => self.comment_list,
+			'comment_count' => self.comment_count
+		}
+	end
+	
 	# Find all the comments for a post or page with the specified id
 	def self.find_for(site, id)
 		@all_comment_list ||= read_comments(site)
@@ -203,11 +211,8 @@ class Jekyll::Post
 
 	alias :to_liquid_without_comments :to_liquid
 	def to_liquid(attrs = nil)
-		puts("POST="+self.id)
 		data = (attrs.nil? ? to_liquid_without_comments() : to_liquid_without_comments(attrs))
-		data['comment_list']  = self.comment_list
-		data['comment_count'] = self.comment_count
-		data
+		data.deep_merge(self.liquid_comment_attributes)
 	end
 end
 
@@ -216,11 +221,8 @@ class Jekyll::Page
 	
 	alias :to_liquid_without_comments :to_liquid
 	def to_liquid(attrs = nil)
-		puts("PAGE="+self.id)
 		data = (attrs.nil? ? to_liquid_without_comments() : to_liquid_without_comments(attrs))
-		data['comment_list']  = self.comment_list
-		data['comment_count'] = self.comment_count
-		data
+		data.deep_merge(self.liquid_comment_attributes)
 	end
 	
 	def id()
