@@ -4,7 +4,7 @@
   <title><![CDATA[Category: actionscript-in-ubuntu | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/actionscript-in-ubuntu/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-14T00:53:35+02:00</updated>
+  <updated>2013-10-19T05:22:46+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -48,7 +48,6 @@
 <p>Create a new file named FDT5.desktop with the following contents:</p>
 
 <p><div><script src='https://gist.github.com/1626770.js?file=FDT5.desktop'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>[Desktop Entry]
 Name=FDT5
 #Comment=
@@ -68,7 +67,6 @@ Alternatively, if you only want the currently logged in user to have FDT show up
 <p>Next, create the following script, and save it as <code>/usr/bin/fdt5</code></p>
 
 <p><div><script src='https://gist.github.com/1626770.js?file=fdt5'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>#!/bin/sh
 #export MOZILLA_FIVE_HOME=&quot;/usr/lib/xulrunner-1.9.2.17/&quot;
 export MOZILLA_FIVE_HOME=&quot;/usr/lib/mozilla/&quot;
@@ -98,7 +96,6 @@ $ECLIPSE_HOME/eclipse $*
 <p>The following script will delete said config files (assuming FDT is installed to <code>/opt/fdt5</code> as recommended) though I wish FDT had a button for this inside the IDE instead.</p>
 
 <p><div><script src='https://gist.github.com/1626770.js?file=fdt5-clean'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code># Clean out viewer settings for FDT
 # Could remove the windows and MAC settings as well, but it seems a bit uneccessary. ;)
 

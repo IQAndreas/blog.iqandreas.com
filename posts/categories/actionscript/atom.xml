@@ -4,7 +4,7 @@
   <title><![CDATA[Category: actionscript | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/actionscript/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-14T00:53:35+02:00</updated>
+  <updated>2013-10-19T05:22:46+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -73,7 +73,6 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
 <p>Turns out, this isn&rsquo;t entirely true. The compiler only adds <code>super()</code> if it doesn&rsquo;t see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
 
 <p><div><script src='https://gist.github.com/2922489.js'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>class Subclass extends Base 
 {
 	public function Subclass()
@@ -135,7 +134,6 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
 <p>Create a new file named FDT5.desktop with the following contents:</p>
 
 <p><div><script src='https://gist.github.com/1626770.js?file=FDT5.desktop'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>[Desktop Entry]
 Name=FDT5
 #Comment=
@@ -155,7 +153,6 @@ Alternatively, if you only want the currently logged in user to have FDT show up
 <p>Next, create the following script, and save it as <code>/usr/bin/fdt5</code></p>
 
 <p><div><script src='https://gist.github.com/1626770.js?file=fdt5'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>#!/bin/sh
 #export MOZILLA_FIVE_HOME=&quot;/usr/lib/xulrunner-1.9.2.17/&quot;
 export MOZILLA_FIVE_HOME=&quot;/usr/lib/mozilla/&quot;
@@ -185,7 +182,6 @@ $ECLIPSE_HOME/eclipse $*
 <p>The following script will delete said config files (assuming FDT is installed to <code>/opt/fdt5</code> as recommended) though I wish FDT had a button for this inside the IDE instead.</p>
 
 <p><div><script src='https://gist.github.com/1626770.js?file=fdt5-clean'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code># Clean out viewer settings for FDT
 # Could remove the windows and MAC settings as well, but it seems a bit uneccessary. ;)
 
@@ -236,12 +232,10 @@ rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SW
 <p>Take these two identical chunks of code as an example:</p>
 
 <p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_compact.as'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>compass.rotation = Math.atan2(event.stageY - compass.y, event.stageX - compass.x) * (180/Math.PI) + 90;</code></pre></noscript></div>
 </p>
 
 <p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_expanded.as'></script>
-<script type="text/javascript">$(".gist-file table tr td.line-numbers").remove();</script>
 <noscript><pre><code>//Get the location of the mouse relative to the compass
 var dx:Number = event.stageX - compass.x;
 var dy:Number = event.stageY - compass.y;
