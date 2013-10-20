@@ -15,6 +15,9 @@ description:
 # Additionally, %o will give you the ordinal representation of the day
 date_format: "ordinal"
 
+# Not relavant yet, since Octopress is still using Jekyll 0.12.0
+#relative_permalinks: true
+
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
 subscribe_email:

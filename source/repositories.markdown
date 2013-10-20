@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /repositories/index.html
 title: "My Repositories"
 date: 2012-04-09 23:55
 comments: false

@@ -18,13 +18,6 @@
 #  You should have received a copy of the GNU General Public License along
 #  with this program; if not, see <http://www.gnu.org/licences/>
 
-class CustomPlugin < Jekyll::Plugin
-	def initialize(config = {})
-		puts("I'm invincible!!!!!!!!!!!!!!!!!!!")
-		puts(config)
-	end
-end
-
 module StaticComments
 
 	def comment_list()
@@ -45,8 +38,8 @@ module StaticComments
 	
 	# Find all the comments for a post or page with the specified id
 	def self.find_for(site, id)
-		@all_comment_list ||= read_comments(site)
-		@all_comment_list[id]
+		@comment_list ||= read_comments(site)
+		@comment_list[id]
 	end
 	
 	# Read all the comments files in the site, and return them as a hash of
@@ -104,19 +97,19 @@ module StaticComments
 				self.ext = File.extname(filename)
 				if self.content =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
 					self.content = $POSTMATCH
-					#Jeyll: self.data = YAML.safe_load($1)
+					# Jekyll: self.data = YAML.safe_load($1)
 					self.data = YAML.load($1)
 				else
 					# It's all YAML! (maybe)
 					# This is to accomodate for comments generated in older versions of Jekyll Static Comments
-					#Jeyll: self.data = YAML.safe_load(self.content)
+					# Jekyll: self.data = YAML.safe_load(self.content)
 					self.data = YAML.load(self.content)
 					if (data.key?('comment'))
 						self.content = data['comment']
 						data.delete('comment')
 					else
 						self.content = ""
-						puts "[StaticComments::Comment] WARNING: I don't know how to parse #{filename}; there doesn't seem to beany 'comment' property."
+						puts "[StaticComments::Comment] WARNING: I don't know how to parse #{filename}; there doesn't seem to be any content or 'comment' property."
 					end
 				end
 			rescue SyntaxError => e
@@ -134,8 +127,7 @@ module StaticComments
 		def transform
 			self.content = converter.convert(self.content)
 		rescue => e
-			Jekyll.logger.error "Conversion error:", "There was an error converting" +
-			" '#{self.path}'."
+			Jekyll.logger.error "Conversion error:", "There was an error converting '#{filename}'."
 			raise e
 		end
 		
@@ -208,7 +200,7 @@ end
 class Jekyll::Post
 	include StaticComments
 	# Already contains 'id' property
-
+	
 	alias :to_liquid_without_comments :to_liquid
 	def to_liquid(attrs = nil)
 		data = (attrs.nil? ? to_liquid_without_comments() : to_liquid_without_comments(attrs))
@@ -221,12 +213,40 @@ class Jekyll::Page
 	
 	alias :to_liquid_without_comments :to_liquid
 	def to_liquid(attrs = nil)
+		puts "fixed_octopress_url:#{self.fixed_octopress_url}"
 		data = (attrs.nil? ? to_liquid_without_comments() : to_liquid_without_comments(attrs))
-		data.deep_merge(self.liquid_comment_attributes)
+		data = data.deep_merge(self.liquid_comment_attributes)
+		data.deep_merge({ 'id' => self.id, 'url' => self.fixed_octopress_url })
 	end
 	
-	def id()
-		"nil"
+	def id
+		return data['id'] if self.data.key? 'id'
+		self.slug
+	end
+	
+	#  Sample output:
+	# URL: /contact.html		SLUG: /contact
+	# URL: /contact.htm			SLUG: /contact
+	# URL: contact.html			SLUG: contact		# The output only starts with a forward-slash if the input does...
+	# URL: /contact/index.html	SLUG: /contact
+	# URL: /index.html			SLUG: /
+	# URL: index.html			SLUG: /				# ... except here.
+	# URL: /dummy/.html			SLUG: /dummy		# Just don't use stupid page names like this
+	# URL: /.html				SLUG: /				# Again, I'm just too lazy to account for stupid cases
+	# URL: /funny/images/cats.html	SLUG: /funny/images/cats
+	def slug
+		# If `html?` remove trailing '.html' (or trailing '.htm')
+		# If `index?` remove trailing '/index.html'
+		# Done with regex instead of calling those two functions
+		# The last non-regex part is to make sure `/index.html` resolves as `/` and not an empty string
+		# Jekyll: self.url.sub( /(\/)?(index)?\.html?$/ , "" ) || "/"
+		self.fixed_octopress_url.sub( /(\/)?(index)?\.html?$/ , "" ) || "/"
+	end
+	
+	# Octopress
+	def fixed_octopress_url
+		# The preceeding "/" is because the `self.url` returned from category pages doesn't begin with a slash.
+		File.join("/", @dir, self.url)
 	end
 	
 end
