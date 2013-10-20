@@ -1,0 +1,65 @@
+---
+permalink: /minecraft/installation.html
+layout: redirect-minecraft
+redirect: http://minecraft.iqandreas.com/patches/minecraft-1.2.5/installation
+redirect_message: This mod can now be found on my MineCraft site (redirecting there automatically): <li class="flink minecraft.iqandreas.com"><a href="http://minecraft.iqandreas.com/patches/minecraft-1.2.5/installation">Installing Mods and Patches in MineCraft</a></li>
+title: Installing Mods and Patches in MineCraft
+name: installation
+---
+<p>The installation instructions are the same as most other MineCraft mods, but for completeness, full instructions have been included.</p>
+
+<h3>Windows</h3>
+
+<ol>
+<li>Open up <code>%appdata%</code>, if you don&rsquo;t know how to do this, <code>start&gt;run</code>, then type in <code>%appdata%</code></li>
+<li>Browse to <code>.minecraft/bin</code></li>
+<li>Open up <code>minecraft.jar</code> with WinRAR or 7zip.</li>
+<li>Drag and drop the necessary files into the jar.</li>
+<li>IMPORTANT: Delete the <code>META-INF</code> folder in the jar.</li>
+<li>Run Minecraft, enjoy!</li>
+</ol>
+
+
+<h3>Macintosh</h3>
+
+<ol>
+<li>Go to <code>Applications&gt;Utilities</code> and open terminal.</li>
+<li>Type in the following, line by line:</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~
+</span><span class='line'>        mkdir mctmp
+</span><span class='line'>        cd mctmp
+</span><span class='line'>        jar xf ~/Library/Application\ Support/minecraft/bin/minecraft.jar</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Outside of terminal, copy all the files and folders into the <code>mctmp</code> directory.</li>
+<li>Back inside terminal, type in the following:</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rm META-INF/MOJANG_C.*
+</span><span class='line'>        jar uf ~/Library/Application\ Support/minecraft/bin/minecraft.jar ./
+</span><span class='line'>        cd ..
+</span><span class='line'>        rm -rf mctmp</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Run Minecraft, enjoy!</li>
+</ol>
+
+
+<hr />
+
+<p>Instructions taken from
+<a href="http://www.minecraftforum.net/topic/75440-v125-risugamis-mods-everything-updated/">MineCraft Forum: Risugami&rsquo;s Mods Installation Instructions</a></p>
