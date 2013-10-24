@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-24T06:18:07+02:00</updated>
+  <updated>2013-10-24T06:19:35+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -66,7 +66,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
 
 <p>By default, GitHub will store your credentials for 15 minutes. If you want to increase or decrease this amount, use the following command:</p>
 
-<p><code>shell
+<p><code>bash
  $ git config --global credential.helper "cache --timeout=900"
 </code></p>
 
