@@ -44,7 +44,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
 
 If you are using Arch Linux, you will require [a slightly different command](http://stackoverflow.com/a/13390889/617937), and if you are using OS-X or Windows, GitHub has provided a short set of instructions to use the same GIT feature:
 
-{% include site="github.com" flink title:"GitHub Blog: Credential Caching for Wrist-Friendly Git Usage" https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage
+{% include flink site="github.com" title="GitHub Blog: Credential Caching for Wrist-Friendly Git Usage" url="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage" %}
 
 After typing in your user-name and password once the next time you are prompted for it, the credentials should be stored, saving you a lot of typing in the future. If that worked, you are done.
 
