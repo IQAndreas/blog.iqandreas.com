@@ -54,7 +54,7 @@ If you _really_ want to require entering your password when connecting to GitHub
 
 By default, GitHub will store your credentials for 15 minutes. If you want to increase or decrease this amount, use the following command:
 
-```shell
+```bash
  $ git config --global credential.helper "cache --timeout=900"
 ```
 
