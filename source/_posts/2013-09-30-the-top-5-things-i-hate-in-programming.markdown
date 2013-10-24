@@ -8,7 +8,7 @@ published: false
 ---
 Every language has its flaws. Some are understandable, while others just get on my nerves.
 
-Here is the list of the top five programming symantics I hate the most (in reverse order).
+Here is the list of the top five programming symantics I hate the most (in reverse order).<!-- more -->
 
 ### The way a package is defined in Action Script 3 ###
 
@@ -35,9 +35,7 @@ package com.iqandreas.shapes
 }
 ```
 
-This results in an additional level of indentation, which I feel is a bit uneccessary (sure, you could ignore that indentation... if your OCD will let you sleep at night).
-
-Keep in mind that you can only have one package per file in AS3, so it's not like you can close the current `package` block and open a new one with a different name.
+This results in an additional level of indentation, which I feel is a bit uneccessary. Keep in mind that you can only have one package per file in AS3, so it's not like you can close the current `package` block and open a new one with a different name.
 
 Java and Haxe both have a much nicer way of dealing with this:
 
@@ -63,8 +61,21 @@ public class Circle extends Sprite
 
 ### The words "width" and "height" are two different lengths ###
 
-This is an annoyance with the English language instead, yet trickles down into your code. Don't you just hate it when 
+This is an annoyance with the English language instead, yet trickles down into your code. Don't you just hate it when your code isn't indented nicely?
 
+```as3
+sprite.x = (stage.stageWidth / 2) - (sprite.width / 2);
+sprite.y = (stage.stageHeight / 2) - (sprite.height / 2);
+```
+
+You could manually fix this by adding spaces:
+
+```as3
+sprite.x = (stage.stageWidth  / 2) - (sprite.width  / 2);
+sprite.y = (stage.stageHeight / 2) - (sprite.height / 2);
+```
+
+But along with `left` and `right`, I still see this as an annoyance brought about from the English language.
 
 ### When the last item in a function is automatically returned ###
 

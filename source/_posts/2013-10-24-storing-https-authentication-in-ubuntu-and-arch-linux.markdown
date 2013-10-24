@@ -10,9 +10,9 @@ _**TLDR version:** Skip to [Storing your HTTPS credentials using a Keyring](#sto
 
 If you use GIT in Ubuntu, you may be used to this seeing this several times a day:
 
-[{% img left /images/blog/git-terminal-window-in-ubuntu.png GIT Terminal window in Ubuntu asking for credentials %}
+{% img /images/blog/git-terminal-window-in-ubuntu-small.png GIT Terminal window in Ubuntu asking for credentials %}
 
-Tired of constantly typing typing in your credentials? (especially since GitHub requires an alpha-numerical password, so your standard, "easy-to-type" one won't do)
+Tired of constantly typing typing in your credentials? (especially since GitHub requires an alpha-numerical password, so your standard, "easy-to-type" one won't do)<!-- more -->
 
 ### If you can use SSH, use it
 
@@ -20,13 +20,13 @@ SSH is more secure (and although I have not confirmed this officially, it seems 
 
 When using SSH, you only have to "generate" a key once for every computer you use, store it in the appropriate directory, and every time you connect to GitHub, that key will be used automatically:
 
-{% include flink site="github.com" url="https://help.github.com/articles/generating-ssh-keys" title="GitHub Help: Generating SSH Keys" %}
+{% include flink site="github.com" url="https://help.github.com/articles/generating-ssh-keys" title="GitHub Help&#58; Generating SSH Keys" %}
 
 #### If the SSH port is being blocked
 
 If it's just an issue of blocked ports, GitHub does provide a service for creating an SSH connection (usually `port 22`) through the HTTPS port (`port 443`) which may get past most firewalls. I'm unsure if this is preferable to connecting over HTTPS or not, but at least the option is available:
 
-{% include flink site="github.com" url="https://help.github.com/articles/using-ssh-over-the-https-port" title="GitHub Help: Using SSH over the HTTPS port" %}
+{% include flink site="github.com" url="https://help.github.com/articles/using-ssh-over-the-https-port" title="GitHub Help&#58; Using SSH over the HTTPS port" %}
 
 ### Storing your HTTPS credentials using a Keyring
 
@@ -34,7 +34,7 @@ _SIDE NOTE:_ There are a lot of old solutions circling the interwebs involving e
 
 Instead, you can use `gnome-keyring` to store your credentials more securely ([thanks to James Ward and marcosdsanchez](http://stackoverflow.com/a/14528360/617937) for this solution). _This solution assumes you are using GIT 1.8.0 or newer, which if you installed it via `apt`, you are. If not, you can find the latest version of git from the following URL:_
 
-{% include flink site="git-scm.com" title="Git: Downloads" url="http://git-scm.com/downloads" %}
+{% include flink site="git-scm.com" title="Git&#58; Downloads" url="http://git-scm.com/downloads" %}
 
 ```bash
 $ sudo apt-get install libgnome-keyring-dev
@@ -44,7 +44,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
 
 If you are using Arch Linux, you will require [a slightly different command](http://stackoverflow.com/a/13390889/617937), and if you are using OS-X or Windows, GitHub has provided a short set of instructions to use the same GIT feature:
 
-{% include flink site="github.com" title="GitHub Blog: Credential Caching for Wrist-Friendly Git Usage" url="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage" %}
+{% include flink site="github.com" title="GitHub Blog&#58; Credential Caching for Wrist-Friendly Git Usage" url="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage" %}
 
 After typing in your user-name and password once the next time you are prompted for it, the credentials should be stored, saving you a lot of typing in the future. If that worked, you are done.
 
