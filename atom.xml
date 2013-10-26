@@ -4,7 +4,7 @@
   <title><![CDATA[Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-26T15:30:29+02:00</updated>
+  <updated>2013-10-26T15:53:42+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/"/>
     <updated>2013-10-24T03:48:00+02:00</updated>
     <id>http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux</id>
-    <content type="html"><![CDATA[<p><em><strong>TLDR version:</strong> Skip to <a href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/#storing-your-https-credentials-using%20a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
+    <content type="html"><![CDATA[<p><em><strong>TLDR version:</strong> Skip to <a href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
 
 <p>If you use GIT in Ubuntu, you may be used to this seeing this several times a day:</p>
 
@@ -32,23 +32,21 @@
 
 <p>When using SSH, you only have to &ldquo;generate&rdquo; a key once for every computer you use, store it in the appropriate directory, and every time you connect to GitHub, that key will be used automatically:</p>
 
-<p><li class="flink help.github.com"><a href="https://help.github.com/articles/generating-ssh-keys">GitHub Help: Generating SSH Keys</a></li></p>
+<p><li class="flink help github_help com_github_help"><a href="https://help.github.com/articles/generating-ssh-keys">GitHub Help: Generating SSH Keys</a></li></p>
 
 <h4>If the SSH port is being blocked</h4>
 
 <p>If it&rsquo;s just an issue of blocked ports, GitHub does provide a service for creating an SSH connection (usually <code>port 22</code>) through the HTTPS port (<code>port 443</code>) which may get past most firewalls. I&rsquo;m unsure if this is preferable to connecting over HTTPS or not, but at least the option is available:</p>
 
-<p><li class="flink help.github.com"><a href="https://help.github.com/articles/using-ssh-over-the-https-port">GitHub Help: Using SSH over the HTTPS port</a></li></p>
+<p><li class="flink help github_help com_github_help"><a href="https://help.github.com/articles/using-ssh-over-the-https-port">GitHub Help: Using SSH over the HTTPS port</a></li></p>
 
-<p><a name="storing-your-https-credentials-using a-keyring"/></p>
-
-<h3>Storing your HTTPS credentials using a Keyring</h3>
+<h3><a name="storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a></h3>
 
 <p><em>SIDE NOTE:</em> There are a lot of old solutions circling the interwebs involving either setting <code>credential.helper</code> to <code>store</code>, or by using <code>netrc</code>, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal.</p>
 
 <p>Instead, you can use <code>gnome-keyring</code> to store your credentials more securely (<a href="http://stackoverflow.com/a/14528360/617937">thanks to James Ward and marcosdsanchez</a> for this solution). <em>This solution assumes you are using GIT 1.8.0 or newer, which if you installed it via <code>apt</code>, you are. If not, you can find the latest version of git from the following URL:</em></p>
 
-<p><li class="flink git-scm.com"><a href="http://git-scm.com/downloads">Git: Downloads</a></li></p>
+<p><li class="flink git-scm com_git-scm"><a href="http://git-scm.com/downloads">Git: Downloads</a></li></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -61,7 +59,7 @@
 
 <p>If you are using Arch Linux, you will require <a href="http://stackoverflow.com/a/13390889/617937">a slightly different command</a>, and if you are using OS-X or Windows, GitHub has provided a short set of instructions to use the same GIT feature:</p>
 
-<p><li class="flink github.com"><a href="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage">GitHub Blog: Credential Caching for Wrist-Friendly Git Usage</a></li></p>
+<p><li class="flink github com_github"><a href="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage">GitHub Blog: Credential Caching for Wrist-Friendly Git Usage</a></li></p>
 
 <p>After typing in your user-name and password once the next time you are prompted for it, the credentials should be stored, saving you a lot of typing in the future. If that worked, you are done.</p>
 
