@@ -6,7 +6,7 @@ comments: true
 categories: [git]
 ---
 
-_**TLDR version:** Skip to [Storing your HTTPS credentials using a Keyring](#storing-your-https-credentials-using a-keyring)._
+_**TLDR version:** Skip to [Storing your HTTPS credentials using a Keyring]({{ page.url }}#storing-your-https-credentials-using a-keyring)._
 
 If you use GIT in Ubuntu, you may be used to this seeing this several times a day:
 
@@ -28,9 +28,10 @@ If it's just an issue of blocked ports, GitHub does provide a service for creati
 
 {% flink https://help.github.com/articles/using-ssh-over-the-https-port "GitHub Help: Using SSH over the HTTPS port" %}
 
+<a name="storing-your-https-credentials-using a-keyring"/>
 ### Storing your HTTPS credentials using a Keyring
 
-_SIDE NOTE:_ There are a lot of old solutions circling the interwebs involving either setting `credential.helper` to `store`, or by using `netrc`, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal._
+_SIDE NOTE:_ There are a lot of old solutions circling the interwebs involving either setting `credential.helper` to `store`, or by using `netrc`, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal.
 
 Instead, you can use `gnome-keyring` to store your credentials more securely ([thanks to James Ward and marcosdsanchez](http://stackoverflow.com/a/14528360/617937) for this solution). _This solution assumes you are using GIT 1.8.0 or newer, which if you installed it via `apt`, you are. If not, you can find the latest version of git from the following URL:_
 
