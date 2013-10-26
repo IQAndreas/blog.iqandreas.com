@@ -4,7 +4,7 @@
   <title><![CDATA[Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-26T15:57:46+02:00</updated>
+  <updated>2013-10-26T16:02:23+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/"/>
     <updated>2013-10-24T03:48:00+02:00</updated>
     <id>http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux</id>
-    <content type="html"><![CDATA[<p><em><strong>TLDR version:</strong> Skip to <a href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
+    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
 
 <p>If you use GIT in Ubuntu, you may be used to this seeing this several times a day:</p>
 
