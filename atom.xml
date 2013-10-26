@@ -4,7 +4,7 @@
   <title><![CDATA[Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-26T16:04:09+02:00</updated>
+  <updated>2013-10-26T16:15:51+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -323,12 +323,9 @@
 
 <p>In the meantime, enjoy the following informative (and practical!) articles by Jackson Dunstan:</p>
 
-<ul>
-<li><a href="http://jacksondunstan.com/articles/1675"><img class="favicon" src="http://jacksondunstan.com/favicon.ico"> Top 10 Performance Tips for 2012</a></li>
-<li><a href="http://jacksondunstan.com/articles/1690"><img class="favicon" src="http://jacksondunstan.com/favicon.ico"> Static vs. Non-Static</a></li>
-<li><a href="http://jacksondunstan.com/articles/1713"><img class="favicon" src="http://jacksondunstan.com/favicon.ico"> Why Static is Slow</a></li>
-</ul>
-
+<p><li class="flink com jacksondunstan_com"><a href="http://jacksondunstan.com/articles/1675">Top 10 Performance Tips for 2012</a></li>
+<li class="flink com jacksondunstan_com"><a href="http://jacksondunstan.com/articles/1690">Top 10 Static vs. Non-Static</a></li>
+<li class="flink com jacksondunstan_com"><a href="http://jacksondunstan.com/articles/1713">Top 10 Why Static is Slow</a></li></p>
 ]]></content>
   </entry>
   
