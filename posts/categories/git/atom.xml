@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-26T14:54:46+02:00</updated>
+  <updated>2013-10-26T15:30:29+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -40,9 +40,11 @@
 
 <p><li class="flink help.github.com"><a href="https://help.github.com/articles/using-ssh-over-the-https-port">https://help.github.com/articles/using-ssh-over-the-https-port</a>">&ldquo;GitHub Help: Using SSH over the HTTPS port&rdquo;</a></li></p>
 
+<p><a name="storing-your-https-credentials-using a-keyring"/></p>
+
 <h3>Storing your HTTPS credentials using a Keyring</h3>
 
-<p><em>SIDE NOTE:</em> There are a lot of old solutions circling the interwebs involving either setting <code>credential.helper</code> to <code>store</code>, or by using <code>netrc</code>, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal._</p>
+<p><em>SIDE NOTE:</em> There are a lot of old solutions circling the interwebs involving either setting <code>credential.helper</code> to <code>store</code>, or by using <code>netrc</code>, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal.</p>
 
 <p>Instead, you can use <code>gnome-keyring</code> to store your credentials more securely (<a href="http://stackoverflow.com/a/14528360/617937">thanks to James Ward and marcosdsanchez</a> for this solution). <em>This solution assumes you are using GIT 1.8.0 or newer, which if you installed it via <code>apt</code>, you are. If not, you can find the latest version of git from the following URL:</em></p>
 
