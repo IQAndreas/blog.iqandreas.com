@@ -13,7 +13,7 @@ class FlinkTag < Liquid::Tag
 			# Example output: com github_com help_github_com
 			site_progress = []
 			site_result = []
-			sites.split('.').each { |segment| 
+			sites.split('.').reverse.each { |segment| 
 				site_progress.unshift(segment)
 				site_result.push(site_progress.join("_"))
 			}
