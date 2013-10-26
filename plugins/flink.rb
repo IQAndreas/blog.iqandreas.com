@@ -4,8 +4,20 @@ class FlinkTag < Liquid::Tag
 		if markup =~ /(https?:\/\/([^\/\s]+)\/?\S*)\s+[\"\']?(.+?)[\"\']?\s*$/i
 			@valid = true
 			@url = $1
-			@site = $2
+			sites = $2
 			@title = $3
+			
+			# Doin this the Ruby way, bitches.
+			# Also, this is a dirty, disgusting hack
+			# Example input: help.github.com
+			# Example output: com github_com help_github_com
+			site_progress = []
+			site_result = []
+			sites.split('.').each { |segment| 
+				site_progress.unshift(segment)
+				site_result.push(site_progress.join("_"))
+			}
+			@site_css = site_result.join(' ')
 		else
 			@valid = false
 			puts "[FlinkTag] Unable to parse the following line:"
@@ -16,7 +28,7 @@ class FlinkTag < Liquid::Tag
 	end
 	
 	def render(context)
-		@valid ? "<li class=\"flink #{@site}\"><a href=\"#{@url}\">#{@title}</a></li>" : ""
+		@valid ? "<li class=\"flink #{@site_css}\"><a href=\"#{@url}\">#{@title}</a></li>" : ""
 	end
 end
 
