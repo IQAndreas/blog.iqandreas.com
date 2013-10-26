@@ -10,6 +10,7 @@ I typically prefer the information in my posts to be more "practical", but the l
 
 In the meantime, enjoy the following informative (and practical!) articles by Jackson Dunstan:
 
-* [{% img favicon http://jacksondunstan.com/favicon.ico %} Top 10 Performance Tips for 2012](http://jacksondunstan.com/articles/1675)
-* [{% img favicon http://jacksondunstan.com/favicon.ico %} Static vs. Non-Static](http://jacksondunstan.com/articles/1690)
-* [{% img favicon http://jacksondunstan.com/favicon.ico %} Why Static is Slow](http://jacksondunstan.com/articles/1713)
+{% flink http://jacksondunstan.com/articles/1675 "Top 10 Performance Tips for 2012" %}
+{% flink http://jacksondunstan.com/articles/1690 "Top 10 Static vs. Non-Static" %}
+{% flink http://jacksondunstan.com/articles/1713 "Top 10 Why Static is Slow" %}
+
