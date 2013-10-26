@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-10-26T15:53:42+02:00</updated>
+  <updated>2013-10-26T15:57:46+02:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -40,7 +40,7 @@
 
 <p><li class="flink help github_help com_github_help"><a href="https://help.github.com/articles/using-ssh-over-the-https-port">https://help.github.com/articles/using-ssh-over-the-https-port</a>">&ldquo;GitHub Help: Using SSH over the HTTPS port&rdquo;</a></li></p>
 
-<h3><a name="storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a></h3>
+<h3><a name="storing-your-https-credentials-using-a-keyring"></a>Storing your HTTPS credentials using a Keyring</h3>
 
 <p><em>SIDE NOTE:</em> There are a lot of old solutions circling the interwebs involving either setting <code>credential.helper</code> to <code>store</code>, or by using <code>netrc</code>, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal.</p>
 
