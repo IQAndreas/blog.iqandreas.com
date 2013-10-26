@@ -29,7 +29,7 @@ If it's just an issue of blocked ports, GitHub does provide a service for creati
 {% flink https://help.github.com/articles/using-ssh-over-the-https-port "GitHub Help: Using SSH over the HTTPS port" %}
 
 
-### <a name="storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>
+### <a name="storing-your-https-credentials-using-a-keyring"></a>Storing your HTTPS credentials using a Keyring
 
 _SIDE NOTE:_ There are a lot of old solutions circling the interwebs involving either setting `credential.helper` to `store`, or by using `netrc`, however, in both of these cases the password gets stored as plain-text on your computer. This is usually not ideal.
 
