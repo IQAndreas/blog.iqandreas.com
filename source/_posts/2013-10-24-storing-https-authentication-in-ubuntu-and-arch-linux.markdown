@@ -6,7 +6,7 @@ comments: true
 categories: [git]
 ---
 
-_**TLDR version:** Skip to [Storing your HTTPS credentials using a Keyring]({{ page.url }}#storing-your-https-credentials-using-a-keyring)._
+_**TL;DR version:** Skip to [Storing your HTTPS credentials using a Keyring]({{ page.url }}#storing-your-https-credentials-using-a-keyring)._
 
 If you use GIT in Ubuntu, you may be used to this seeing this several times a day:
 
