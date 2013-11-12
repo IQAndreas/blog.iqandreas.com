@@ -36,7 +36,7 @@ a#title_link {
 	display: block;
 }
 
-.hidden_link {
+.hidden_link, .hidden_link:visited {
 	color: inherit;
 	font-weight: inherit;
 	text-decoration: inherit;
