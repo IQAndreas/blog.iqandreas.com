@@ -4,6 +4,7 @@
 
 url: http://blog.iqandreas.com
 title: The Programming Blog of Andreas Renberg (IQAndreas)
+displayed_title: <span id="title1">The Programming Blog of</span><br/><span id="title2">Andreas Renberg (<span id="iqandreas"><span id="iq">IQ</span><span id="andreas">Andreas</span></span>)</span>
 subtitle: I'm only a Theoretical Developer
 author: Andreas Renberg (IQAndreas)
 simple_search: http://google.com/search

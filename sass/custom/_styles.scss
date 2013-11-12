@@ -1,6 +1,38 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+#header {
+	text-align: center;
+}
+
+#title1 {
+	font-size: 70%;
+}
+
+#title2 {
+	
+}
+
+span#andreas-renberg {
+	font-family: 'Roboto Slab', serif;
+}
+
+span#iqandreas {
+	font-weight: bold;
+	font-family: 'Roboto Slab', serif;
+}
+span#iq {
+	color:rgb(0, 144, 255);
+}
+span#andreas {
+	font-size: 120%;
+}
+
+a#title_link {
+	display: block;
+}
 
 /* ---- GISTS ---- */
 

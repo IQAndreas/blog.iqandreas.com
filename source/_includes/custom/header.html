@@ -1,5 +1,5 @@
-<hgroup>
-  <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+<hgroup id="header">
+  <h1><a id="title_link" href="{{ root_url }}/">{% if site.displayed_title %}{{ site.displayed_title }}{% else %}{{ site.title }}{% endif %}</a></h1>
   {% if site.subtitle %}
     <h2>{{ site.subtitle }}</h2>
   {% endif %}
