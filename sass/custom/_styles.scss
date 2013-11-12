@@ -8,6 +8,7 @@
 }
 
 #title1 {
+	color: $subtitle-color;
 	font-size: 60%;
 }
 
@@ -33,6 +34,12 @@ span#andreas {
 
 a#title_link {
 	display: block;
+}
+
+.hidden_link {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: inherit;
 }
 
 /* ---- GISTS ---- */
