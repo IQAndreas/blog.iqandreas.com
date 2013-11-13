@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-13T02:49:02+01:00</updated>
+  <updated>2013-11-13T02:52:55+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -95,10 +95,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
 
 <p>There are also further technical details in which ignores take precedence etc. in case anyone wants some heavier reading:</p>
 
-<ul>
-<li><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html"><img class="favicon" src="http://www.kernel.org/favicon.ico"> <em>gitignore(5) Manual Page</em></a></li>
-</ul>
-
+<p><li class="flink org kernel_org www_kernel_org"><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html">http://www.kernel.org/pub/software/scm/git/docs/gitignore.html</a>">&ldquo;GIT Docs: gitignore Manual Page&rdquo;</a></li></p>
 ]]></content>
   </entry>
   
