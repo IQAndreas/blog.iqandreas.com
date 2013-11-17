@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
+  <link href="http://blog.iqandreas.com/posts/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://blog.iqandreas.com/"/>
+  <updated>2013-11-17T12:15:51+01:00</updated>
+  <id>http://blog.iqandreas.com/</id>
+  <author>
+    <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[What are the default permissions for files in Ubuntu?]]></title>
+    <link href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/"/>
+    <updated>2013-11-17T10:54:00+01:00</updated>
+    <id>http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu</id>
+    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="{{%20page.url%20}}#summary">In a nutshell</a>.</em></p>
+
+<p>By default, when you create a file in Ubuntu as a standard user (either in Nautilus or with <code>touch</code>), it gets the permission of <code>644</code>. If you mark that file as executable, as expected, it gets the permission <code>755</code>.</p>
+
+<p>What may be surprising is that directories also have a default permission of <code>755</code>. Even though it seems like directories aren&rsquo;t the type of thing that would be &ldquo;executed&rdquo;, this flag is actually very important to Linux! <!-- more -->(and if anyone can find an article behind the reasoning behind this decision, I would love to find out)</p>
+
+<p>If a directory (or <em>any</em> of its parent directories) isn&rsquo;t marked as executable, you cannot <code>cd</code> into it. Although it is browsable in Nautilus, trying to write anything to the folder results in a &ldquo;forbidden&rdquo; or &ldquo;insufficient privileges&rdquo; error message. Some commands (like <code>ls</code>) work on the directory, while others (such as <code>stat</code>) do not.</p>
+
+<p>Links (both to files and directories) have the permission <code>777</code>, which I&rsquo;m assuming is done for the similar reasons as the executable bit on directories.</p>
+
+<h3>On external media</h3>
+
+<p>For external harddrives, USB drives, or SD cards that are mounted in <code>/media/&lt;username&gt;</code>, if you haven&rsquo;t manually changed either the mount settings or file system format of the drive, the file system type is likely to be either <code>Fat32</code> or <code>NTFS</code>. Here, the file permissions are going to be different, with a value of <code>600</code> for files and <code>700</code> for directories. Links remain the same at <code>777</code>, though it is unclear to me if links created in Linux are stored differently or not on foreign file systems.</p>
+
+<p>As far as I can tell, there is no way to change file and directory permissions, or even mark files as being executable without changing the mount settings, so all files are always stuck with a privilege of <code>600</code>. This makes sense as such file systems don&rsquo;t use the same type of permission settings for files, so storing the permission data would be difficult. In fact, I&rsquo;m just glad we are able read from and write to those types of file systems from Linux at all!</p>
+
+<h3><a name="summary"></a>In a nutshell</h3>
+
+<p>These are the default values for file permissions in Ubuntu 13.10. They may be the same in other Linux distributions, but I have not been able to verify this personally.</p>
+
+<p><strong>In a standard ext3 file system</strong></p>
+
+<ul>
+<li><code>644</code> files</li>
+<li><code>755</code> executable files</li>
+<li><code>755</code> directories</li>
+<li><code>777</code> links to files</li>
+<li><code>777</code> links to directories</li>
+</ul>
+
+
+<p><strong>For removable media (Fat32) and windows partitions (NTFS)</strong></p>
+
+<ul>
+<li><code>600</code> files (can&rsquo;t be executable)</li>
+<li><code>700</code> directories</li>
+<li><code>777</code> links to files</li>
+<li><code>777</code> links to directories</li>
+</ul>
+
+
+<h3>A script for better displaying file permissions in a directory</h3>
+
+<p>While you can display the permissions of files in a directory with <code>ls -l</code>, that information isn&rsquo;t very easy to read:</p>
+
+<p><code>bash
+ $ ls -l
+total 16
+drwxr-xr-x 2 andreas andreas 4096 Nov 17 11:00 cat-images-folder
+-rw-r--r-- 1 andreas andreas  245 Nov 17 10:58 cat-images.zip
+-rwxr-xr-x 1 andreas andreas   30 Nov 17 11:15 do-something.sh
+lrwxrwxrwx 1 andreas andreas   56 Nov 17 11:23 Link to cat-images-folder -&gt; /home/andreas/temp/cat-images-folder
+lrwxrwxrwx 1 andreas andreas   53 Nov 17 11:22 Link to cat-images.zip -&gt; /home/andreas/temp/cat-images.zip
+-rw-r--r-- 1 andreas andreas 1922 Nov 17 11:15 readme.txt
+</code></p>
+
+<p>Instead, you can instead use the <code>stat</code> command to display permissions in the more friendly &ldquo;octal notation&rdquo; (<a href="http://thenubbyadmin.com/2012/02/16/how-to-list-linux-file-permissions-in-octal-notation/">source</a>):</p>
+
+<p><code>bash
+ $ stat -c "%a %n" *
+755 cat-images-folder
+644 cat-images.zip
+755 do-something.sh
+777 Link to cat-images-folder
+777 Link to cat-images.zip
+644 readme.txt
+</code></p>
+
+<p>And if you want to tweak the output further (such as to tell us whether an item is a file, directory, or link), see the following page (or just run <code>man stat</code>) which lists all available options:</p>
+
+<p>{% flink <a href="http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html">http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html</a> &ldquo;Ubuntu manuals: stat&rdquo; %}</p>
+]]></content>
+  </entry>
+  
+</feed>
