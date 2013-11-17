@@ -12,7 +12,7 @@ I have recently played with the thought of the classic high score system being "
 Remember the good old days of playing Pac-Man at the arcade, burning quarter after quarter until you were #1? You could then laugh in the face of the last high score holder, and brag to all the local children and challenge them to beat your score.
 <sub><sup>_(Or maybe not, I was born a few years too late for the glory days of arcade games, so I'm guessing at how the high scores worked back then)_</sup></sub>
 
-{% img right /images/blog/high-score-2011-11-25-small.png Really really high high score %}
+{% img right /images/blog/high-score-2011-11-25.small.png Really really high high score %}
 
 But today, with the rise of flash games, no matter how hard you work at getting to the top, your fantastic score of 189,335 points will place you at position #24,890 in the high score list, with the top scores always being held by cheaters or some Asian kid with an abnormal talent for games and hours of time on his hands.
 
@@ -34,6 +34,6 @@ SpaceChem does an amazing job at including a high score system without "intimida
 
 When you have finished a working design, you see a bar chart of how creation's efficiency compares to the average user. This allows you to see which areas you could realistically improve your score without being blown out of the water by Sum Yung Gui from Beijing.
 
-{% img center /images/blog/spacechem-high-score-small.png Example SpaceChem high score result %}
+{% img center /images/blog/spacechem-high-score.small.png Example SpaceChem high score result %}
 
 If you know of any other games with unique and brilliant high score systems, share them in the comments.

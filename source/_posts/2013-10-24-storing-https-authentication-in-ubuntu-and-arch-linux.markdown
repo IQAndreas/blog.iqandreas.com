@@ -10,7 +10,7 @@ _**TL;DR version:** Skip to [Storing your HTTPS credentials using a Keyring]({{ 
 
 If you use GIT in Ubuntu, you may be used to this seeing this several times a day:
 
-{% img /images/blog/git-terminal-window-in-ubuntu-small.png GIT Terminal window in Ubuntu asking for credentials %}
+{% img /images/blog/git-terminal-window-in-ubuntu.small.png GIT Terminal window in Ubuntu asking for credentials %}
 
 Tired of constantly typing typing in your credentials? (especially since GitHub requires an alpha-numerical password, so your standard, "easy-to-type" one won't do)<!-- more -->
 
