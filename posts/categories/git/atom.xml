@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-17T08:34:02+01:00</updated>
+  <updated>2013-11-17T08:52:13+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -12,77 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[The things I hate in Git]]></title>
-    <link href="http://blog.iqandreas.com/git/the-things-i-hate-in-git/"/>
-    <updated>2013-11-17T07:42:00+01:00</updated>
-    <id>http://blog.iqandreas.com/git/the-things-i-hate-in-git</id>
-    <content type="html"><![CDATA[<p>I love Git to pieces, but there are a few things that annoy me constantly.</p>
-
-<h3>Inconsistent flag naming</h3>
-
-<p><code>
-git stash list
-git branch --list  # But to be fair, the command does the same thing without the flag
-git remote  # no `--list` flag or anything
-</code></p>
-
-<p><code>
-git stash drop
-git branch -d
-git remote remove
-</code></p>
-
-<h3>The default behavior of <code>git branch</code></h3>
-
-<p>Tell me, how often do you create a new branch, but want to stay on the current one? <em>It happens once or twice</em>.</p>
-
-<p>How often do you create a branch, and then want to switch to it immediately? <em>Pretty much all the time</em>.</p>
-
-<p>Sadly, the command <code>git branch &lt;new_branch_name&gt;</code> will by default do the former.</p>
-
-<p>I would much prefer to change the default behavior, and instead have an optional flag like <code>--stay</code>:</p>
-
-<p><code>
-git branch fix-camera-bug --stay
-</code></p>
-
-<p>Sure, you <em>could</em> run <code>git checkout -b &lt;new_branch_name&gt;</code>, but I see the <code>checkout</code> command as a way of jumping between branches, not of creating them. Still, I would much prefer if by default you automatically switched to new branches when you create them.</p>
-
-<h3>Git orphan</h3>
-
-<p>It&rsquo;s surprisingly often that you want to</p>
-
-<h3>Inconsistent use of</h3>
-
-<p>BEGINNER WARNING:</p>
-
-<p><code>
-repo/branch
-repo:branch
-repo branch
-</code></p>
-
-<h3>The inconsistent use of &ldquo;checkout&rdquo;</h3>
-
-<p>BEGINNER WARNING</p>
-
-<p>One minute, <code>git checkout</code> changes branches, the next minute,</p>
-
-<p>Also, <code>git reset</code> and <code>git fetch</code>.</p>
-
-<h3>Branches named 0a</h3>
-
-<p><code>
-git branch 0a
-</code></p>
-
-<p>Fine, this one is my fault, and not Git&rsquo;s, but about &frac14;th of the times I try to list all branches (<code>-a</code>), I accidentally create a new branch named <code>0a</code>. I guess my right pinky just isn&rsquo;t dexterous enough. :(</p>
-
-<p>Is there anything you</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git: How to move tags]]></title>
@@ -99,7 +28,7 @@ git branch 0a
 
 <p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
 
-<p>{% img /images/blog/git-terminal-window-overwrite-existing-tag-small.png GIT Terminal window in Ubuntu editing a GIT tag %}</p>
+<p><img src="/images/blog/git-terminal-window-overwrite-existing-tag-small.png" title="GIT Terminal window in Ubuntu editing a GIT tag" ></p>
 
 <p><em>Hey! That&rsquo;s my old tag description!</em> Now you can edit it if you want, or just save it as the way it was.</p>
 
@@ -107,8 +36,8 @@ git branch 0a
 
 <p>If you have already pushed the tag to the server and want to fix that, first make sure your local version of the tag is correct. Then all you need to do is make another <code>push</code> using the same <code>-f</code> (or <code>--force</code>) flag.</p>
 
-<p><code>bash
-git push origin --tags -f
+<p><code>
+ $ git push origin --tags -f
 </code></p>
 
 <p>Remember to alert any other developers on the team if you ever &ldquo;force&rdquo; a change like this. If they still have an &ldquo;old&rdquo; version of the tag around, it may cause conflicts when they try to push to the server!</p>
@@ -119,7 +48,7 @@ git push origin --tags -f
 
 <p>So, for example (in my case, the tag name is <code>v2.56</code> and the remote repository is named <code>origin</code>):</p>
 
-<p><code>bash
+<p><code>
  $ git tag -d v2.56
 Deleted tag 'v2.56' (was 75ff2f1)
  $ git fetch origin --tags
@@ -136,11 +65,11 @@ From https://github.com/FlixelCommunity/flixel
     <link href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/"/>
     <updated>2013-10-24T03:48:00+02:00</updated>
     <id>http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux</id>
-    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="{{%20page.url%20}}#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
+    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
 
 <p>If you use GIT in Ubuntu, you may be used to this seeing this several times a day:</p>
 
-<p>{% img /images/blog/git-terminal-window-in-ubuntu-small.png GIT Terminal window in Ubuntu asking for credentials %}</p>
+<p><img src="/images/blog/git-terminal-window-in-ubuntu-small.png" title="GIT Terminal window in Ubuntu asking for credentials" ></p>
 
 <p>Tired of constantly typing typing in your credentials? (especially since GitHub requires an alpha-numerical password, so your standard, &ldquo;easy-to-type&rdquo; one won&rsquo;t do)<!-- more --></p>
 
@@ -150,13 +79,13 @@ From https://github.com/FlixelCommunity/flixel
 
 <p>When using SSH, you only have to &ldquo;generate&rdquo; a key once for every computer you use, store it in the appropriate directory, and every time you connect to GitHub, that key will be used automatically:</p>
 
-<p>{% flink <a href="https://help.github.com/articles/generating-ssh-keys">https://help.github.com/articles/generating-ssh-keys</a> &ldquo;GitHub Help: Generating SSH Keys&rdquo; %}</p>
+<p><li class="flink com github_com help_github_com"><a href="https://help.github.com/articles/generating-ssh-keys">https://help.github.com/articles/generating-ssh-keys</a>">&ldquo;GitHub Help: Generating SSH Keys&rdquo;</a></li></p>
 
 <h4>If the SSH port is being blocked</h4>
 
 <p>If it&rsquo;s just an issue of blocked ports, GitHub does provide a service for creating an SSH connection (usually <code>port 22</code>) through the HTTPS port (<code>port 443</code>) which may get past most firewalls. I&rsquo;m unsure if this is preferable to connecting over HTTPS or not, but at least the option is available:</p>
 
-<p>{% flink <a href="https://help.github.com/articles/using-ssh-over-the-https-port">https://help.github.com/articles/using-ssh-over-the-https-port</a> &ldquo;GitHub Help: Using SSH over the HTTPS port&rdquo; %}</p>
+<p><li class="flink com github_com help_github_com"><a href="https://help.github.com/articles/using-ssh-over-the-https-port">https://help.github.com/articles/using-ssh-over-the-https-port</a>">&ldquo;GitHub Help: Using SSH over the HTTPS port&rdquo;</a></li></p>
 
 <h3><a name="storing-your-https-credentials-using-a-keyring"></a>Storing your HTTPS credentials using a Keyring</h3>
 
@@ -164,7 +93,7 @@ From https://github.com/FlixelCommunity/flixel
 
 <p>Instead, you can use <code>gnome-keyring</code> to store your credentials more securely (<a href="http://stackoverflow.com/a/14528360/617937">thanks to James Ward and marcosdsanchez</a> for this solution). <em>This solution assumes you are using GIT 1.8.0 or newer, which if you installed it via <code>apt</code>, you are. If not, you can find the latest version of git from the following URL:</em></p>
 
-<p>{% flink <a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a> &ldquo;Git: Downloads&rdquo; %}</p>
+<p><li class="flink com git-scm_com"><a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>">&ldquo;Git: Downloads&rdquo;</a></li></p>
 
 <p><code>bash
 $ sudo apt-get install libgnome-keyring-dev
@@ -174,7 +103,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
 
 <p>If you are using Arch Linux, you will require <a href="http://stackoverflow.com/a/13390889/617937">a slightly different command</a>, and if you are using OS-X or Windows, GitHub has provided a short set of instructions to use the same GIT feature:</p>
 
-<p>{% flink <a href="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage">https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage</a> &ldquo;GitHub Blog: Credential Caching for Wrist-Friendly Git Usage&rdquo; %}</p>
+<p><li class="flink com github_com"><a href="https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage">https://github.com/blog/1104-credential-caching-for-wrist-friendly-git-usage</a>">&ldquo;GitHub Blog: Credential Caching for Wrist-Friendly Git Usage&rdquo;</a></li></p>
 
 <p>After typing in your user-name and password once the next time you are prompted for it, the credentials should be stored, saving you a lot of typing in the future. If that worked, you are done.</p>
 
@@ -213,7 +142,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
 
 <p>There are also further technical details in which ignores take precedence etc. in case anyone wants some heavier reading:</p>
 
-<p>{% flink <a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html">http://www.kernel.org/pub/software/scm/git/docs/gitignore.html</a> &ldquo;GIT Docs: gitignore Manual Page&rdquo; %}</p>
+<p><li class="flink org kernel_org www_kernel_org"><a href="http://www.kernel.org/pub/software/scm/git/docs/gitignore.html">http://www.kernel.org/pub/software/scm/git/docs/gitignore.html</a>">&ldquo;GIT Docs: gitignore Manual Page&rdquo;</a></li></p>
 ]]></content>
   </entry>
   

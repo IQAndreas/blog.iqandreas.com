@@ -10,11 +10,11 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta charset="utf-8">
-  <title>I Will Code for Free! - The Programming Blog of Andreas Renberg (IQAndreas)</title>
+  <title>Git: How to move tags - The Programming Blog of Andreas Renberg (IQAndreas)</title>
   <meta name="author" content="Andreas Renberg (IQAndreas)">
   
   
-  <meta name="description" content="No, it&rsquo;s not a trap. There is no fine-print. If you need any help with code but are working on a low budget, I&rsquo;m your man. I also do &hellip;">
+  <meta name="description" content="Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.iqandreas.com/i-will-code-for-free">
+  <link rel="canonical" href="http://blog.iqandreas.com/git/how-to-move-tags">
   <link href="/favicon.png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="The Programming Blog of Andreas Renberg (IQAndreas)" type="application/atom+xml">
   <!-- STYLESHEETS -->
@@ -101,7 +101,7 @@
   
   <header>
     
-      <h1 class="entry-title">I Will Code for Free!</h1>
+      <h1 class="entry-title">Git: How to Move Tags</h1>
     
     
       <p class="meta">
@@ -117,48 +117,56 @@
   
 
 
-<time datetime="2012-04-16T06:54:00+02:00" pubdate data-updated="true">Apr 16<span>th</span>, 2012</time>
+<time datetime="2013-11-17T06:43:00+01:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>No, it&rsquo;s not a trap. There is no fine-print.</p>
+<div class="entry-content"><p>Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?</p>
 
-<p>If you need any help with code but are working on a low budget, <strong>I&rsquo;m your man</strong>. I also do tutoring, helping to explain anything you may have missed or still don&rsquo;t understand fully when learning a new programming language.<!-- more --></p>
+<p><strong>Unrelated but important side note:</strong> Since you are tagging in Git, <a href="http://www.rockstarprogrammer.org/post/2008/oct/16/git-tag-does-wrong-thing-default/">you are using the <code>-a</code> flag, right?</a></p>
 
-<h3>Why free?</h3>
+<h3>Editing the tag locally</h3>
 
-<p>We have all been in that situation. You need a small feature added or have a minor item that needs fixing in a programming language you either have never used or are still new to. You have two options.</p>
+<p>You could <span class="hoverable" title="git tag -d <tag_name>&ldquo;>delete it</span> and <span class="hoverable" title="git tag -a <tag_name>&rdquo;>re-add it</span>, but all the hard work you put into writing the tag&rsquo;s description would be lost.</p>
 
-<ol>
-<li><p>Spend the next seven hours (or more) digging through Google trying to find something similar, and eventually hack and slash together something that <em>sort of</em> works the way you want it to.</p></li>
-<li><p>Hire a professional at $75 per hour to do the job.</p></li>
-</ol>
+<p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
 
+<p><img src="/images/blog/git-terminal-window-overwrite-existing-tag-small.png" title="GIT Terminal window in Ubuntu editing a GIT tag" ></p>
 
-<p><span class='pullquote-right' data-pullquote='when someone familiar with the language could have done it in 15 minutes'>I have been faced with these choices, and it saddens me that I nearly always choose option #1, wasting <strong>hours</strong> of my time when someone familiar with the language could have done it in 15 minutes. But if I hired a professional to help me out for every 15 minute job that blocked my path&hellip;</span></p>
+<p><em>Hey! That&rsquo;s my old tag description!</em> Now you can edit it if you want, or just save it as the way it was.</p>
 
-<h3>I can afford working free for 15 minutes</h3>
+<h3>Editing the tag on the server</h3>
 
-<p>Although I reserve the right to decline any job, <a href="/contact">contact me</a> if you need assistance with any of the following:</p>
+<p>If you have already pushed the tag to the server and want to fix that, first make sure your local version of the tag is correct. Then all you need to do is make another <code>push</code> using the same <code>-f</code> (or <code>--force</code>) flag.</p>
 
-<ul>
-<li><p><strong>Fixing/Tweaking existing code</strong> &ndash; Do you want that menu on the left instead of the right and to expand when you click on it instead of hovering over it? I&rsquo;ll fix that.</p></li>
-<li><p><strong>Debugging</strong> &ndash; I love searching for and fixing bugs, I don&rsquo;t know why.</p></li>
-<li><p><strong>Explaining code</strong> &ndash; I <a href="http://iqandreas.github.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/">tend</a> <a href="http://www.kirupa.com/forum/showthread.php?334440-Video-scrubber-positioning-problems">to</a> <a href="http://www.kirupa.com/forum/showthread.php?275077-1203-No-default-constructor">get</a> <a href="http://www.kirupa.com/forum/showthread.php?324256-1-class-to-multiple-library-assets-error-1203">illustrative</a> when explaining concepts in programming. Some find this uneccessary, but for others (including myself) it makes concepts easier to understand. Though usually my explanations aren&rsquo;t <em>that</em> long.</p></li>
-<li><p><strong>Writing code</strong> &ndash; I will only write code for small and sometimes medium sized projects. If you want to create a MMORPG from scratch and need a free coder, search elsewhere. But if you want a script to verify the user&rsquo;s email address when they submit a comment, perfect!</p></li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ git push origin --tags -f</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Programming languages</h3>
+<p>Remember to alert any other developers on the team if you ever &ldquo;force&rdquo; a change like this. If they still have an &ldquo;old&rdquo; version of the tag around, it may cause conflicts when they try to push to the server!</p>
 
-<p>I am <em>very</em> comfortable with <strong>ActionScript</strong>, and have a firm grasp of the basics and syntax of <strong>PHP</strong>, <strong>JavaScript</strong>, and <strong>Java</strong>.</p>
+<h3>If the tag is edited on the server, but the local one is old</h3>
 
-<p><strong>I am not a designer.</strong> I can only help with code, not making things look nice (which includes HTML and CSS).</p>
+<p>Say <em>someone else</em> moved a tag, but the version in your local repository still points to the old commit? First, delete the local tag, then pull in the changes from the remote repo; the new tag will be added automatically.</p>
 
-<p>I can be contacted via the form below, or via the media listed on the <a href="/contact">contact</a> page.</p>
+<p>So, for example (in my case, the tag name is <code>v2.56</code> and the remote repository is named <code>origin</code>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ git tag -d v2.56
+</span><span class='line'>Deleted tag 'v2.56' (was 75ff2f1)
+</span><span class='line'> $ git fetch origin --tags
+</span><span class='line'>From https://github.com/FlixelCommunity/flixel
+</span><span class='line'> * [new tag]         v2.56      -&gt; v2.56</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this example, the <code>--tags</code> flag was actually optional, since <code>git fetch</code> will by default automatically fetch tags along with any modified branches. But there is no harm leaving it in there for clarity.</p>
 </div>
 
 
@@ -181,15 +189,21 @@
   
 
 
-<time datetime="2012-04-16T06:54:00+02:00" pubdate data-updated="true">Apr 16<span>th</span>, 2012</time>
+<time datetime="2013-11-17T06:43:00+01:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/posts/categories/git/'>git</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.iqandreas.com/i-will-code-for-free/" data-via="IQAndreas" data-counturl="http://blog.iqandreas.com/i-will-code-for-free/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.iqandreas.com/git/how-to-move-tags/" data-via="IQAndreas" data-counturl="http://blog.iqandreas.com/git/how-to-move-tags/" >Tweet</a>
   
   
   
@@ -198,10 +212,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/monologues/why-so-many-monologues/" title="Previous Post: Why so many Monologues?">&laquo; Why so many Monologues?</a>
+        <a class="basic-alignment left" href="/git/storing-https-authentication-in-ubuntu-and-arch-linux/" title="Previous Post: GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)">&laquo; GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)</a>
       
-      
-        <a class="basic-alignment right" href="/monologues/pick-a-community-any-community/" title="Next Post: Pick a Community, any Community">Pick a Community, any Community &raquo;</a>
       
     </p>
   </footer>
@@ -218,9 +230,9 @@
 	All comments are held for moderation; Markdown and basic HTML formatting accepted.
 </p>
 <form id="commentform" method="POST" action="http://api.iqandreas.com/jekyll-static-comments/commentsubmit.php">
-	<input type="hidden" name="page_id" value="/i-will-code-for-free" />
-	<input type="hidden" name="page_title" value="I Will Code for Free!" />
-	<input type="hidden" name="return_url" value="http://blog.iqandreas.com/i-will-code-for-free/" />
+	<input type="hidden" name="page_id" value="/git/how-to-move-tags" />
+	<input type="hidden" name="page_title" value="Git: How to move tags" />
+	<input type="hidden" name="return_url" value="http://blog.iqandreas.com/git/how-to-move-tags/" />
 	<table>
 		<tr>
 			<th><label for="commenter-name">Name:</label></th>

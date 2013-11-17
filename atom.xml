@@ -4,7 +4,7 @@
   <title><![CDATA[The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-15T05:29:14+01:00</updated>
+  <updated>2013-11-17T08:52:13+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git: How to move tags]]></title>
+    <link href="http://blog.iqandreas.com/git/how-to-move-tags/"/>
+    <updated>2013-11-17T06:43:00+01:00</updated>
+    <id>http://blog.iqandreas.com/git/how-to-move-tags</id>
+    <content type="html"><![CDATA[<p>Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?</p>
+
+<p><strong>Unrelated but important side note:</strong> Since you are tagging in Git, <a href="http://www.rockstarprogrammer.org/post/2008/oct/16/git-tag-does-wrong-thing-default/">you are using the <code>-a</code> flag, right?</a></p>
+
+<h3>Editing the tag locally</h3>
+
+<p>You could <span class="hoverable" title="git tag -d <tag_name>&ldquo;>delete it</span> and <span class="hoverable" title="git tag -a <tag_name>&rdquo;>re-add it</span>, but all the hard work you put into writing the tag&rsquo;s description would be lost.</p>
+
+<p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
+
+<p><img src="http://blog.iqandreas.com/images/blog/git-terminal-window-overwrite-existing-tag-small.png" title="GIT Terminal window in Ubuntu editing a GIT tag" ></p>
+
+<p><em>Hey! That&rsquo;s my old tag description!</em> Now you can edit it if you want, or just save it as the way it was.</p>
+
+<h3>Editing the tag on the server</h3>
+
+<p>If you have already pushed the tag to the server and want to fix that, first make sure your local version of the tag is correct. Then all you need to do is make another <code>push</code> using the same <code>-f</code> (or <code>--force</code>) flag.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ git push origin --tags -f</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Remember to alert any other developers on the team if you ever &ldquo;force&rdquo; a change like this. If they still have an &ldquo;old&rdquo; version of the tag around, it may cause conflicts when they try to push to the server!</p>
+
+<h3>If the tag is edited on the server, but the local one is old</h3>
+
+<p>Say <em>someone else</em> moved a tag, but the version in your local repository still points to the old commit? First, delete the local tag, then pull in the changes from the remote repo; the new tag will be added automatically.</p>
+
+<p>So, for example (in my case, the tag name is <code>v2.56</code> and the remote repository is named <code>origin</code>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ git tag -d v2.56
+</span><span class='line'>Deleted tag 'v2.56' (was 75ff2f1)
+</span><span class='line'> $ git fetch origin --tags
+</span><span class='line'>From https://github.com/FlixelCommunity/flixel
+</span><span class='line'> * [new tag]         v2.56      -&gt; v2.56</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this example, the <code>--tags</code> flag was actually optional, since <code>git fetch</code> will by default automatically fetch tags along with any modified branches. But there is no harm leaving it in there for clarity.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)]]></title>
@@ -1305,55 +1356,6 @@ And a whole lot more!</p>
 <p>That is Events 101.</p>
 
 <p>Continue to <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">Part #2 &ndash; Custom Events</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ActionScript Blogs to Follow [March 2010]]]></title>
-    <link href="http://blog.iqandreas.com/actionscript/actionscript-blogs-to-follow-march-2010/"/>
-    <updated>2010-03-10T10:36:00+01:00</updated>
-    <id>http://blog.iqandreas.com/actionscript/actionscript-blogs-to-follow-march-2010</id>
-    <content type="html"><![CDATA[<p>A Google search for &ldquo;<a href="http://www.google.com/search?&amp;q=actionscript+blog">ActionScript blog</a>&rdquo; returns over 5,790,000 results. In a widespread internet world like this, it can be difficult (especially for beginners) sifting through which information is reliable and helpful, and which simply isn&rsquo;t (hopefully this blog is not in the latter category).</p>
-
-<p>Here is my personal list of blogs I find quite worthwhile to bookmark and check up on from time to time.<!-- more --></p>
-
-<h3>Freelance Flash Games</h3>
-
-<p><a href="http://freelanceflashgames.com/news/">http://freelanceflashgames.com/news/</a></p>
-
-<p>A great resource which stands out primarily for it&rsquo;s great articles about <a href="http://freelanceflashgames.com/news/2009/03/26/understanding-sponsorship-licenses/">sponsorships</a>, advertisements, game design, and where to find sounds, fonts, and graphics for your games.</p>
-
-<h3>I help people make games &ndash; Michael James Williams</h3>
-
-<p><a href="http://gamedev.michaeljameswilliams.com/blog/">http://gamedev.michaeljameswilliams.com/blog/</a></p>
-
-<p>Several great tutorials and posts on making games, most notable for his guide on <a href="http://gamedev.michaeljameswilliams.com/as3-avoider-game-tutorial-base/">creating an Avoider Game</a> in ActionScript 3, where no prior knowledge of programming required. One very helpful recent post is learning to <a href="http://gamedev.michaeljameswilliams.com/2010/02/28/blitting-movie-clips-flash-as3/">Blit and Cache MovieClips</a>.</p>
-
-<h3>Emanuele Feronato &ndash; Italian geek and PROgrammer</h3>
-
-<p><a href="http://www.emanueleferonato.com/">http://www.emanueleferonato.com/</a></p>
-
-<p>Emanuele has several great tutorials on learning to make games, including using <a href="http://box2dflash.sourceforge.net/">Box2D</a> to create physics based games. Also a bountiful source of <strike>advertising</strike> reviews for a lot of commercial ActionScript software.</p>
-
-<h3>gskinner.com &ndash; gBlog</h3>
-
-<p><a href="http://gskinner.com/blog/">http://gskinner.com/blog/</a></p>
-
-<p>From the guy most notable for the &ldquo;<a href="http://gskinner.com/libraries/gtween/">GTween</a>&rdquo; tweening engine and the new, easy to use <a href="http://www.gskinner.com/blog/archives/2009/04/as3_performance.html">Performance Tester</a>. New classes and utilities are released every so often, however, most posts are aimed more at intermediate ActionScript developers.</p>
-
-<h3>Rasmus Wriedt Larsen</h3>
-
-<p><a href="http://gamedev.rasmuswriedtlarsen.com/">http://gamedev.rasmuswriedtlarsen.com/</a></p>
-
-<p>He doesn&rsquo;t have great amount of posts yet, and updates about as (ir)regularly as me, but the does have several helpful and easy to read articles, including how to use the undocumented function &ldquo;addFrameScript&rdquo; to add code to <a href="http://gamedev.rasmuswriedtlarsen.com/2010/01/13/quicktip-execute-code-after-animaiton/">run once a MovieClip has finished playing</a> without the need of a timeline.</p>
-
-<h3>gotoAndLearn()</h3>
-
-<p><a href="http://www.gotoandlearn.com/">http://www.gotoandlearn.com/</a></p>
-
-<p>A fantastic set of video tutorials on various categories, mostly made up of &ldquo;introduction&rdquo; and &ldquo;getting started&rdquo; videos for things like <a href="http://www.gotoandlearn.com/play?id=105">Augmented Reality</a>, <a href="http://www.gotoandlearn.com/play?id=120">ByteArrays</a>, ZendAMF, SWF Address, and more. It&rsquo;s not a blog per se, (Lee Brimelow does have a blog as well, but it&rsquo;s not always &ldquo;beginner friendly&rdquo;) but it&rsquo;s definitely worth following, and a great source for beginners.</p>
-
-<p>Do you have any favorite blogs you like to follow? Post a comment!</p>
 ]]></content>
   </entry>
   
