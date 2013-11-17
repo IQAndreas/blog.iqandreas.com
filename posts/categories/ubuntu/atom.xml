@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-17T12:15:51+01:00</updated>
+  <updated>2013-11-17T12:25:40+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -18,7 +18,11 @@
     <link href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/"/>
     <updated>2013-11-17T10:54:00+01:00</updated>
     <id>http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu</id>
-    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="{{%20page.url%20}}#summary">In a nutshell</a>.</em></p>
+    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="#summary">In a nutshell</a>.</em></p>
+
+<p><em>This article assumes you understand the notiation for file system permissions, and have a basic grasp on the topic. If not, there is a nice starter article on the Ubuntu community wiki:</em></p>
+
+<p><li class="flink com ubuntu_com help_ubuntu_com"><a href="https://help.ubuntu.com/community/FilePermissions">https://help.ubuntu.com/community/FilePermissions</a>">&ldquo;Ubuntu: Understanding and using File Permissions&rdquo;</a></li></p>
 
 <p>By default, when you create a file in Ubuntu as a standard user (either in Nautilus or with <code>touch</code>), it gets the permission of <code>644</code>. If you mark that file as executable, as expected, it gets the permission <code>755</code>.</p>
 
@@ -63,7 +67,7 @@
 
 <p>While you can display the permissions of files in a directory with <code>ls -l</code>, that information isn&rsquo;t very easy to read:</p>
 
-<p><code>bash
+<p><code>
  $ ls -l
 total 16
 drwxr-xr-x 2 andreas andreas 4096 Nov 17 11:00 cat-images-folder
@@ -76,7 +80,7 @@ lrwxrwxrwx 1 andreas andreas   53 Nov 17 11:22 Link to cat-images.zip -&gt; /hom
 
 <p>Instead, you can instead use the <code>stat</code> command to display permissions in the more friendly &ldquo;octal notation&rdquo; (<a href="http://thenubbyadmin.com/2012/02/16/how-to-list-linux-file-permissions-in-octal-notation/">source</a>):</p>
 
-<p><code>bash
+<p><code>
  $ stat -c "%a %n" *
 755 cat-images-folder
 644 cat-images.zip
@@ -88,7 +92,7 @@ lrwxrwxrwx 1 andreas andreas   53 Nov 17 11:22 Link to cat-images.zip -&gt; /hom
 
 <p>And if you want to tweak the output further (such as to tell us whether an item is a file, directory, or link), see the following page (or just run <code>man stat</code>) which lists all available options:</p>
 
-<p>{% flink <a href="http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html">http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html</a> &ldquo;Ubuntu manuals: stat&rdquo; %}</p>
+<p><li class="flink com ubuntu_com manpages_ubuntu_com"><a href="http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html">http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html</a>">&ldquo;Ubuntu manuals: stat&rdquo;</a></li></p>
 ]]></content>
   </entry>
   

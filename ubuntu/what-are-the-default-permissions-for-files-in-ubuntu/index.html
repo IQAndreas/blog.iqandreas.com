@@ -10,11 +10,11 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta charset="utf-8">
-  <title>GIT: How to move tags - The Programming Blog of Andreas Renberg (IQAndreas)</title>
+  <title>What are the default permissions for files in Ubuntu? - The Programming Blog of Andreas Renberg (IQAndreas)</title>
   <meta name="author" content="Andreas Renberg (IQAndreas)">
   
   
-  <meta name="description" content="Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How &hellip;">
+  <meta name="description" content="TL;DR version: Skip to In a nutshell. This article assumes you understand the notiation for file system permissions, and have a basic grasp on the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.iqandreas.com/git/how-to-move-tags">
+  <link rel="canonical" href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu">
   <link href="/favicon.png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="The Programming Blog of Andreas Renberg (IQAndreas)" type="application/atom+xml">
   <!-- STYLESHEETS -->
@@ -101,7 +101,7 @@
   
   <header>
     
-      <h1 class="entry-title">GIT: How to Move Tags</h1>
+      <h1 class="entry-title">What Are the Default Permissions for Files in Ubuntu?</h1>
     
     
       <p class="meta">
@@ -117,56 +117,101 @@
   
 
 
-<time datetime="2013-11-17T06:43:00+01:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
+<time datetime="2013-11-17T10:54:00+01:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?<!-- more --></p>
+<div class="entry-content"><p><em><strong>TL;DR version:</strong> Skip to <a href="/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/#summary">In a nutshell</a>.</em></p>
 
-<p><strong>Unrelated but important side note:</strong> Since you are tagging in Git, <a href="http://www.rockstarprogrammer.org/post/2008/oct/16/git-tag-does-wrong-thing-default/">you are using the <code>-a</code> flag, right?</a></p>
+<p><em>This article assumes you understand the notiation for file system permissions, and have a basic grasp on the topic. If not, there is a nice starter article on the Ubuntu community wiki:</em></p>
 
-<h3>Editing the tag locally</h3>
+<p><li class="flink com ubuntu_com help_ubuntu_com"><a href="https://help.ubuntu.com/community/FilePermissions">Ubuntu: Understanding and using File Permissions</a></li></p>
 
-<p>You could <span class="hoverable" title="git tag -d &lt;tag_name&gt;">delete it</span> and <span class="hoverable" title="git tag -a &lt;tag_name&gt;">re-add it</span>, but all the hard work you put into writing the tag&rsquo;s description would be lost.</p>
+<p>By default, when you create a file in Ubuntu as a standard user (either in Nautilus or with <code>touch</code>), it gets the permission of <code>644</code>. If you mark that file as executable, as expected, it gets the permission <code>755</code>.</p>
 
-<p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
+<p>What may be surprising is that directories also have a default permission of <code>755</code>. Even though it seems like directories aren&rsquo;t the type of thing that would be &ldquo;executed&rdquo;, this flag is actually very important to Linux! <!-- more -->(and if anyone can find an article behind the reasoning behind this decision, I would love to find out)</p>
 
-<p><img src="/images/blog/git-terminal-window-overwrite-existing-tag.small.png" title="&#34;Terminal window in Ubuntu editing a GIT tag&#34;" alt="&#34;Terminal window in Ubuntu editing a GIT tag&#34;"></p>
+<p>If a directory (or <em>any</em> of its parent directories) isn&rsquo;t marked as executable, you cannot <code>cd</code> into it. Although it is browsable in Nautilus, trying to write anything to the folder results in a &ldquo;forbidden&rdquo; or &ldquo;insufficient privileges&rdquo; error message. Some commands (like <code>ls</code>) work on the directory, while others (such as <code>stat</code>) do not.</p>
 
-<p><em>Hey! That&rsquo;s my old tag description!</em> Now you can edit it if you want, or just save it as the way it was.</p>
+<p>Links (both to files and directories) have the permission <code>777</code>, which I&rsquo;m assuming is done for the similar reasons as the executable bit on directories.</p>
 
-<h3>Editing the tag on the server</h3>
+<h3>On external media</h3>
 
-<p>If you have already pushed the tag to the server and want to fix that, first make sure your local version of the tag is correct. Then all you need to do is make another <code>push</code> using the same <code>-f</code> (or <code>--force</code>) flag.</p>
+<p>For external harddrives, USB drives, or SD cards that are mounted in <code>/media/&lt;username&gt;</code>, if you haven&rsquo;t manually changed either the mount settings or file system format of the drive, the file system type is likely to be either <code>Fat32</code> or <code>NTFS</code>. Here, the file permissions are going to be different, with a value of <code>600</code> for files and <code>700</code> for directories. Links remain the same at <code>777</code>, though it is unclear to me if links created in Linux are stored differently or not on foreign file systems.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> $ git push origin --tags -f</span></code></pre></td></tr></table></div></figure>
+<p>As far as I can tell, there is no way to change file and directory permissions, or even mark files as being executable without changing the mount settings, so all files are always stuck with a privilege of <code>600</code>. This makes sense as such file systems don&rsquo;t use the same type of permission settings for files, so storing the permission data would be difficult. In fact, I&rsquo;m just glad we are able read from and write to those types of file systems from Linux at all!</p>
+
+<h3><a name="summary"></a>In a nutshell</h3>
+
+<p>These are the default values for file permissions in Ubuntu 13.10. They may be the same in other Linux distributions, but I have not been able to verify this personally.</p>
+
+<p><strong>In a standard ext3 file system</strong></p>
+
+<ul>
+<li><code>644</code> files</li>
+<li><code>755</code> executable files</li>
+<li><code>755</code> directories</li>
+<li><code>777</code> links to files</li>
+<li><code>777</code> links to directories</li>
+</ul>
 
 
-<p>Remember to alert any other developers on the team if you ever &ldquo;force&rdquo; a change like this. If they still have an &ldquo;old&rdquo; version of the tag around, it may cause conflicts when they try to push to the server!</p>
+<p><strong>For removable media (Fat32) and windows partitions (NTFS)</strong></p>
 
-<h3>If the tag is edited on the server, but the local one is old</h3>
+<ul>
+<li><code>600</code> files (can&rsquo;t be executable)</li>
+<li><code>700</code> directories</li>
+<li><code>777</code> links to files</li>
+<li><code>777</code> links to directories</li>
+</ul>
 
-<p>Say <em>someone else</em> moved a tag, but the version in your local repository still points to the old commit? First, delete the local tag, then pull in the changes from the remote repo; the new tag will be added automatically.</p>
 
-<p>So, for example (in my case, the tag name is <code>v2.56</code> and the remote repository is named <code>origin</code>):</p>
+<h3>A script for better displaying file permissions in a directory</h3>
+
+<p>While you can display the permissions of files in a directory with <code>ls -l</code>, that information isn&rsquo;t very easy to read:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> $ git tag -d v2.56
-</span><span class='line'>Deleted tag 'v2.56' (was 75ff2f1)
-</span><span class='line'> $ git fetch origin --tags
-</span><span class='line'>From https://github.com/FlixelCommunity/flixel
-</span><span class='line'> * [new tag]         v2.56      -&gt; v2.56</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls -l
+</span><span class='line'>total 16
+</span><span class='line'>drwxr-xr-x 2 andreas andreas 4096 Nov 17 11:00 cat-images-folder
+</span><span class='line'>-rw-r--r-- 1 andreas andreas  245 Nov 17 10:58 cat-images.zip
+</span><span class='line'>-rwxr-xr-x 1 andreas andreas   30 Nov 17 11:15 do-something.sh
+</span><span class='line'>lrwxrwxrwx 1 andreas andreas   56 Nov 17 11:23 Link to cat-images-folder -&gt; /home/andreas/temp/cat-images-folder
+</span><span class='line'>lrwxrwxrwx 1 andreas andreas   53 Nov 17 11:22 Link to cat-images.zip -&gt; /home/andreas/temp/cat-images.zip
+</span><span class='line'>-rw-r--r-- 1 andreas andreas 1922 Nov 17 11:15 readme.txt</span></code></pre></td></tr></table></div></figure>
 
 
-<p>In this example, the <code>--tags</code> flag was actually optional, since <code>git fetch</code> will by default automatically fetch tags along with any modified branches. But there is no harm leaving it in there for clarity.</p>
+<p>Instead, you can instead use the <code>stat</code> command to display permissions in the more friendly &ldquo;octal notation&rdquo; (<a href="http://thenubbyadmin.com/2012/02/16/how-to-list-linux-file-permissions-in-octal-notation/">source</a>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ stat -c "%a %n" *
+</span><span class='line'>755 cat-images-folder
+</span><span class='line'>644 cat-images.zip
+</span><span class='line'>755 do-something.sh
+</span><span class='line'>777 Link to cat-images-folder
+</span><span class='line'>777 Link to cat-images.zip
+</span><span class='line'>644 readme.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And if you want to tweak the output further (such as to tell us whether an item is a file, directory, or link), see the following page (or just run <code>man stat</code>) which lists all available options:</p>
+
+<p><li class="flink com ubuntu_com manpages_ubuntu_com"><a href="http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html">Ubuntu manuals: stat</a></li></p>
 </div>
 
 
@@ -189,12 +234,12 @@
   
 
 
-<time datetime="2013-11-17T06:43:00+01:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
+<time datetime="2013-11-17T10:54:00+01:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/posts/categories/git/'>git</a>
+    <a class='category' href='/posts/categories/ubuntu/'>ubuntu</a>
   
 </span>
 
@@ -203,7 +248,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.iqandreas.com/git/how-to-move-tags/" data-via="IQAndreas" data-counturl="http://blog.iqandreas.com/git/how-to-move-tags/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/" data-via="IQAndreas" data-counturl="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/" >Tweet</a>
   
   
   
@@ -212,10 +257,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/git/storing-https-authentication-in-ubuntu-and-arch-linux/" title="Previous Post: GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)">&laquo; GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)</a>
+        <a class="basic-alignment left" href="/git/how-to-move-tags/" title="Previous Post: GIT: How to move tags">&laquo; GIT: How to move tags</a>
       
-      
-        <a class="basic-alignment right" href="/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/" title="Next Post: What are the default permissions for files in Ubuntu?">What are the default permissions for files in Ubuntu? &raquo;</a>
       
     </p>
   </footer>
@@ -232,9 +275,9 @@
 	All comments are held for moderation; Markdown and basic HTML formatting accepted.
 </p>
 <form id="commentform" method="POST" action="http://api.iqandreas.com/jekyll-static-comments/commentsubmit.php">
-	<input type="hidden" name="page_id" value="/git/how-to-move-tags" />
-	<input type="hidden" name="page_title" value="GIT: How to move tags" />
-	<input type="hidden" name="return_url" value="http://blog.iqandreas.com/git/how-to-move-tags/" />
+	<input type="hidden" name="page_id" value="/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu" />
+	<input type="hidden" name="page_title" value="What are the default permissions for files in Ubuntu?" />
+	<input type="hidden" name="return_url" value="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/" />
 	<table>
 		<tr>
 			<th><label for="commenter-name">Name:</label></th>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: actionscript | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/actionscript/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-17T12:15:51+01:00</updated>
+  <updated>2013-11-17T12:25:40+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -72,17 +72,28 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
 
 <p>Turns out, this isn&rsquo;t entirely true. The compiler only adds <code>super()</code> if it doesn&rsquo;t see it written out in the constructor. It makes no distinction whether you actually call it or not. Here is a simple little trick if you want to completely hop over calling <code>super()</code> when creating a sub-class.<!-- more --></p>
 
-<p>{% gist 2922489 %}</p>
+<p><div><script src='https://gist.github.com/2922489.js'></script>
+<noscript><pre><code>class Subclass extends Base 
+{
+	public function Subclass()
+	{
+		if (false)
+		{
+			super();
+		}
+	}
+}</code></pre></noscript></div>
+</p>
 
 <p>If you want more reading on the matter, this information was taken from a forum thread by <a href="http://me.reclipse.net/">Krilnon</a> over at the Kirupa forums.</p>
 
 <ul>
-<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior">{% img favicon http://www.kirupa.com/favicon.ico %} [TIP] Skipping super() &ndash; Interesting behavior</a></li>
+<li><a href="http://www.kirupa.com/forum/showthread.php?363399-Tip-Skipping-super%28%29-Interesting-behavior"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> [TIP] Skipping super() &ndash; Interesting behavior</a></li>
 </ul>
 
 
 <p>But remember, as I brought up in the forum thread linked to above:
-{% blockquote %}In my opinion, this is pure evil! No good can come of not calling constructors, none at all&hellip;{% endblockquote %}</p>
+<blockquote><p>In my opinion, this is pure evil! No good can come of not calling constructors, none at all&hellip;</p></blockquote></p>
 
 <p>So use with caution!</p>
 ]]></content>
@@ -95,7 +106,7 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
     <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
     <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which &ldquo;resets&rdquo; the internal SWFViewer in case it won&rsquo;t open after closing improperly.</p>
 
-<p>{% img center /images/blog/fdt-in-ubuntu-applications-menu.png FDT in Ubuntu Applications Menu %}</p>
+<p><img class="center" src="/images/blog/fdt-in-ubuntu-applications-menu.png" title="FDT in Ubuntu Applications Menu" ></p>
 
 <!-- more -->
 
@@ -112,7 +123,7 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
 
 <p>If you want to do this the easy way, download the pre-made files from the <a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files">GitHub repository</a> and install them to the locations specified in the README.</p>
 
-<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master">{% img favicon /images/icons/icon_archive.gif %} https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
+<p><a href="https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master"><img class="favicon" src="/images/icons/icon_archive.gif"> https://github.com/IQAndreas/FDT-Ubuntu-Launcher-Files/zipball/master</a></p>
 
 <p>You are all done. Enjoy!</p>
 
@@ -122,7 +133,17 @@ if ((data.length > 0) &amp;&amp; server.enabled)</p>
 
 <p>Create a new file named FDT5.desktop with the following contents:</p>
 
-<p>{% gist 1626770 FDT5.desktop %}</p>
+<p><div><script src='https://gist.github.com/1626770.js?file=FDT5.desktop'></script>
+<noscript><pre><code>[Desktop Entry]
+Name=FDT5
+#Comment=
+Exec=fdt5
+Icon=/opt/fdt5/fdt-icon.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;Application;IDE;</code></pre></noscript></div>
+</p>
 
 <p>If you want the file to be available to all users of the computer, save the file in
 &ndash; <code>/usr/share/applications/</code>
@@ -131,7 +152,18 @@ Alternatively, if you only want the currently logged in user to have FDT show up
 
 <p>Next, create the following script, and save it as <code>/usr/bin/fdt5</code></p>
 
-<p>{% gist 1626770 fdt5 %}</p>
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5'></script>
+<noscript><pre><code>#!/bin/sh
+#export MOZILLA_FIVE_HOME=&quot;/usr/lib/xulrunner-1.9.2.17/&quot;
+export MOZILLA_FIVE_HOME=&quot;/usr/lib/mozilla/&quot;
+
+export LD_LIBRARY_PATH=${MOZILLA_FIVE_HOME}:${LD_LIBRARY_PATH}
+export GDK_NATIVE_WINDOWS=1
+export ECLIPSE_HOME=&quot;/opt/fdt5&quot;
+
+$ECLIPSE_HOME/eclipse $*
+</code></pre></noscript></div>
+</p>
 
 <p>Note that the script may be a tad more complicated than it needs to be, but this is the script I&rsquo;m using since I had to jump through a few hoops getting FDT to work properly in Ubuntu.</p>
 
@@ -141,7 +173,7 @@ Alternatively, if you only want the currently logged in user to have FDT show up
 
 <p>Finally, if you want FDT to stay in the launcher bar, start up FDT, right-click the icon in the launcher, and make sure &ldquo;Keep in Launcher&rdquo; is checked.</p>
 
-<p>{% img center /images/blog/fdt-in-ubuntu-launcher-keep-in-launcher.png FDT in the Ubuntu Launcher. Right click and make sure &ldquo;Keep in Launcher&rdquo; is checked. %}</p>
+<p><img class="center" src="/images/blog/fdt-in-ubuntu-launcher-keep-in-launcher.png" title="FDT in the Ubuntu Launcher. Right click and make sure &ldquo;Keep in Launcher&rdquo; is checked." ></p>
 
 <h3>Cleaning the SWFViewer settings</h3>
 
@@ -149,7 +181,20 @@ Alternatively, if you only want the currently logged in user to have FDT show up
 
 <p>The following script will delete said config files (assuming FDT is installed to <code>/opt/fdt5</code> as recommended) though I wish FDT had a button for this inside the IDE instead.</p>
 
-<p>{% gist 1626770 fdt5-clean %}</p>
+<p><div><script src='https://gist.github.com/1626770.js?file=fdt5-clean'></script>
+<noscript><pre><code># Clean out viewer settings for FDT
+# Could remove the windows and MAC settings as well, but it seems a bit uneccessary. ;)
+
+# 32 bit linux
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerCheck
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerLock
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux32/.SWFViewerRestartInfo
+
+# 64 bit linux
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerCheck
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerLock
+rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SWFViewerRestartInfo</code></pre></noscript></div>
+</p>
 
 <p>Save the script to <code>/usr/bin/fdt5-clean</code> and run it by typing <code>fdt5-clean</code> into the command prompt. The script does not require admin rights to run as long as your FDT install folder has full permission for all users.</p>
 
@@ -186,9 +231,21 @@ Alternatively, if you only want the currently logged in user to have FDT show up
 
 <p>Take these two identical chunks of code as an example:</p>
 
-<p>{% gist 1625219 compass_rotation_compact.as %}</p>
+<p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_compact.as'></script>
+<noscript><pre><code>compass.rotation = Math.atan2(event.stageY - compass.y, event.stageX - compass.x) * (180/Math.PI) + 90;</code></pre></noscript></div>
+</p>
 
-<p>{% gist 1625219 compass_rotation_expanded.as %}</p>
+<p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_expanded.as'></script>
+<noscript><pre><code>//Get the location of the mouse relative to the compass
+var dx:Number = event.stageX - compass.x;
+var dy:Number = event.stageY - compass.y;
+
+var radianRotation:Number = Math.atan2(dy, dx);
+var degreeRotation:Number = radianRotation * (180/Math.PI);
+
+//Offset the rotation by 90 degrees to make it show up properly
+compass.rotation = degreeRotation + 90;</code></pre></noscript></div>
+</p>
 
 <p>The first chunk of code is much more efficient than the second, but I wouldn&rsquo;t want to be the developer that find bugs in that project.</p>
 
@@ -216,7 +273,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
     <id>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter</id>
     <content type="html"><![CDATA[<p>No, it&rsquo;s not painting with drops (though, that seems like a great idea for another project). Instead this experiment drops pieces of a painting down from above which eventually form to assemble a complete picture.</p>
 
-<p><a href="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/">{% img center http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/experiment-drop-painter-preview-image.png %}</a>
+<p><a href="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/"><img class="center" src="http://iqandreas.isbetterthanyou.org/public/kirupa.com/square-contest-2011/experiment-drop-painter-preview-image.png"></a>
 <em>Click the image to go open the SWF</em></p>
 
 <!-- more -->
@@ -228,7 +285,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>I later entered it into a <a href="http://www.kirupa.com/forum/showthread.php?362779-Information-and-Rules!">contest</a> held on the <a href="http://www.kirupa.com/forum/">Kirupa Forums</a>, and modified it slightly to fit the contest theme.</p>
 
-<p><a href="https://github.com/IQAndreas/Drop-Painter-Experiment">The source is available on GitHub</a> in case anyone is curious how it was achieved (and yes, I did cheat. It&rsquo;s not actually dynamic. The movement of all those shapes are &ldquo;pre-baked&rdquo; during the &ldquo;Loading&rdquo; screen and simply played back afterwards, which is why it is able to take up so little CPU on playback. {% img smiley <a href="http://www.kirupa.com/forum/images/smilies/trout.gif">http://www.kirupa.com/forum/images/smilies/trout.gif</a> %}</p>
+<p><a href="https://github.com/IQAndreas/Drop-Painter-Experiment">The source is available on GitHub</a> in case anyone is curious how it was achieved (and yes, I did cheat. It&rsquo;s not actually dynamic. The movement of all those shapes are &ldquo;pre-baked&rdquo; during the &ldquo;Loading&rdquo; screen and simply played back afterwards, which is why it is able to take up so little CPU on playback. <img class="smiley <a" src="href="http://www.kirupa.com/forum/images/smilies/trout.gif">http://www.kirupa.com/forum/images/smilies/trout.gif</a>"></p>
 ]]></content>
   </entry>
   

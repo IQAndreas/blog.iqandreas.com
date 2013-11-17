@@ -4,7 +4,7 @@
   <title><![CDATA[The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-17T09:10:38+01:00</updated>
+  <updated>2013-11-17T12:25:40+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What are the default permissions for files in Ubuntu?]]></title>
+    <link href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/"/>
+    <updated>2013-11-17T10:54:00+01:00</updated>
+    <id>http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu</id>
+    <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/#summary">In a nutshell</a>.</em></p>
+
+<p><em>This article assumes you understand the notiation for file system permissions, and have a basic grasp on the topic. If not, there is a nice starter article on the Ubuntu community wiki:</em></p>
+
+<p><li class="flink com ubuntu_com help_ubuntu_com"><a href="https://help.ubuntu.com/community/FilePermissions">Ubuntu: Understanding and using File Permissions</a></li></p>
+
+<p>By default, when you create a file in Ubuntu as a standard user (either in Nautilus or with <code>touch</code>), it gets the permission of <code>644</code>. If you mark that file as executable, as expected, it gets the permission <code>755</code>.</p>
+
+<p>What may be surprising is that directories also have a default permission of <code>755</code>. Even though it seems like directories aren&rsquo;t the type of thing that would be &ldquo;executed&rdquo;, this flag is actually very important to Linux! <!-- more -->(and if anyone can find an article behind the reasoning behind this decision, I would love to find out)</p>
+
+<p>If a directory (or <em>any</em> of its parent directories) isn&rsquo;t marked as executable, you cannot <code>cd</code> into it. Although it is browsable in Nautilus, trying to write anything to the folder results in a &ldquo;forbidden&rdquo; or &ldquo;insufficient privileges&rdquo; error message. Some commands (like <code>ls</code>) work on the directory, while others (such as <code>stat</code>) do not.</p>
+
+<p>Links (both to files and directories) have the permission <code>777</code>, which I&rsquo;m assuming is done for the similar reasons as the executable bit on directories.</p>
+
+<h3>On external media</h3>
+
+<p>For external harddrives, USB drives, or SD cards that are mounted in <code>/media/&lt;username&gt;</code>, if you haven&rsquo;t manually changed either the mount settings or file system format of the drive, the file system type is likely to be either <code>Fat32</code> or <code>NTFS</code>. Here, the file permissions are going to be different, with a value of <code>600</code> for files and <code>700</code> for directories. Links remain the same at <code>777</code>, though it is unclear to me if links created in Linux are stored differently or not on foreign file systems.</p>
+
+<p>As far as I can tell, there is no way to change file and directory permissions, or even mark files as being executable without changing the mount settings, so all files are always stuck with a privilege of <code>600</code>. This makes sense as such file systems don&rsquo;t use the same type of permission settings for files, so storing the permission data would be difficult. In fact, I&rsquo;m just glad we are able read from and write to those types of file systems from Linux at all!</p>
+
+<h3><a name="summary"></a>In a nutshell</h3>
+
+<p>These are the default values for file permissions in Ubuntu 13.10. They may be the same in other Linux distributions, but I have not been able to verify this personally.</p>
+
+<p><strong>In a standard ext3 file system</strong></p>
+
+<ul>
+<li><code>644</code> files</li>
+<li><code>755</code> executable files</li>
+<li><code>755</code> directories</li>
+<li><code>777</code> links to files</li>
+<li><code>777</code> links to directories</li>
+</ul>
+
+
+<p><strong>For removable media (Fat32) and windows partitions (NTFS)</strong></p>
+
+<ul>
+<li><code>600</code> files (can&rsquo;t be executable)</li>
+<li><code>700</code> directories</li>
+<li><code>777</code> links to files</li>
+<li><code>777</code> links to directories</li>
+</ul>
+
+
+<h3>A script for better displaying file permissions in a directory</h3>
+
+<p>While you can display the permissions of files in a directory with <code>ls -l</code>, that information isn&rsquo;t very easy to read:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ ls -l
+</span><span class='line'>total 16
+</span><span class='line'>drwxr-xr-x 2 andreas andreas 4096 Nov 17 11:00 cat-images-folder
+</span><span class='line'>-rw-r--r-- 1 andreas andreas  245 Nov 17 10:58 cat-images.zip
+</span><span class='line'>-rwxr-xr-x 1 andreas andreas   30 Nov 17 11:15 do-something.sh
+</span><span class='line'>lrwxrwxrwx 1 andreas andreas   56 Nov 17 11:23 Link to cat-images-folder -&gt; /home/andreas/temp/cat-images-folder
+</span><span class='line'>lrwxrwxrwx 1 andreas andreas   53 Nov 17 11:22 Link to cat-images.zip -&gt; /home/andreas/temp/cat-images.zip
+</span><span class='line'>-rw-r--r-- 1 andreas andreas 1922 Nov 17 11:15 readme.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Instead, you can instead use the <code>stat</code> command to display permissions in the more friendly &ldquo;octal notation&rdquo; (<a href="http://thenubbyadmin.com/2012/02/16/how-to-list-linux-file-permissions-in-octal-notation/">source</a>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ stat -c "%a %n" *
+</span><span class='line'>755 cat-images-folder
+</span><span class='line'>644 cat-images.zip
+</span><span class='line'>755 do-something.sh
+</span><span class='line'>777 Link to cat-images-folder
+</span><span class='line'>777 Link to cat-images.zip
+</span><span class='line'>644 readme.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And if you want to tweak the output further (such as to tell us whether an item is a file, directory, or link), see the following page (or just run <code>man stat</code>) which lists all available options:</p>
+
+<p><li class="flink com ubuntu_com manpages_ubuntu_com"><a href="http://manpages.ubuntu.com/manpages/precise/en/man1/stat.1.html">Ubuntu manuals: stat</a></li></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GIT: How to move tags]]></title>
@@ -1218,144 +1314,6 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <p>That is Custom Events 101</p>
 
 <p>Continue to <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling">Part #3 &ndash; Easy Event Bubbling</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Understanding the AS3 Event System #1 - The Basics]]></title>
-    <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
-    <updated>2010-10-11T10:39:00+02:00</updated>
-    <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
-    <content type="html"><![CDATA[<p>This thread is part 1 in the &ldquo;<a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series.</p>
-
-<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
-
-<p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&rsquo;t fully understand or would like me to clarify further.</p>
-
-<!-- more -->
-
-
-<hr />
-
-<p>Imagine your code as one big office room. That office has about 100 or so cubicles, with each cubicle representing a different object. For instance, if you have five <code>Buttons</code> on the stage, it&rsquo;s not one <code>Button</code> cubicle, but instead five different cubicles, one for each <code>Button</code> instance.</p>
-
-<h4>The Event String/Event Type</h4>
-
-<p>Now, I&rsquo;m sitting in the <code>homeButton</code> cubicle. One day, I get an email from my boss who tells me I have been <em>&ldquo;clicked&rdquo;</em>. So immediately I stand up, and yell out into the hallway so loudly that everyone can hear <em>&ldquo;I HAVE BEEN CLICKED!&rdquo;</em></p>
-
-<p>Now, the boss may have A LOT more information, such as where I was clicked, how many times, if any of my children were clicked, and a lot more information. However, I won&rsquo;t stand up and yell out to everyone in the building all that information. That is quite wasteful, and if I receive several of those emails a day, I would soon get tired of spouting out all that information.</p>
-
-<p>Instead, to save energy, I only tell everyone <em>&ldquo;I have been <u>clicked</u>&rdquo;</em>. That is me telling everybody the <code>event type</code>, also known as the <code>event string</code>.</p>
-
-<h4>Listening for Events</h4>
-
-<p>Back up a few hours (before the event string). I have a friend named Nico sitting in the art department (his cubicle is labeled <code>currentImage</code>, but that&rsquo;s not actually relevant). His boss told him <em>&ldquo;Whenever Andreas in the <code>homeButton</code> cubicle is clicked I want you to draw an image of a house and send it right to me.&rdquo;</em></p>
-
-<p>Now, Nico could get up out of his seat every five minutes, walk over to me, and ask <em>&ldquo;Hey, Andreas. Were you clicked yet?&rdquo;</em> I say no, so he walks back to his cubicle and sits down. This would happen again and again, and neither of us would get any work done. This is VERY inefficient. Nico could reduce this and only check with me once per hour, but he wants to know <em>immediately</em> when I am clicked. So that is NOT an option either.</p>
-
-<p>Instead, Nico sits in his cubicle continuing his regular work, and in the meantime, <em>listens</em> out in the hallway for my voice. Now, at around noon I yell out <em>&ldquo;I was <u>keypressed</u>!&rdquo;</em> He hears my voice, but he really doesn&rsquo;t care about the keypresses. So, he ignores what I say, and continues working. Then another guy in the cubicle (Larry, a really annoying guy) yells out <em>&ldquo;I was <u>clicked</u>!&rdquo;</em> Since Larry is not as good looking as Andreas, and The Boss didn&rsquo;t tell Nico to listen to Larry, Nico ignores him completely.</p>
-
-<p>Because, <u>Nico is only listening to</u> Andreas (in <u>the <code>homeButton</code> cubicle</u>) <u>for the <code>clicked</code> event</u> (which looks something like this in AS3):</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="n">homeButton</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;clicked&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">drawHouse</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When he hears the event, he needs to <u>start drawing the house</u> (which he does in the <code>drawHouse</code> function).</p>
-
-<h4>The Event is dispatched</h4>
-
-<p>Now, fast forward back to where we were. Me (Andreas) gets the call from my boss telling me I was <code>clicked</code>. So I stand up and yell out to everyone. <em>&ldquo;I was <u>clicked</u>!&rdquo;</em></p>
-
-<p>Two people were listening for my <code>clicked</code>, Nico and Bob (the guy from <code>contentManagement</code>, a very talkative fellow) Nico rushes up to me excited <em>&ldquo;Hey Andreas. I heard about the click. That is awesome! Congratulations! <img src="http://www.kirupa.com/forum/images/smilies/happy.gif" title="Smilie" > But tell me more about the event! </em>Why were you clicked? Where were you clicked? Who clicked you? Why did they click you?_&rdquo;</p>
-
-<p>I could spend the next 5 minutes explaining all the juicy details to Nico, but then I would have to repeat all this information to Bob (which is very inefficient, and Bob is a busy man and doesn&rsquo;t want to wait). So instead, I print out all the information on the <code>clicked event</code> and put it into a Folder which I give to Nico. I give the folder to both Nico and Bob so they can use the information in it and look at it as they please. This folder is the <code>Event</code> object (more details on that later)</p>
-
-<p>Immediatly Nico rushes to his art studio in his cubicle and gets to work at <code>drawHouse()</code>, however, now he has the Folder (the <code>Event</code>) he can use that information while drawing the house, and therefore passes it into the function as a parameter:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">function </span><span class="nf">drawHouse</span><span class="o">(</span><span class="err">&lt;u&gt;</span><span class="n">event</span><span class="o">:</span><span class="kt">Event</span><span class="err">&lt;/u&gt;</span><span class="o">)</span>
-</span><span class='line'><span class="o">{</span>
-</span><span class='line'>    <span class="cm">/* Draw stuff in here... */</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>The Event</h4>
-
-<p>To make sure that everyone gets the information they need, there are VERY strict protocols to what the <code>Event</code> Folder needs to contain.</p>
-
-<p>The following pages with information are required for standard Event Folders
-* <strong>the target</strong> &ndash; the person dispatching the event, which in this case is me, Andreas (or actually the <code>homeButton</code> cubicle).
-* <strong>event type</strong> &ndash; the type of event (aka <code>event string</code>), in this case, <code>clicked</code>.
-<span style="font-size: xx-small;">(there are a few more pages in the file, but that&rsquo;s mostly the small legal mumbo-jumbo fine print that no one reads anyway. You will be fine ignoring them for now.)</span></p>
-
-<p>This is a standard <code>Event</code> file. But hold on, there was A LOT more information which is missing here! If I hand Nico a file with only those two pages of information in it, he will still wonder <em>&ldquo;Where were you clicked?&rdquo;</em> along with MANY other important questions. Luckily, the company already has a neat system figured out!</p>
-
-<h4>The MouseEvent</h4>
-
-<p>Now, the company I work for has a second type of file, a <code>MouseEvent</code> File. This file <code>extends</code> the standard <code>Event</code> File. That means that the <code>MouseEvent</code> file has all the information contained in the plus a lot more information, perfect for when a <code>clicked</code> event happens.</p>
-
-<p>It has the standard two fields (<code>target</code> and <code>type</code>) PLUS these additional pages with information:
-&ndash; <em>localX</em>
-&ndash; <em>localY</em>
-&ndash; <em>stageX</em>
-&ndash; <em>stageY</em>
-&ndash; <em>altKey</em>
-&ndash; <em>ctrlKey</em>
-And a whole lot more!</p>
-
-<p>Note that this <code>MouseEvent</code> file ONLY is allowed to be used when dealing with events that had to do with the mouse, such as <code>clicked</code>, <code>hovered</code> etc. The file should NOT be used for events that had to do with the keyboard, <code>keypressed</code> or <code>keyreleased</code>. Those events should instead use a specialized <code>KeyboardEvent</code> File with it&rsquo;s own special properties.</p>
-
-<p>So I print out all the relevant information and hand both Nico and Bob a <code>MouseEvent</code> folder. Using that information, they draw the houses, display text, or whatever they want to do with the information.</p>
-
-<p><em>(<strong>Extra note:</strong> Maybe Bob didn&rsquo;t even need to see the file. Maybe he just needed to know that I was clicked, so when I hand him the file, he may not even open it or look at the details of the click using the information inside. That&rsquo;s fine by me, but I still need to create the file in case there is someone out there who actually needs the information.)</em></p>
-
-<h4>Creating the MouseEvent</h4>
-
-<p>Bob and Nico don&rsquo;t want to wait for me to print out and collect all the papers needed in the <code>MouseEvent</code> file. They want the information to be ready the second they step up to my cubicle. So, BEFORE I stand up and tell everyone I was clicked, I create the folder ahead of time for quick and easy access. THEN, <u>I <code>dispatch</code> it to all who are <code>listening</code></u>.</p>
-
-<p>This is how it looks in ActionScript:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="c1">//create the folder with all the information in it</span>
-</span><span class='line'><span class="kd">var</span> <span class="n">eventFolder</span><span class="p">:</span><span class="kt">MouseEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">MouseEvent</span><span class="o">(</span><span class="s2">&quot;&lt;u&gt;clicked&lt;/u&gt;&quot;</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">localX</span><span class="o">,</span> <span class="n">localY</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">bla</span><span class="o">,</span> <span class="n">more</span> <span class="n">bla</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//Now stand up and tell everyone I was clicked</span>
-</span><span class='line'><span class="c1">//The &quot;eventFolder&quot; already says the **event type** is &quot;clicked&quot;,</span>
-</span><span class='line'><span class="c1">// so I don&#39;t need to repeat myself when dispatching it.</span>
-</span><span class='line'><span class="c1">//All I need to do is dispatch the folder and Flash will do all the dirty work</span>
-</span><span class='line'><span class="n">dispatchEvent</span><span class="o">(</span><span class="n">eventFolder</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now Nico and Bob (and whoever else is <code>listening</code>) can react to it and get to see the folder I sent when <code>dispatching</code>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='as3'><span class='line'><span class="kd">function </span><span class="nf">drawHouse</span><span class="o">(</span> <span class="err">&lt;u&gt;</span><span class="n">andreasEventFolder</span><span class="o">:</span><span class="kt">MouseEvent</span><span class="err">&lt;/u&gt;</span> <span class="o">)</span>
-</span><span class='line'><span class="o">{</span>
-</span><span class='line'>    <span class="cm">/*Draw stuff in here...*/</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That is Events 101.</p>
-
-<p>Continue to <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">Part #2 &ndash; Custom Events</a></p>
 ]]></content>
   </entry>
   
