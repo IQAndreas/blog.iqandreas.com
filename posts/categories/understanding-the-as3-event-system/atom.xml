@@ -4,7 +4,7 @@
   <title><![CDATA[Category: understanding-the-as3-event-system | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-15T05:29:14+01:00</updated>
+  <updated>2013-11-17T08:34:02+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -181,7 +181,7 @@ newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
     <content type="html"><![CDATA[<p>This thread is part 2 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
-<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040">{% img favicon http://www.kirupa.com/favicon.ico %} Passing a string to be a custom event</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&rsquo;t fully understand or would like me to clarify further.</p>
 
@@ -269,7 +269,9 @@ dispatchEvent(scEvent);
 
 <p>But I noticed, no one really reads the information in the <code>Event</code> Folder! I spent good money putting together and printing out all the information for those folders, and no one reads them! They get the file from me, then run back to their own cubicles, fire up the game, and throw the <code>Event</code> Folder directly into the trash.</p>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+<p>{% pullquote %}
+When you think about it, {do they really <strong>need</strong> all that extra information} such as maps or players? They will find all that information out anyway when they start up StarCraft. There really is no use going into all the hassle of creating custom events!
+{% endpullquote %}</p>
 
 <p>Instead, what if I print out a plain old <code>Event</code> Folder? All it says is the <code>target</code> and the <code>type</code>, but if they want more information (which someone once in a while does) they can ask me for it directly.</p>
 
@@ -296,7 +298,7 @@ dispatchEvent(eventFolder);
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
     <content type="html"><![CDATA[<p>This thread is part 1 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series.</p>
 
-<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040"><img class="favicon" src="http://www.kirupa.com/favicon.ico"> Passing a string to be a custom event</a></p>
+<p>I originally wrote this thread as a response to a Kirupa forum thread: <a href="http://www.kirupa.com/forum/showthread.php?t=355040">{% img favicon http://www.kirupa.com/favicon.ico %} Passing a string to be a custom event</a></p>
 
 <p>This is my first draft, so any opinions or thoughts are deeply appreciated, especially if there is anything you still don&rsquo;t fully understand or would like me to clarify further.</p>
 
@@ -334,7 +336,7 @@ homeButton.addEventListener("&lt;u&gt;clicked&lt;/u&gt;", drawHouse);
 
 <p>Now, fast forward back to where we were. Me (Andreas) gets the call from my boss telling me I was <code>clicked</code>. So I stand up and yell out to everyone. <em>&ldquo;I was <u>clicked</u>!&rdquo;</em></p>
 
-<p>Two people were listening for my <code>clicked</code>, Nico and Bob (the guy from <code>contentManagement</code>, a very talkative fellow) Nico rushes up to me excited <em>&ldquo;Hey Andreas. I heard about the click. That is awesome! Congratulations! <img class="<a" src="href="http://www.kirupa.com/forum/images/smilies/happy.gif">http://www.kirupa.com/forum/images/smilies/happy.gif</a>" title="Smilie" > But tell me more about the event! </em>Why were you clicked? Where were you clicked? Who clicked you? Why did they click you?_&rdquo;</p>
+<p>Two people were listening for my <code>clicked</code>, Nico and Bob (the guy from <code>contentManagement</code>, a very talkative fellow) Nico rushes up to me excited <em>&ldquo;Hey Andreas. I heard about the click. That is awesome! Congratulations! {% img <a href="http://www.kirupa.com/forum/images/smilies/happy.gif">http://www.kirupa.com/forum/images/smilies/happy.gif</a> Smilie %} But tell me more about the event! </em>Why were you clicked? Where were you clicked? Who clicked you? Why did they click you?_&rdquo;</p>
 
 <p>I could spend the next 5 minutes explaining all the juicy details to Nico, but then I would have to repeat all this information to Bob (which is very inefficient, and Bob is a busy man and doesn&rsquo;t want to wait). So instead, I print out all the information on the <code>clicked event</code> and put it into a Folder which I give to Nico. I give the folder to both Nico and Bob so they can use the information in it and look at it as they please. This folder is the <code>Event</code> object (more details on that later)</p>
 

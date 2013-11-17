@@ -4,7 +4,7 @@
   <title><![CDATA[Category: monologues | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/monologues/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-15T05:29:14+01:00</updated>
+  <updated>2013-11-17T08:34:02+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.iqandreas.com/monologues/pick-a-community-any-community/"/>
     <updated>2012-06-12T09:56:00+02:00</updated>
     <id>http://blog.iqandreas.com/monologues/pick-a-community-any-community</id>
-    <content type="html"><![CDATA[<p>Surround your pullquote like this {" text to be quoted "}</p>
+    <content type="html"><![CDATA[<p>{% pullquote %}{&ldquo;Learning to program all on your own can be hard, really hard in fact.&rdquo;} Sometimes it helps having a place where you can ask questions when Google just isn&rsquo;t giving you what you are looking for. There are also benefits in using a community to <em>answer</em> programming questions (a topic I will cover in an upcoming blog post).{% endpullquote %}</p>
 
 <p>To assist in choosing a community, I have compiled a list containing details about various communities and my experience in using them.<!-- more --> As I haven&rsquo;t been to every community out there, I would appreciate if you leave your own recommendations and detailed experiences as a comment below.</p>
 
@@ -34,7 +34,7 @@
 
 <p>I eventually started using the Kirupa forums more and more. I don&rsquo;t remember all the reasons why, but one major factor was that I often got better responses there, and would often get tied into long conversations. But in the end, the reason I finally settled down at the Kirupa forums is the same reason that I use ActionScript; it&rsquo;s not necessarily &ldquo;the best&rdquo;, I&rsquo;m just used to it. I&rsquo;m very comfortable there, and have had no reason to switch to a new forum.</p>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+<p>{% pullquote %}{&ldquo;The Kirupa Forums are just the right size.&rdquo;} There are enough experienced ActionScripters (and even helpful beginners) to answer nearly every question within a day or two of its being posted. The questions that usually end up unanswered are the poorly written ones and &ldquo;not-really-questions&rdquo; like <em>&ldquo;i need to make a music player in flash cs5 that uses xml. help plz.&rdquo;</em>{% endpullquote %}</p>
 
 <p>Sure, in a larger forum there are many more people answering questions, but after a few hours your question is already on page 2, which as we all know is where forum threads go to die. By then, no one except Google searchers will find your thread! Personally, I&rsquo;m not a fan of huge forums.</p>
 
@@ -48,7 +48,7 @@
 
 <p>Although I haven&rsquo;t gotten deeply involved with this community, only using it on occasion, I feel it is a brilliant and magnificent way of asking and answering questions.</p>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+<p>{% pullquote %}Unlike &ldquo;traditional forums&rdquo; where responses appear from top to bottom in chronological order, the best answers on StackOverflow &ldquo;float up&rdquo; to the top. There is no &ldquo;chit chat&rdquo; or &ldquo;small talk&rdquo;; even the comments that aren&rsquo;t actually &ldquo;answers&rdquo; are small and out of the way. {&ldquo;It&rsquo;s questions and answers, pure and simple.&rdquo;}{% endpullquote %}</p>
 
 <p>In the beginning, your powers are quite &ldquo;limited&rdquo;; you can&rsquo;t &ldquo;upvote&rdquo;, use links in your answers, or give those comments that aren&rsquo;t direct &ldquo;answers&rdquo;. To earn more privileges, you need to earn points by asking and answering questions well. Unlike Expert&rsquo;s Exchange (mentioned below), these points don&rsquo;t go away, but serve as a guard to keep spammers and &ldquo;low quality askers/answerers&rdquo; out. But as soon as you have racked up enough points to gain the trust of StackOverflow, you are free to ask, answer, and even edit across the site.</p>
 
@@ -95,9 +95,9 @@
 
 <p>In the meantime, enjoy the following informative (and practical!) articles by Jackson Dunstan:</p>
 
-<p><li class="flink com jacksondunstan_com"><a href="http://jacksondunstan.com/articles/1675">http://jacksondunstan.com/articles/1675</a>">&ldquo;Top 10 Performance Tips for 2012&rdquo;</a></li>
-<li class="flink com jacksondunstan_com"><a href="http://jacksondunstan.com/articles/1690">http://jacksondunstan.com/articles/1690</a>">&ldquo;Top 10 Static vs. Non-Static&rdquo;</a></li>
-<li class="flink com jacksondunstan_com"><a href="http://jacksondunstan.com/articles/1713">http://jacksondunstan.com/articles/1713</a>">&ldquo;Top 10 Why Static is Slow&rdquo;</a></li></p>
+<p>{% flink <a href="http://jacksondunstan.com/articles/1675">http://jacksondunstan.com/articles/1675</a> &ldquo;Top 10 Performance Tips for 2012&rdquo; %}
+{% flink <a href="http://jacksondunstan.com/articles/1690">http://jacksondunstan.com/articles/1690</a> &ldquo;Top 10 Static vs. Non-Static&rdquo; %}
+{% flink <a href="http://jacksondunstan.com/articles/1713">http://jacksondunstan.com/articles/1713</a> &ldquo;Top 10 Why Static is Slow&rdquo; %}</p>
 ]]></content>
   </entry>
   
@@ -116,7 +116,7 @@
 
 <p>For an embarrassingly long time I had large &ldquo;gaps&rdquo; in my knowledge. As one of many early personal examples, I never learned how to properly use for loops, so I tended to avoid them. In addition, I didn&rsquo;t realize you could access indexes in arrays with variables, and would instead copy and paste lines several times, filling in hard coded numbers.</p>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+<p>{% pullquote %}Today, I still suffer from this. All but the most basic and common design patterns are still unfamiliar to me. In fact, properly organizing large projects is still a mountain of a task. {&ldquo;I&rsquo;m not done learning&rdquo;}.{% endpullquote %}</p>
 
 <p>Perhaps this problem would not exist if I had taken a single course from start to finish. I would take on new information one idea at a time and in an organized manner, rather than jump around from tutorial to tutorial picking up bits a pieces, missing chunks along the way.</p>
 
@@ -124,7 +124,7 @@
 
 <p>There are beginner guides <em>galore</em> to any programming language or library you could imagine, from professional companies such as <a href="http://www.lynda.com/">Lynda</a> and <a href="http://active.tutsplus.com/sessions/as3-101/">Envato</a>, to independent bloggers such as <a href="http://www.untoldentertainment.com/blog/flash-and-actionscript-911">Untold Entertainment</a>, <a href="http://gamedev.michaeljameswilliams.com/as3-avoider-game-tutorial-base/">Michael James Williams</a> and <a href="http://www.emanueleferonato.com/">Emanuele Feronato</a>.</p>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+<p>{% pullquote %}Alas, few beginner tutorials prepare you for the &ldquo;road ahead&rdquo;. In my experience, the most difficult stage in learning a new language is {&ldquo;\"I know the basics and the syntax. Now what?\&rdquo;&ldquo;} During the "intermediate&rdquo; phase, technical manuals and papers are too advanced, while beginner tutorials are too simple. Either there are too few resources for intermediate developers, or they are too diffiuclt to find.{% endpullquote %}</p>
 
 <p>It certainly isn&rsquo;t a help when beginner guides will take shortcuts (such as using timeline code rather than teaching to properly write classes) in an effort to make the new information easier to absorb. But similar to the &ldquo;automatically-generated-behind-the-scenes code&rdquo; in <em>Visual Studio.net</em>, this <strong>may</strong> have crippling effects on the students.</p>
 
@@ -159,7 +159,7 @@
     <link href="http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer/"/>
     <updated>2012-03-02T14:56:00+01:00</updated>
     <id>http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer</id>
-    <content type="html"><![CDATA[<p><em><strong>Note:</strong> Take this post with a grain of salt. It&rsquo;s meant to be a slightly amusing rant, and should not be used as an official classification system for developers.</em> <img class="smiley <a" src="href="http://www.kirupa.com/forum/images/smilies/wink.gif">http://www.kirupa.com/forum/images/smilies/wink.gif</a>" title=";)" ></p>
+    <content type="html"><![CDATA[<p><em><strong>Note:</strong> Take this post with a grain of salt. It&rsquo;s meant to be a slightly amusing rant, and should not be used as an official classification system for developers.</em> {% img smiley <a href="http://www.kirupa.com/forum/images/smilies/wink.gif">http://www.kirupa.com/forum/images/smilies/wink.gif</a> ;) %}</p>
 
 <p><strong>Engineers</strong>, <strong>Architects</strong>, and <strong>Chemists</strong> work with their hands on &ldquo;real life&rdquo; projects. They of course use their problem solving and thinking skills in their line of work, but in the end, they get paid to develop specific products with practical uses.</p>
 
@@ -174,7 +174,7 @@
 <!-- more -->
 
 
-<p><a href="http://xkcd.com/974/"><img class="center" src="http://imgs.xkcd.com/comics/the_general_problem.png"></a></p>
+<p><a href="http://xkcd.com/974/">{% img center http://imgs.xkcd.com/comics/the_general_problem.png %}</a></p>
 
 <p><strong>Software Engineers</strong> and <strong>Software Architects</strong> on the other hand use software development as a means to an end, a way to put food on the table or get a website up and running. They are more willing to take shortcuts even if doing so may break the Sacred Laws of OOP. <em>These people have also been caught placing code on the main timeline. (yuck!)</em></p>
 
@@ -194,7 +194,7 @@
 
 <p>So which one are you? A Software Engineer, a Theoretical Developer, or a mix of both?</p>
 
-<p>Or perhaps the Theoretical Developer is just a fancy name I invented as an excuse for my lack of &ldquo;real life&rdquo; progress&hellip; <img class="smiley <a" src="href="http://www.kirupa.com/forum/images/smilies/trout.gif">http://www.kirupa.com/forum/images/smilies/trout.gif</a>" title=";)" ></p>
+<p>Or perhaps the Theoretical Developer is just a fancy name I invented as an excuse for my lack of &ldquo;real life&rdquo; progress&hellip; {% img smiley <a href="http://www.kirupa.com/forum/images/smilies/trout.gif">http://www.kirupa.com/forum/images/smilies/trout.gif</a> ;) %}</p>
 ]]></content>
   </entry>
   

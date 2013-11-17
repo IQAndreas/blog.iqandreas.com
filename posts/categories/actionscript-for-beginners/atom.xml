@@ -4,7 +4,7 @@
   <title><![CDATA[Category: actionscript-for-beginners | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/actionscript-for-beginners/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-15T05:29:14+01:00</updated>
+  <updated>2013-11-17T08:34:02+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -42,21 +42,9 @@
 
 <p>Take these two identical chunks of code as an example:</p>
 
-<p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_compact.as'></script>
-<noscript><pre><code>compass.rotation = Math.atan2(event.stageY - compass.y, event.stageX - compass.x) * (180/Math.PI) + 90;</code></pre></noscript></div>
-</p>
+<p>{% gist 1625219 compass_rotation_compact.as %}</p>
 
-<p><div><script src='https://gist.github.com/1625219.js?file=compass_rotation_expanded.as'></script>
-<noscript><pre><code>//Get the location of the mouse relative to the compass
-var dx:Number = event.stageX - compass.x;
-var dy:Number = event.stageY - compass.y;
-
-var radianRotation:Number = Math.atan2(dy, dx);
-var degreeRotation:Number = radianRotation * (180/Math.PI);
-
-//Offset the rotation by 90 degrees to make it show up properly
-compass.rotation = degreeRotation + 90;</code></pre></noscript></div>
-</p>
+<p>{% gist 1625219 compass_rotation_expanded.as %}</p>
 
 <p>The first chunk of code is much more efficient than the second, but I wouldn&rsquo;t want to be the developer that find bugs in that project.</p>
 
