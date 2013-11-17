@@ -8,6 +8,10 @@ categories: [ubuntu]
 
 _**TL;DR version:** Skip to [In a nutshell]({{ page.url }}#summary)._
 
+_This article assumes you understand the notiation for file system permissions, and have a basic grasp on the topic. If not, there is a nice starter article on the Ubuntu community wiki:_
+
+{% flink https://help.ubuntu.com/community/FilePermissions "Ubuntu: Understanding and using File Permissions" %}
+
 By default, when you create a file in Ubuntu as a standard user (either in Nautilus or with `touch`), it gets the permission of `644`. If you mark that file as executable, as expected, it gets the permission `755`.
 
 What may be surprising is that directories also have a default permission of `755`. Even though it seems like directories aren't the type of thing that would be "executed", this flag is actually very important to Linux! <!-- more -->(and if anyone can find an article behind the reasoning behind this decision, I would love to find out)
@@ -47,7 +51,7 @@ These are the default values for file permissions in Ubuntu 13.10. They may be t
 
 While you can display the permissions of files in a directory with `ls -l`, that information isn't very easy to read:
 
-```bash
+```
  $ ls -l
 total 16
 drwxr-xr-x 2 andreas andreas 4096 Nov 17 11:00 cat-images-folder
@@ -60,7 +64,7 @@ lrwxrwxrwx 1 andreas andreas   53 Nov 17 11:22 Link to cat-images.zip -> /home/a
 
 Instead, you can instead use the `stat` command to display permissions in the more friendly "octal notation" ([source](http://thenubbyadmin.com/2012/02/16/how-to-list-linux-file-permissions-in-octal-notation/)):
 
-```bash
+```
  $ stat -c "%a %n" *
 755 cat-images-folder
 644 cat-images.zip
