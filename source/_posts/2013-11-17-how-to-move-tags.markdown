@@ -6,7 +6,7 @@ comments: true
 categories: [git]
 ---
 
-Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?
+Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?<!-- more -->
 
 **Unrelated but important side note:** Since you are tagging in Git, [you are using the `-a` flag, right?](http://www.rockstarprogrammer.org/post/2008/oct/16/git-tag-does-wrong-thing-default/)
 
@@ -16,7 +16,7 @@ You could <span class="hoverable" title="git tag -d <tag_name>">delete it</span>
 
 Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add `-f` (or `--force`) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:
 
-{% img /images/blog/git-terminal-window-overwrite-existing-tag.small.png GIT Terminal window in Ubuntu editing a GIT tag %}
+{% img /images/blog/git-terminal-window-overwrite-existing-tag.small.png "Terminal window in Ubuntu editing a GIT tag" %}
 
 _Hey! That's my old tag description!_ Now you can edit it if you want, or just save it as the way it was.
 
