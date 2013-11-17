@@ -24,8 +24,8 @@ _Hey! That's my old tag description!_ Now you can edit it if you want, or just s
 
 If you have already pushed the tag to the server and want to fix that, first make sure your local version of the tag is correct. Then all you need to do is make another `push` using the same `-f` (or `--force`) flag.
 
-```bash
-git push origin --tags -f
+```
+ $ git push origin --tags -f
 ```
 
 Remember to alert any other developers on the team if you ever "force" a change like this. If they still have an "old" version of the tag around, it may cause conflicts when they try to push to the server!
@@ -36,7 +36,7 @@ Say _someone else_ moved a tag, but the version in your local repository still p
 
 So, for example (in my case, the tag name is `v2.56` and the remote repository is named `origin`):
 
-```bash
+```
  $ git tag -d v2.56
 Deleted tag 'v2.56' (was 75ff2f1)
  $ git fetch origin --tags
