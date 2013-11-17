@@ -16,6 +16,10 @@ You could <span class="hoverable" title="git tag -d &lt;tag_name&gt;">delete it<
 
 Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add `-f` (or `--force`) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:
 
+```
+ $ git tag -a v2.56 8bad64f6e9 -f
+```
+
 {% img /images/blog/git-terminal-window-overwrite-existing-tag.small.png "Terminal window in Ubuntu editing a GIT tag" %}
 
 _Hey! That's my old tag description!_ Now you can edit it if you want, or just save it as the way it was.
