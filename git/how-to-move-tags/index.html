@@ -134,6 +134,10 @@
 
 <p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> $ git tag -a v2.56 8bad64f6e9 -f</span></code></pre></td></tr></table></div></figure>
+
+
 <p><img src="/images/blog/git-terminal-window-overwrite-existing-tag.small.png" title="&#34;Terminal window in Ubuntu editing a GIT tag&#34;" alt="&#34;Terminal window in Ubuntu editing a GIT tag&#34;"></p>
 
 <p><em>Hey! That&rsquo;s my old tag description!</em> Now you can edit it if you want, or just save it as the way it was.</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-17T12:25:40+01:00</updated>
+  <updated>2013-11-17T23:53:05+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -27,6 +27,10 @@
 <p>You could <span class="hoverable" title="git tag -d &lt;tag_name&gt;">delete it</span> and <span class="hoverable" title="git tag -a &lt;tag_name&gt;">re-add it</span>, but all the hard work you put into writing the tag&rsquo;s description would be lost.</p>
 
 <p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
+
+<p><code>
+ $ git tag -a v2.56 8bad64f6e9 -f
+</code></p>
 
 <p><img src="/images/blog/git-terminal-window-overwrite-existing-tag.small.png" title="&ldquo;Terminal window in Ubuntu editing a GIT tag&rdquo;" ></p>
 
