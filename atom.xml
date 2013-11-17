@@ -4,7 +4,7 @@
   <title><![CDATA[The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-17T08:52:13+01:00</updated>
+  <updated>2013-11-17T08:56:34+01:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Git: How to move tags]]></title>
+    <title type="html"><![CDATA[GIT: How to move tags]]></title>
     <link href="http://blog.iqandreas.com/git/how-to-move-tags/"/>
     <updated>2013-11-17T06:43:00+01:00</updated>
     <id>http://blog.iqandreas.com/git/how-to-move-tags</id>
@@ -28,7 +28,7 @@
 
 <p>Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add <code>-f</code> (or <code>--force</code>) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:</p>
 
-<p><img src="http://blog.iqandreas.com/images/blog/git-terminal-window-overwrite-existing-tag-small.png" title="GIT Terminal window in Ubuntu editing a GIT tag" ></p>
+<p><img src="http://blog.iqandreas.com/images/blog/git-terminal-window-overwrite-existing-tag.small.png" title="GIT Terminal window in Ubuntu editing a GIT tag" ></p>
 
 <p><em>Hey! That&rsquo;s my old tag description!</em> Now you can edit it if you want, or just save it as the way it was.</p>
 
@@ -73,7 +73,7 @@
 
 <p>If you use GIT in Ubuntu, you may be used to this seeing this several times a day:</p>
 
-<p><img src="http://blog.iqandreas.com/images/blog/git-terminal-window-in-ubuntu-small.png" title="GIT Terminal window in Ubuntu asking for credentials" ></p>
+<p><img src="http://blog.iqandreas.com/images/blog/git-terminal-window-in-ubuntu.small.png" title="GIT Terminal window in Ubuntu asking for credentials" ></p>
 
 <p>Tired of constantly typing typing in your credentials? (especially since GitHub requires an alpha-numerical password, so your standard, &ldquo;easy-to-type&rdquo; one won&rsquo;t do)<!-- more --></p>
 
@@ -675,7 +675,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 <p>Remember the good old days of playing Pac-Man at the arcade, burning quarter after quarter until you were #1? You could then laugh in the face of the last high score holder, and brag to all the local children and challenge them to beat your score.
 <sub><sup><em>(Or maybe not, I was born a few years too late for the glory days of arcade games, so I&rsquo;m guessing at how the high scores worked back then)</em></sup></sub></p>
 
-<p><img class="right" src="http://blog.iqandreas.com/images/blog/high-score-2011-11-25-small.png" title="Really really high high score" ></p>
+<p><img class="right" src="http://blog.iqandreas.com/images/blog/high-score-2011-11-25.small.png" title="Really really high high score" ></p>
 
 <p>But today, with the rise of flash games, no matter how hard you work at getting to the top, your fantastic score of 189,335 points will place you at position #24,890 in the high score list, with the top scores always being held by cheaters or some Asian kid with an abnormal talent for games and hours of time on his hands.</p>
 
@@ -695,7 +695,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
 
 <p>When you have finished a working design, you see a bar chart of how creation&rsquo;s efficiency compares to the average user. This allows you to see which areas you could realistically improve your score without being blown out of the water by Sum Yung Gui from Beijing.</p>
 
-<p><img class="center" src="http://blog.iqandreas.com/images/blog/spacechem-high-score-small.png" title="Example SpaceChem high score result" ></p>
+<p><img class="center" src="http://blog.iqandreas.com/images/blog/spacechem-high-score.small.png" title="Example SpaceChem high score result" ></p>
 
 <p>If you know of any other games with unique and brilliant high score systems, share them in the comments.</p>
 ]]></content>
