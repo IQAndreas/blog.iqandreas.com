@@ -12,7 +12,7 @@ Say you already added a tag, but later realized that it was in the wrong place, 
 
 ### Editing the tag locally
 
-You could <span class="hoverable" title="git tag -d <tag_name>">delete it</span> and <span class="hoverable" title="git tag -a <tag_name>">re-add it</span>, but all the hard work you put into writing the tag's description would be lost.
+You could <span class="hoverable" title="git tag -d &lt;tag_name&gt;">delete it</span> and <span class="hoverable" title="git tag -a &lt;tag_name&gt;">re-add it</span>, but all the hard work you put into writing the tag's description would be lost.
 
 Instead, choose the place in your history where you want the tag moved to, tag it like you usually would, but add `-f` (or `--force`) to the command; that extra flag will allow you to replace the other tag with the same name. And a pleasant surprise appears if we try to overwrite an existing tag:
 
