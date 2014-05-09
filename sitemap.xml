@@ -2,250 +2,254 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://blog.iqandreas.com/actionscript/actionscript-blogs-to-follow-march-2010/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/is-high-score-dead/</loc>
-        <lastmod>2013-11-17T08:55:14+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/the-humble-air-bundle/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/why-so-many-monologues/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/i-will-code-for-free/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/monologues/pick-a-community-any-community/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/git/best-practices-for-git-ignore/</loc>
-        <lastmod>2013-11-13T02:51:30+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual/
         </loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/
         </loc>
-        <lastmod>2013-11-17T09:02:50+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/git/how-to-move-tags/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/
         </loc>
-        <lastmod>2013-11-17T12:24:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/repositories/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/snow-fixes/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/craftable-double-slabs/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-water-griefing/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/leaves-fixes/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-ender-griefing/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/iqandreas-fixes/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/cauldron-fixes/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/boat-fixes/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-void-fog/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/adjustable-anaglyph/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/license/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-ghast-griefing/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-silverfish-griefing/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/installation/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/water-fixes/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-creeper-griefing/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/harvestable-ice/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/minecraft/no-more-tnt-griefing/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/actionscriptactionscript-for-beginners/</loc>
-        <lastmod>2013-10-20T04:27:29+02:00</lastmod>
+        <lastmod>2013-10-19T21:27:29-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/actionscript/</loc>
-        <lastmod>2013-11-17T23:52:07+01:00</lastmod>
+        <lastmod>2013-11-17T16:52:07-06:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/actionscriptunderstanding-the-as3-event-system/</loc>
-        <lastmod>2013-10-20T04:28:39+02:00</lastmod>
+        <lastmod>2013-10-19T21:28:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/actionscriptexperiments/</loc>
-        <lastmod>2013-10-20T04:28:25+02:00</lastmod>
+        <lastmod>2013-10-19T21:28:25-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/actionscriptactionscript-in-ubuntu/</loc>
-        <lastmod>2013-10-20T04:28:21+02:00</lastmod>
+        <lastmod>2013-10-19T21:28:21-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/</loc>
-        <lastmod>2013-11-20T03:56:21+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.iqandreas.com/blog/archives/</loc>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/posts/archives/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/posts/</loc>
-        <lastmod>2013-10-20T04:10:21+02:00</lastmod>
+        <lastmod>2013-10-19T21:10:21-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.commonologues/</loc>
-        <lastmod>2013-10-20T04:28:46+02:00</lastmod>
+        <lastmod>2013-10-19T21:28:46-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/git/</loc>
-        <lastmod>2013-10-20T04:28:14+02:00</lastmod>
+        <lastmod>2013-10-19T21:28:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/contactkirupa.com/</loc>
-        <lastmod>2013-10-20T03:47:40+02:00</lastmod>
+        <lastmod>2013-10-19T20:47:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/contact/</loc>
-        <lastmod>2013-11-11T17:43:44+01:00</lastmod>
+        <lastmod>2014-05-08T23:45:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/contacttwitter/</loc>
-        <lastmod>2013-10-20T03:47:40+02:00</lastmod>
+        <lastmod>2013-10-19T20:47:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/contactgithub/</loc>
-        <lastmod>2013-10-20T03:47:40+02:00</lastmod>
+        <lastmod>2013-10-19T20:47:40-05:00</lastmod>
     </url>
     <url>
         <loc>http://blog.iqandreas.com/robots.txt</loc>
-        <lastmod>2013-11-11T17:37:05+01:00</lastmod>
+        <lastmod>2014-05-08T23:42:14-05:00</lastmod>
     </url>
 </urlset>

@@ -4,7 +4,7 @@
   <title><![CDATA[The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-20T04:00:30+01:00</updated>
+  <updated>2014-05-08T23:46:05-05:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[What are the default permissions for files in Ubuntu?]]></title>
     <link href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/"/>
-    <updated>2013-11-17T10:54:00+01:00</updated>
+    <updated>2013-11-17T10:54:00-06:00</updated>
     <id>http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu</id>
     <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/#summary">In a nutshell</a>.</em></p>
 
@@ -112,7 +112,7 @@
   <entry>
     <title type="html"><![CDATA[GIT: How to move tags]]></title>
     <link href="http://blog.iqandreas.com/git/how-to-move-tags/"/>
-    <updated>2013-11-17T06:43:00+01:00</updated>
+    <updated>2013-11-17T06:43:00-06:00</updated>
     <id>http://blog.iqandreas.com/git/how-to-move-tags</id>
     <content type="html"><![CDATA[<p>Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?<!-- more --></p>
 
@@ -167,7 +167,7 @@
   <entry>
     <title type="html"><![CDATA[GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)]]></title>
     <link href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/"/>
-    <updated>2013-10-24T03:48:00+02:00</updated>
+    <updated>2013-10-24T03:48:00-05:00</updated>
     <id>http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux</id>
     <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
 
@@ -232,7 +232,7 @@
   <entry>
     <title type="html"><![CDATA[Why my one line if statements are unusual]]></title>
     <link href="http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
-    <updated>2013-01-04T13:02:00+01:00</updated>
+    <updated>2013-01-04T13:02:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
     <content type="html"><![CDATA[<p>My one line if statements have been described as <em>&ldquo;um&hellip; unique&rdquo;</em> and <em>&ldquo;making me cringe&rdquo;</em>, but trust me, there is method to this madness; mainly, it&rsquo;s practical for debugging.<!-- more --> The sample code is in ActionScript, but should be self-explanatory in any language with similar semantics:</p>
 
@@ -286,7 +286,7 @@
   <entry>
     <title type="html"><![CDATA[Best practices for git ignore]]></title>
     <link href="http://blog.iqandreas.com/git/best-practices-for-git-ignore/"/>
-    <updated>2013-01-02T11:46:00+01:00</updated>
+    <updated>2013-01-02T11:46:00-06:00</updated>
     <id>http://blog.iqandreas.com/git/best-practices-for-git-ignore</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.kernel.org/pub/software/scm/git/docs/">man pages for GIT</a> aren&rsquo;t usually the clearest or most helpful, and is seldom the first place I turn to for help. Still, I ran across some valuable &ldquo;best practices&rdquo; information which I myself have not been following due to ignorance.<!-- more --></p>
 
@@ -311,7 +311,7 @@
   <entry>
     <title type="html"><![CDATA[How to Ignore the Constructor when Extending a Class]]></title>
     <link href="http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
-    <updated>2012-06-13T08:47:00+02:00</updated>
+    <updated>2012-06-13T08:47:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
     <content type="html"><![CDATA[<p>As we all know, if you don&rsquo;t call <code>super()</code> in your constructor&rsquo;s code, the Flash compiler will automatically append it to your constructor&rsquo;s code.</p>
 
@@ -349,7 +349,7 @@
   <entry>
     <title type="html"><![CDATA[Pick a Community, any Community]]></title>
     <link href="http://blog.iqandreas.com/monologues/pick-a-community-any-community/"/>
-    <updated>2012-06-12T09:56:00+02:00</updated>
+    <updated>2012-06-12T09:56:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/pick-a-community-any-community</id>
     <content type="html"><![CDATA[<p><span class='pullquote-right' data-pullquote='Learning to program all on your own can be hard, really hard in fact.'>Learning to program all on your own can be hard, really hard in fact. Sometimes it helps having a place where you can ask questions when Google just isn&rsquo;t giving you what you are looking for. There are also benefits in using a community to <em>answer</em> programming questions (a topic I will cover in an upcoming blog post).</span></p>
 
@@ -422,7 +422,7 @@
   <entry>
     <title type="html"><![CDATA[I Will Code for Free!]]></title>
     <link href="http://blog.iqandreas.com/i-will-code-for-free/"/>
-    <updated>2012-04-16T06:54:00+02:00</updated>
+    <updated>2012-04-16T06:54:00-05:00</updated>
     <id>http://blog.iqandreas.com/i-will-code-for-free</id>
     <content type="html"><![CDATA[<p>No, it&rsquo;s not a trap. There is no fine-print.</p>
 
@@ -465,7 +465,7 @@
   <entry>
     <title type="html"><![CDATA[Why so many Monologues?]]></title>
     <link href="http://blog.iqandreas.com/monologues/why-so-many-monologues/"/>
-    <updated>2012-03-20T13:34:00+01:00</updated>
+    <updated>2012-03-20T13:34:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/why-so-many-monologues</id>
     <content type="html"><![CDATA[<p>I typically prefer the information in my posts to be more &ldquo;practical&rdquo;, but the last few posts have been mainly monologues. Bear with me though, I&rsquo;m working up to one central point, and after that I&rsquo;m back to writing useful information. <!-- more --></p>
 
@@ -480,7 +480,7 @@
   <entry>
     <title type="html"><![CDATA[The Problems with Being Self Taught]]></title>
     <link href="http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught/"/>
-    <updated>2012-03-08T15:51:00+01:00</updated>
+    <updated>2012-03-08T15:51:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught</id>
     <content type="html"><![CDATA[<p><em><strong>Note:</strong> I can only speak from personal experience on this issue, so I could use more input.</em></p>
 
@@ -533,7 +533,7 @@
   <entry>
     <title type="html"><![CDATA[What is a Theoretical Developer?]]></title>
     <link href="http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer/"/>
-    <updated>2012-03-02T14:56:00+01:00</updated>
+    <updated>2012-03-02T14:56:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer</id>
     <content type="html"><![CDATA[<p><em><strong>Note:</strong> Take this post with a grain of salt. It&rsquo;s meant to be a slightly amusing rant, and should not be used as an official classification system for developers.</em> <img class="smiley" src="http://www.kirupa.com/forum/images/smilies/wink.gif" title=";)" ></p>
 
@@ -577,7 +577,7 @@
   <entry>
     <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
     <link href="http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
-    <updated>2012-01-17T08:48:00+01:00</updated>
+    <updated>2012-01-17T08:48:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
     <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which &ldquo;resets&rdquo; the internal SWFViewer in case it won&rsquo;t open after closing improperly.</p>
 
@@ -680,7 +680,7 @@ rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SW
   <entry>
     <title type="html"><![CDATA[What Beginners need to know about Performance and Garbage Collection]]></title>
     <link href="http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
-    <updated>2012-01-16T01:43:00+01:00</updated>
+    <updated>2012-01-16T01:43:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
     <content type="html"><![CDATA[<p>Another category of beginner questions that often appear on the <a href="http://www.kirupa.com/forum/">Kirupa forums</a> are about performance and garbage collection. Some common concerns:</p>
 
@@ -746,7 +746,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[The Humble AIR Bundle]]></title>
     <link href="http://blog.iqandreas.com/monologues/the-humble-air-bundle/"/>
-    <updated>2011-12-26T05:58:00+01:00</updated>
+    <updated>2011-12-26T05:58:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/the-humble-air-bundle</id>
     <content type="html"><![CDATA[<p>I&rsquo;d like to say straight off the bat that this bundle does not exist. It&rsquo;s just an idea I have been playing with in my mind.</p>
 
@@ -765,7 +765,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[Is High Score dead?]]></title>
     <link href="http://blog.iqandreas.com/monologues/is-high-score-dead/"/>
-    <updated>2011-11-25T14:50:00+01:00</updated>
+    <updated>2011-11-25T14:50:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/is-high-score-dead</id>
     <content type="html"><![CDATA[<p>I have recently played with the thought of the classic high score system being &ldquo;dead&rdquo;. These viewpoints are from the perspective as a player rather than a developer.</p>
 
@@ -804,7 +804,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[Does "Ponycorns" exploit the mentally ill?]]></title>
     <link href="http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill/"/>
-    <updated>2011-06-04T14:15:00+02:00</updated>
+    <updated>2011-06-04T14:15:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill</id>
     <content type="html"><![CDATA[<p>Untold Entertainment recently released a new game, &ldquo;<a href="http://www.untoldentertainment.com/games/sissy/">Sissy&rsquo;s Magical Ponycorn Adventure</a>&rdquo;.</p>
 
@@ -914,7 +914,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[Experiment: Drop Painter]]></title>
     <link href="http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter/"/>
-    <updated>2011-06-03T17:12:00+02:00</updated>
+    <updated>2011-06-03T17:12:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/experiments/experiment-drop-painter</id>
     <content type="html"><![CDATA[<p>No, it&rsquo;s not painting with drops (though, that seems like a great idea for another project). Instead this experiment drops pieces of a painting down from above which eventually form to assemble a complete picture.</p>
 
@@ -937,7 +937,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[Developing for the Playbook: Chapter 3 - The Emulator]]></title>
     <link href="http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/"/>
-    <updated>2011-03-30T04:50:00+02:00</updated>
+    <updated>2011-03-30T04:50:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator</id>
     <content type="html"><![CDATA[<p><strong>DISCLAIMER:</strong> This is the most rediculous thing I have ever done. Please ignore it. ;)</p>
 
@@ -983,7 +983,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
     <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
-    <updated>2010-10-19T07:23:00+02:00</updated>
+    <updated>2010-10-19T07:23:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
     <content type="html"><![CDATA[<p>This thread is part 3 in the &ldquo;<a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
 
@@ -1178,7 +1178,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #2 - Custom Events]]></title>
     <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
-    <updated>2010-10-12T07:53:00+02:00</updated>
+    <updated>2010-10-12T07:53:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
     <content type="html"><![CDATA[<p>This thread is part 2 in the &ldquo;<a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 

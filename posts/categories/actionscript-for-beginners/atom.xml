@@ -4,7 +4,7 @@
   <title><![CDATA[Category: actionscript-for-beginners | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/actionscript-for-beginners/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-20T04:00:30+01:00</updated>
+  <updated>2014-05-08T23:46:05-05:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[What Beginners need to know about Performance and Garbage Collection]]></title>
     <link href="http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
-    <updated>2012-01-16T01:43:00+01:00</updated>
+    <updated>2012-01-16T01:43:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
     <content type="html"><![CDATA[<p>Another category of beginner questions that often appear on the <a href="http://www.kirupa.com/forum/">Kirupa forums</a> are about performance and garbage collection. Some common concerns:</p>
 

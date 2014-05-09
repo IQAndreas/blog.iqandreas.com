@@ -4,7 +4,7 @@
   <title><![CDATA[Category: understanding-the-as3-event-system | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/understanding-the-as3-event-system/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-20T04:00:30+01:00</updated>
+  <updated>2014-05-08T23:46:05-05:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #3 - Easy Event Bubbling]]></title>
     <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling/"/>
-    <updated>2010-10-19T07:23:00+02:00</updated>
+    <updated>2010-10-19T07:23:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-3-easy-event-bubbling</id>
     <content type="html"><![CDATA[<p>This thread is part 3 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a> and <a href="/actionscript/understanding-the-as3-event-system/part-2-custom-events">part 2</a>. If you have not read the previous parts, it is recommended that you do so.</p>
 
@@ -177,7 +177,7 @@ newsButton.addEventListener(MouseEvent.CLICK, navigationButtonClicked);</p>
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #2 - Custom Events]]></title>
     <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events/"/>
-    <updated>2010-10-12T07:53:00+02:00</updated>
+    <updated>2010-10-12T07:53:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-2-custom-events</id>
     <content type="html"><![CDATA[<p>This thread is part 2 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series. It continues on the &ldquo;office&rdquo; illustration used in <a href="/actionscript/understanding-the-as3-event-system/part-1-the-basics">part 1</a>. If you have not read part 1, it is recommended that you do so.</p>
 
@@ -292,7 +292,7 @@ dispatchEvent(eventFolder);
   <entry>
     <title type="html"><![CDATA[Understanding the AS3 Event System #1 - The Basics]]></title>
     <link href="http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics/"/>
-    <updated>2010-10-11T10:39:00+02:00</updated>
+    <updated>2010-10-11T10:39:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/understanding-the-as3-event-system/part-1-the-basics</id>
     <content type="html"><![CDATA[<p>This thread is part 1 in the &ldquo;<a href="/actionscript/understanding-the-as3-event-system/">Understanding the AS3 Event System</a>&rdquo; series.</p>
 

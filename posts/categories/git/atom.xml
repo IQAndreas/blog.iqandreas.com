@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-20T04:00:30+01:00</updated>
+  <updated>2014-05-08T23:46:05-05:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[GIT: How to move tags]]></title>
     <link href="http://blog.iqandreas.com/git/how-to-move-tags/"/>
-    <updated>2013-11-17T06:43:00+01:00</updated>
+    <updated>2013-11-17T06:43:00-06:00</updated>
     <id>http://blog.iqandreas.com/git/how-to-move-tags</id>
     <content type="html"><![CDATA[<p>Say you already added a tag, but later realized that it was in the wrong place, or perhaps you needed to add a few more last-minute commits. How would you go about moving it?<!-- more --></p>
 
@@ -67,7 +67,7 @@ From https://github.com/FlixelCommunity/flixel
   <entry>
     <title type="html"><![CDATA[GIT: Storing HTTPS Authentication in Ubuntu (and Arch Linux)]]></title>
     <link href="http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux/"/>
-    <updated>2013-10-24T03:48:00+02:00</updated>
+    <updated>2013-10-24T03:48:00-05:00</updated>
     <id>http://blog.iqandreas.com/git/storing-https-authentication-in-ubuntu-and-arch-linux</id>
     <content type="html"><![CDATA[<p><em><strong>TL;DR version:</strong> Skip to <a href="#storing-your-https-credentials-using-a-keyring">Storing your HTTPS credentials using a Keyring</a>.</em></p>
 
@@ -128,7 +128,7 @@ $ git config --global credential.helper /usr/share/doc/git/contrib/credential/gn
   <entry>
     <title type="html"><![CDATA[Best practices for git ignore]]></title>
     <link href="http://blog.iqandreas.com/git/best-practices-for-git-ignore/"/>
-    <updated>2013-01-02T11:46:00+01:00</updated>
+    <updated>2013-01-02T11:46:00-06:00</updated>
     <id>http://blog.iqandreas.com/git/best-practices-for-git-ignore</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.kernel.org/pub/software/scm/git/docs/">man pages for GIT</a> aren&rsquo;t usually the clearest or most helpful, and is seldom the first place I turn to for help. Still, I ran across some valuable &ldquo;best practices&rdquo; information which I myself have not been following due to ignorance.<!-- more --></p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: actionscript-in-ubuntu | The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/posts/categories/actionscript-in-ubuntu/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2013-11-20T04:00:30+01:00</updated>
+  <updated>2014-05-08T23:46:05-05:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
     <link href="http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
-    <updated>2012-01-17T08:48:00+01:00</updated>
+    <updated>2012-01-17T08:48:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
     <content type="html"><![CDATA[<p>In this guide, we will add FDT to the list of installed applications, and optionally, install a script which &ldquo;resets&rdquo; the internal SWFViewer in case it won&rsquo;t open after closing improperly.</p>
 
