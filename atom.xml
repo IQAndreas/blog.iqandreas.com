@@ -4,7 +4,7 @@
   <title><![CDATA[The Programming Blog of Andreas Renberg (IQAndreas)]]></title>
   <link href="http://blog.iqandreas.com/atom.xml" rel="self"/>
   <link href="http://blog.iqandreas.com/"/>
-  <updated>2014-05-08T23:46:05-05:00</updated>
+  <updated>2014-05-09T01:24:48-05:00</updated>
   <id>http://blog.iqandreas.com/</id>
   <author>
     <name><![CDATA[Andreas Renberg (IQAndreas)]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[What are the default permissions for files in Ubuntu?]]></title>
+    <title type="html"><![CDATA[What Are the Default Permissions for Files in Ubuntu?]]></title>
     <link href="http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu/"/>
     <updated>2013-11-17T10:54:00-06:00</updated>
     <id>http://blog.iqandreas.com/ubuntu/what-are-the-default-permissions-for-files-in-ubuntu</id>
@@ -110,7 +110,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[GIT: How to move tags]]></title>
+    <title type="html"><![CDATA[GIT: How to Move Tags]]></title>
     <link href="http://blog.iqandreas.com/git/how-to-move-tags/"/>
     <updated>2013-11-17T06:43:00-06:00</updated>
     <id>http://blog.iqandreas.com/git/how-to-move-tags</id>
@@ -230,7 +230,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Why my one line if statements are unusual]]></title>
+    <title type="html"><![CDATA[Why My One Line if Statements Are Unusual]]></title>
     <link href="http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual/"/>
     <updated>2013-01-04T13:02:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/why-my-one-line-if-statements-are-unusual</id>
@@ -284,7 +284,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Best practices for git ignore]]></title>
+    <title type="html"><![CDATA[Best Practices for Git Ignore]]></title>
     <link href="http://blog.iqandreas.com/git/best-practices-for-git-ignore/"/>
     <updated>2013-01-02T11:46:00-06:00</updated>
     <id>http://blog.iqandreas.com/git/best-practices-for-git-ignore</id>
@@ -309,7 +309,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How to Ignore the Constructor when Extending a Class]]></title>
+    <title type="html"><![CDATA[How to Ignore the Constructor When Extending a Class]]></title>
     <link href="http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class/"/>
     <updated>2012-06-13T08:47:00-05:00</updated>
     <id>http://blog.iqandreas.com/actionscript/how-to-ignore-the-constructor-when-extending-a-class</id>
@@ -347,7 +347,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Pick a Community, any Community]]></title>
+    <title type="html"><![CDATA[Pick a Community, Any Community]]></title>
     <link href="http://blog.iqandreas.com/monologues/pick-a-community-any-community/"/>
     <updated>2012-06-12T09:56:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/pick-a-community-any-community</id>
@@ -463,7 +463,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Why so many Monologues?]]></title>
+    <title type="html"><![CDATA[Why So Many Monologues?]]></title>
     <link href="http://blog.iqandreas.com/monologues/why-so-many-monologues/"/>
     <updated>2012-03-20T13:34:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/why-so-many-monologues</id>
@@ -478,7 +478,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The Problems with Being Self Taught]]></title>
+    <title type="html"><![CDATA[The Problems With Being Self Taught]]></title>
     <link href="http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught/"/>
     <updated>2012-03-08T15:51:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/the-problems-with-being-self-taught</id>
@@ -531,7 +531,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[What is a Theoretical Developer?]]></title>
+    <title type="html"><![CDATA[What Is a Theoretical Developer?]]></title>
     <link href="http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer/"/>
     <updated>2012-03-02T14:56:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/what-is-a-theoretical-developer</id>
@@ -575,7 +575,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Ubuntu: Adding FDT to the list of Applications]]></title>
+    <title type="html"><![CDATA[Ubuntu: Adding FDT to the List of Applications]]></title>
     <link href="http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications/"/>
     <updated>2012-01-17T08:48:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/actionscript-in-ubuntu/ubuntu-adding-fdt-to-the-list-of-applications</id>
@@ -678,7 +678,7 @@ rm -f /opt/fdt5/plugins/com.powerflasher.fdt.ui.swfViewer_5.0.0.1412/linux64/.SW
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[What Beginners need to know about Performance and Garbage Collection]]></title>
+    <title type="html"><![CDATA[What Beginners Need to Know About Performance and Garbage Collection]]></title>
     <link href="http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection/"/>
     <updated>2012-01-16T01:43:00-06:00</updated>
     <id>http://blog.iqandreas.com/actionscript/actionscript-for-beginners/what-beginners-need-to-know-about-performance-and-garbage-collection</id>
@@ -763,7 +763,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Is High Score dead?]]></title>
+    <title type="html"><![CDATA[Is High Score Dead?]]></title>
     <link href="http://blog.iqandreas.com/monologues/is-high-score-dead/"/>
     <updated>2011-11-25T14:50:00-06:00</updated>
     <id>http://blog.iqandreas.com/monologues/is-high-score-dead</id>
@@ -802,7 +802,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Does "Ponycorns" exploit the mentally ill?]]></title>
+    <title type="html"><![CDATA[Does "Ponycorns" Exploit the Mentally Ill?]]></title>
     <link href="http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill/"/>
     <updated>2011-06-04T14:15:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/does-ponycorns-exploit-the-mentally-ill</id>
@@ -935,7 +935,7 @@ Then, make sure you <strong>really</strong> know the basics of ActionScript (ins
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Developing for the Playbook: Chapter 3 - The Emulator]]></title>
+    <title type="html"><![CDATA[Developing for the Playbook: Chapter 3 - the Emulator]]></title>
     <link href="http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator/"/>
     <updated>2011-03-30T04:50:00-05:00</updated>
     <id>http://blog.iqandreas.com/monologues/developing-for-the-playbook-chapter-3-the-emulator</id>
